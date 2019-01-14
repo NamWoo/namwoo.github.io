@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="TIL,">
 
 
 
@@ -75,17 +75,20 @@
 
 
 
-<meta name="description" content="두 달 전부터 써오고 준비했던, 누구보다 미리미리 준비하고 써왔던 원서를 제출 못했다30분 전에 제출하려고 보니 pdf 를 올리는 게 아니고 그걸 또 나눠서 올려야 하는 거였고 파일명을 한국어를 빼고 하길 권고 하길래 혹시 몰라 또 파일명을 일일이 바꿔주었고 그렇게 들어갔더니 결제..  결제과정에 설치하고 가상계좌를 받니 뭐하니 넘어가고 결제는 휴대폰 계좌">
+<meta name="description" content="TIL.   올라라 정확도야.새벽 6시까지 진행중인거 보다 잠듬. VGG19_BN 모델 batch size 조정12batch size=8num_workers=2 엄청~ 나게 오래걸림. 정확도도 너무 낮음.. 12batch size=32num_workers=0 더 빨라졌는데 정확도가 70프로대가 한계.. 12batch size=64num_workers=0 다">
+<meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="whatastupidday">
-<meta property="og:url" content="http://namwoo.github.io/2018/12/30/whatastupidday/index.html">
+<meta property="og:title" content="20190112_TIL">
+<meta property="og:url" content="http://namwoo.github.io/2019/01/12/20190112-TIL/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
-<meta property="og:description" content="두 달 전부터 써오고 준비했던, 누구보다 미리미리 준비하고 써왔던 원서를 제출 못했다30분 전에 제출하려고 보니 pdf 를 올리는 게 아니고 그걸 또 나눠서 올려야 하는 거였고 파일명을 한국어를 빼고 하길 권고 하길래 혹시 몰라 또 파일명을 일일이 바꿔주었고 그렇게 들어갔더니 결제..  결제과정에 설치하고 가상계좌를 받니 뭐하니 넘어가고 결제는 휴대폰 계좌">
+<meta property="og:description" content="TIL.   올라라 정확도야.새벽 6시까지 진행중인거 보다 잠듬. VGG19_BN 모델 batch size 조정12batch size=8num_workers=2 엄청~ 나게 오래걸림. 정확도도 너무 낮음.. 12batch size=32num_workers=0 더 빨라졌는데 정확도가 70프로대가 한계.. 12batch size=64num_workers=0 다">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2018-12-30T08:35:51.893Z">
+<meta property="og:image" content="http://namwoo.github.io/2019/01/12/20190112-TIL/assets/img/190112.PNG">
+<meta property="og:updated_time" content="2019-01-12T08:00:04.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="whatastupidday">
-<meta name="twitter:description" content="두 달 전부터 써오고 준비했던, 누구보다 미리미리 준비하고 써왔던 원서를 제출 못했다30분 전에 제출하려고 보니 pdf 를 올리는 게 아니고 그걸 또 나눠서 올려야 하는 거였고 파일명을 한국어를 빼고 하길 권고 하길래 혹시 몰라 또 파일명을 일일이 바꿔주었고 그렇게 들어갔더니 결제..  결제과정에 설치하고 가상계좌를 받니 뭐하니 넘어가고 결제는 휴대폰 계좌">
+<meta name="twitter:title" content="20190112_TIL">
+<meta name="twitter:description" content="TIL.   올라라 정확도야.새벽 6시까지 진행중인거 보다 잠듬. VGG19_BN 모델 batch size 조정12batch size=8num_workers=2 엄청~ 나게 오래걸림. 정확도도 너무 낮음.. 12batch size=32num_workers=0 더 빨라졌는데 정확도가 70프로대가 한계.. 12batch size=64num_workers=0 다">
+<meta name="twitter:image" content="http://namwoo.github.io/2019/01/12/20190112-TIL/assets/img/190112.PNG">
 
 
 
@@ -117,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/2018/12/30/whatastupidday/">
+  <link rel="canonical" href="http://namwoo.github.io/2019/01/12/20190112-TIL/">
 
 
 
@@ -352,9 +355,9 @@
       
 
       
-        <p><a href="https://docs.python.org/2/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/2/library/argparse.html</a></p>
+        <h2 id="argparse"><a href="#argparse" class="headerlink" title="argparse"></a>argparse</h2><p><a href="https://docs.python.org/2/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/2/library/argparse.html</a></p>
 <p>15.4.3. The add_argument() method</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArgumentParser.add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArgumentParser.add_argument(name <span class="keyword">or</span> flags...[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])</span><br></pre></td></tr></table></figure>
 <p>Define how a single command-line argument should be parsed. Each parameter has its own more detailed description below, but in short they are:</p>
 <ul>
 <li>name or flags - Either a name or a list of option strings, e.g. foo or -f, –foo.</li>
@@ -372,7 +375,20 @@
 <p>The following sections describe how each of these are used.</p>
 <p><a href="https://docs.python.org/3/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/3/library/argparse.html</a></p>
 <p><a href="https://pymotw.com/3/argparse/" target="_blank" rel="noopener">https://pymotw.com/3/argparse/</a></p>
-
+<h2 id="TORCH-OPTIM"><a href="#TORCH-OPTIM" class="headerlink" title="TORCH.OPTIM"></a>TORCH.OPTIM</h2><p><a href="https://pytorch.org/docs/stable/optim.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/optim.html</a></p>
+<h2 id="HOW-TO-ADJUST-LEARNING-RATE"><a href="#HOW-TO-ADJUST-LEARNING-RATE" class="headerlink" title="HOW TO ADJUST LEARNING RATE"></a>HOW TO ADJUST LEARNING RATE</h2><p><a href="https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate" target="_blank" rel="noopener">https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># Assuming optimizer has two groups.</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lambda1 = <span class="keyword">lambda</span> epoch: epoch // <span class="number">30</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lambda2 = <span class="keyword">lambda</span> epoch: <span class="number">0.95</span> ** epoch</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scheduler = LambdaLR(optimizer, lr_lambda=[lambda1, lambda2])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    scheduler.step()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    train(...)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    validate(...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># Assuming optimizer uses lr = 0.05 for all groups</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># lr = 0.05     if epoch &lt; 30</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># lr = 0.005    if 30 &lt;= epoch &lt; 60</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># lr = 0.0005   if 60 &lt;= epoch &lt; 90</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># ...</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scheduler = StepLR(optimizer, step_size=<span class="number">30</span>, gamma=<span class="number">0.1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    scheduler.step()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    train(...)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    validate(...)</span><br></pre></td></tr></table></figure>
+<p>설치</p>
+<p><a href="http://bob3rdnewbie.tistory.com/313" target="_blank" rel="noopener">http://bob3rdnewbie.tistory.com/313</a><br><a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">https://pytorch.org/get-started/locally/</a></p>
+<p>[Window Title]<br>Python</p>
+<p>[Main Instruction]<br>Python의 작동이 중지되었습니다.</p>
+<p>[Content]<br>문제에 대한 해결 방법을 확인하는 중입니다.</p>
+<p>[취소]</p>
+<p><a href="https://tensorflow.blog/2018/04/25/pytorch-0-4-0-release/" target="_blank" rel="noopener">https://tensorflow.blog/2018/04/25/pytorch-0-4-0-release/</a><br><a href="https://tensorflow.blog/2018/04/25/pytorch-0-4-0-release/" target="_blank" rel="noopener">https://tensorflow.blog/2018/04/25/pytorch-0-4-0-release/</a></p>
+<p><a href="https://github.com/tensorflow/tensorflow/issues/22794" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow/issues/22794</a><br>conda create –name tf-gpu<br>conda install -c aaronzs tensorflow-gpu<br>conda install -c anaconda cudatoolkit<br>conda install -c anaconda cudnn<br>conda install keras-gpu</p>
+<p><a href="https://github.com/pytorch/pytorch/issues/4518" target="_blank" rel="noopener">https://github.com/pytorch/pytorch/issues/4518</a><br>from torch._C import * (ImportError: DLL load failed: The specified module could not be found.</p>
+<h1 id="https-pytorch-org-docs-stable-torch-html-torch-topk"><a href="#https-pytorch-org-docs-stable-torch-html-torch-topk" class="headerlink" title="https://pytorch.org/docs/stable/torch.html#torch.topk"></a><a href="https://pytorch.org/docs/stable/torch.html#torch.topk" target="_blank" rel="noopener">https://pytorch.org/docs/stable/torch.html#torch.topk</a></h1>
       
     </div>
     
@@ -430,6 +446,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/01/14/20190114-TIL/" rel="prev" title="20190114_TIL">
+                20190114_TIL <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -480,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -496,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -542,6 +571,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#argparse"><span class="nav-number">1.</span> <span class="nav-text">argparse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TORCH-OPTIM"><span class="nav-number">2.</span> <span class="nav-text">TORCH.OPTIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HOW-TO-ADJUST-LEARNING-RATE"><span class="nav-number">3.</span> <span class="nav-text">HOW TO ADJUST LEARNING RATE</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#https-pytorch-org-docs-stable-torch-html-torch-topk"><span class="nav-number"></span> <span class="nav-text">https://pytorch.org/docs/stable/torch.html#torch.topk</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
