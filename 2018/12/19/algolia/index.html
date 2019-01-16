@@ -76,13 +76,13 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="http://namwoo.github.io/schedule/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://namwoo.github.io/categories/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-16T20:36:08.705Z">
+<meta property="og:updated_time" content="2019-01-16T20:35:57.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="schedule">
+<meta name="twitter:title" content="categories">
 
 
 
@@ -114,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/schedule/">
+  <link rel="canonical" href="http://namwoo.github.io/categories/">
 
 
 
@@ -345,6 +345,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/19/algolia/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/19/algolia/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -512,6 +522,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -772,6 +789,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+        <script src="https://jjeejj.github.io/js/gitment.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'namwoo',
+            repo: 'mygitment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'ac6bec7d0f7e673bd6a6430a824039b4d4fea9d8',
+            
+                client_id: 'f29ce73945ae72ccd830'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
