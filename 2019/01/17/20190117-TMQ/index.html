@@ -124,7 +124,7 @@
 
 
 
-  <title>Tag: TIL, Diary | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190117_TMQ | my Blog of Absolute and Subjective Knowledge</title>
   
 
 
@@ -152,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -274,52 +274,203 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>TIL, Diary<small>Tag</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/17/20190117-TMQ/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/11/TILStart/" itemprop="url">
-              
-                <span itemprop="name">TILStart</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">20190117_TMQ</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-11T15:15:30+09:00" content="2019-01-11">
-          01-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-17T03:03:35+09:00">2019-01-17</time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>아래 질문들은 어제 질문인데 정리하다보니 하루가 넘어가서 새벽 4시 ㅡㅡ</p>
+<h1 id="q1"><a href="#q1" class="headerlink" title="q1"></a>q1</h1><h3 id="아래-코드-이해불가"><a href="#아래-코드-이해불가" class="headerlink" title="아래 코드 이해불가"></a>아래 코드 이해불가</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment"># loss = criterion(logits, labels)</span></span><br><span class="line">...</span><br><span class="line">running_loss += loss.item()</span><br><span class="line">...</span><br><span class="line">acuracy = running_loss/len(trainloader)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>running_loss를 왜 append 해주는 걸까? </p>
+<ul>
+<li><code>bath_size = 64</code> 였고</li>
+<li><code>input_images.shape = 1*28*28</code> 는 FMNIST dataset, 옷가지 사진에 1ch짜리 이미지들..</li>
+<li><code>len(traindataloder) = 938</code> </li>
+</ul>
+<p>FMNIST dataset에  60000개의 데이터포인트에서 <code>bath_size</code>가 64니까 <code>64/60000 = 938</code></p>
+<ol>
+<li><code>bath_size</code>의 의미는 한번에 불러와서 처리할 이미지의 양. 으로 이해.</li>
+<li>그럼 epoch 한번이 돌때 <code>traindataloder</code>에서 64개의 그림이 들어오는 거고 그 과정을 for문으로 938번 하겠다는 거</li>
+<li>쭉쭉쭉 모델을 통해서 loss function(얼만큼 틀렸는지 실제 labels과 비교)을 구했고 </li>
+<li>그걸 exp 해서 <code>이산</code>을 <code>연속</code>으로 바꿔주고</li>
+<li>그 값을 정규화해서 확률을 구한다.</li>
+<li>그럼 한 epoch 돌았을 때 출력된 loss를 바로 실제 확률로 비교해서 출력하고</li>
+<li>다음 epoch 돌았을 때 다시 출력되는 loss를 다시 실제 확률로 비교해서 출력하면 되는거 아닌가?</li>
+<li>왜 <code>running_loss = running_loss + loss.item()</code> 이렇게 해서 loss를 쌓지?</li>
+<li>그리고 쌓은 loss를 전체 횟수인 <code>len(trainloader)</code> 이걸로 나눠주는 걸까? </li>
+</ol>
+<blockquote>
+<p>왜왜왜왜왜왜왜 loss 를 쌓고 정확도는 또 저렇게 총 반복횟수로 나누는지 전혀 모르겠따.</p>
+</blockquote>
+<h1 id="q2"><a href="#q2" class="headerlink" title="q2"></a>q2</h1><h3 id="아래-코드-역시-이해불가"><a href="#아래-코드-역시-이해불가" class="headerlink" title="아래 코드 역시 이해불가"></a>아래 코드 역시 이해불가</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment"># log_ps = model(images)</span></span><br><span class="line">test_loss += criterion(log_ps, labels)</span><br><span class="line">...</span><br><span class="line"><span class="comment"># ps = torch.exp(log_ps)</span></span><br><span class="line">top_p, top_class = ps.topk(<span class="number">1</span>, dim=<span class="number">1</span>)</span><br><span class="line">equals = top_class == labels.view(*top_class.shape)</span><br><span class="line"><span class="comment"># accuracy += torch.mean(equals.type(torch.FloatTensor))</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>위 q1질문에 이어서..  </p>
+<ol>
+<li><code>model</code>을 통해 입력된 <code>images</code>를 <code>criterion</code>까지 거쳐 <code>test_loss</code>를 구하는데</li>
+<li>왜 쌓아 또? </li>
+<li>그렇다 치고 넘어간 loss를 exp해서 이산으로 바꿔주고 </li>
+<li>topk 함수써서 가장 높은 확률을 나타내는 1개의 확률 <code>top_p</code>과 실제 <code>top_class</code>을 출력.</li>
+<li>위 4번에 나온 <code>top_class</code>를 실제 labels 이미지랑 비교해서 같으면 1, 틀리면 0 만들기.<ol>
+<li><code>equals.shape = 64*1</code> 일태고 이중 맞은 몇 개가 1일 태지</li>
+</ol>
+</li>
+<li>총 64개중에 맞은게 1개 있으면 확률은 0.15 정도된다. 이게 accuracy… 인데.. 왜?</li>
+</ol>
+<blockquote>
+<p>2번 왜 쌓는지 모르겠고 3-4 로 넘어가는 과정에서 정확히 무슨 확률이 높은걸 뽑아내는지 이해안되고 6번이 왜 accuracy가 되는지 모르겠다.</p>
+</blockquote>
+<hr>
+<p>아아아아아아~~ 모르겠다 누가 알려주세요.. 근데 여기 내 블로그는 검색이 안되는데.. 누가 내 블로그에 검색해서 정리도 안된 홈피에 이걸 찾아 알려줄까.. 게다가 댓글 창도 없는 내 블로그….. 카패 개설하고 스터디 만들어서 직접해보든지 해야하나… 며칠째 끙끙 이걸 해결할 방법이 없네..</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Namwoo Kim
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://namwoo.github.io/2019/01/17/20190117-TMQ/" title="20190117_TMQ">http://namwoo.github.io/2019/01/17/20190117-TMQ/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TMQ/" rel="tag"># TMQ</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/17/20190117-TIL/" rel="next" title="20190117_TIL">
+                <i class="fa fa-chevron-left"></i> 20190117_TIL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +478,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -347,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -409,6 +573,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#q1"><span class="nav-number">1.</span> <span class="nav-text">q1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#아래-코드-이해불가"><span class="nav-number">1.0.1.</span> <span class="nav-text">아래 코드 이해불가</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#q2"><span class="nav-number">2.</span> <span class="nav-text">q2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#아래-코드-역시-이해불가"><span class="nav-number">2.0.1.</span> <span class="nav-text">아래 코드 역시 이해불가</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -525,6 +705,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
 
   
 
