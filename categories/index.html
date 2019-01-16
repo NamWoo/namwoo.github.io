@@ -73,6 +73,9 @@
 
 
 
+  <meta property="fb:admins" content="100001334268596">
+  <meta property="fb:app_id" content="455359708592164">
+
 
 
 <meta property="og:type" content="website">
@@ -122,6 +125,24 @@
 
   <title>categories | my Blog of Absolute and Subjective Knowledge</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '455359708592164',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/euc_kr/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -320,9 +341,8 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
+      <div class="fb-comments" data-href="http://namwoo.github.io/categories/index.html" data-numposts="10" data-width="100%" data-colorscheme="light">
+      </div>
     </div>
 
   
@@ -584,48 +604,6 @@
 
 
 
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-        <script src="https://jjeejj.github.io/js/gitment.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-      <style>
-        a.gitment-editor-footer-tip { display: none; }
-        .gitment-container.gitment-footer-container { display: none; }
-      </style>
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'namwoo',
-            repo: 'mygitment',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: 'ac6bec7d0f7e673bd6a6430a824039b4d4fea9d8',
-            
-                client_id: 'f29ce73945ae72ccd830'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
