@@ -75,18 +75,18 @@
 
 
 
-<meta name="description" content="argparsehttps://docs.python.org/2/library/argparse.html 15.4.3. The add_argument() method 1ArgumentParser.add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, requ">
+<meta name="description" content="어제 끝내거나 아직인거(실은 미룬거) 자기 전 project2 제출 했는데 코멘트 옴. 메일 알람 듣고 자려고 누웠다가 일어나서 확인. 파일제출이 덜 되어 있어 다시 제출. 잠 깨는 바람에 컴터 켰는데. 인터넷 서핑중에 뜨는 창에 정말 맛있게 야식 비빔면 먹는거 보고 배속에서 꼬를르르륽. 새벽3시에 파썰어서 볶음밥….ㅠㅠㅠㅠ ㅠㅠㅠㅠㅠ     오늘 예정(제">
 <meta name="keywords" content="TIL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20190113_TIL">
-<meta property="og:url" content="http://namwoo.github.io/2019/01/13/20190113-TIL/index.html">
+<meta property="og:title" content="20190115_TIL">
+<meta property="og:url" content="http://namwoo.github.io/2019/01/15/20190115-TIL/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
-<meta property="og:description" content="argparsehttps://docs.python.org/2/library/argparse.html 15.4.3. The add_argument() method 1ArgumentParser.add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, requ">
+<meta property="og:description" content="어제 끝내거나 아직인거(실은 미룬거) 자기 전 project2 제출 했는데 코멘트 옴. 메일 알람 듣고 자려고 누웠다가 일어나서 확인. 파일제출이 덜 되어 있어 다시 제출. 잠 깨는 바람에 컴터 켰는데. 인터넷 서핑중에 뜨는 창에 정말 맛있게 야식 비빔면 먹는거 보고 배속에서 꼬를르르륽. 새벽3시에 파썰어서 볶음밥….ㅠㅠㅠㅠ ㅠㅠㅠㅠㅠ     오늘 예정(제">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-13T16:17:19.376Z">
+<meta property="og:updated_time" content="2019-01-15T17:46:15.980Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20190113_TIL">
-<meta name="twitter:description" content="argparsehttps://docs.python.org/2/library/argparse.html 15.4.3. The add_argument() method 1ArgumentParser.add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, requ">
+<meta name="twitter:title" content="20190115_TIL">
+<meta name="twitter:description" content="어제 끝내거나 아직인거(실은 미룬거) 자기 전 project2 제출 했는데 코멘트 옴. 메일 알람 듣고 자려고 누웠다가 일어나서 확인. 파일제출이 덜 되어 있어 다시 제출. 잠 깨는 바람에 컴터 켰는데. 인터넷 서핑중에 뜨는 창에 정말 맛있게 야식 비빔면 먹는거 보고 배속에서 꼬를르르륽. 새벽3시에 파썰어서 볶음밥….ㅠㅠㅠㅠ ㅠㅠㅠㅠㅠ     오늘 예정(제">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/2019/01/13/20190113-TIL/">
+  <link rel="canonical" href="http://namwoo.github.io/2019/01/15/20190115-TIL/">
 
 
 
@@ -374,6 +374,11 @@
 <li>Even though the plot and images are displayed properly, the names of the flowers are incorrect. To be able to get the correct names, you need to first reverse the class_to_to_idx dictionary, and use the topk labels as keys to get the correct class ids. Once you have the class ids, you can then use the class ids strings as keys in the cat_to_name dictionary to retrieve the correct class names. This is why you’re only getting 20-30% of the correct names even though your accuracy is close to 90%.  </li>
 <li>You should be printing the training and validation loss during each epoch of training. Only the training loss is printed here.</li>
 </ol>
+<h2 id="multiprocessing-module"><a href="#multiprocessing-module" class="headerlink" title="multiprocessing module"></a>multiprocessing module</h2><ul>
+<li>컴이 못따라가줘서 찾아보다보니 알게된 멀티프로세싱. </li>
+<li>내 컴으로 cuda 사용시 gtx1050 2gb, 메모리 부족으로 큰건 돌릴 수 없음…</li>
+<li>개별로 실행 잘 되는 건 확인 했는데, 실제 내가 사용하는 학습 알고리즘에 적용되는지 넣어보기.</li>
+</ul>
 <p>참고.</p>
 <div style="padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px;"><br><img src="https://www.google.com/s2/favicons?domain=medium.com" style="vertical-align: middle; width:16px; height:16px"><br><a style="vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none;" href="https://medium.com/@josh_2774/deep-learning-with-pytorch-9574e74d17ad" target="_blank" rel="noopener">Deep Learning With PyTorch &ndash; Josh Bernhard &ndash; Medium</a><br></div>
 
@@ -445,6 +450,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/17/20190117-TIL/" rel="prev" title="20190117_TIL">
+                20190117_TIL <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -521,7 +530,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -577,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#주피터-노트북-시작폴더-변경법"><span class="nav-number">1.</span> <span class="nav-text">주피터 노트북 시작폴더 변경법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#어제해야한거-오늘로-미룬거-부터"><span class="nav-number">2.</span> <span class="nav-text">어제해야한거 오늘로 미룬거 부터.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#주피터-노트북-시작폴더-변경법"><span class="nav-number">1.</span> <span class="nav-text">주피터 노트북 시작폴더 변경법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#어제해야한거-오늘로-미룬거-부터"><span class="nav-number">2.</span> <span class="nav-text">어제해야한거 오늘로 미룬거 부터.</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-module"><span class="nav-number"></span> <span class="nav-text">multiprocessing module</span></a></li></div>
             
 
           </div>
