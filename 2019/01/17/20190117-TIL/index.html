@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="TIL,">
+  <meta name="keywords" content="TMQ,">
 
 
 
@@ -75,18 +75,18 @@
 
 
 
-<meta name="description" content="히든 레이어 여럿일때 이렇게 처리. 123456checkpoint = &amp;#123;&apos;input_size&apos;: 784,              &apos;output_size&apos;: 10,              &apos;hidden_layers&apos;: [each.out_features for each in model.hidden_layers],              &apos;state_d">
-<meta name="keywords" content="TIL">
+<meta name="description" content="아래 질문들은 어제 질문인데 정리하다보니 하루가 넘어가서 새벽 4시 ㅡㅡ q1아래 코드 이해불가1234567...# loss = criterion(logits, labels)...running_loss += loss.item()...acuracy = running_loss/len(trainloader)... running_loss를 왜 append 해주는">
+<meta name="keywords" content="TMQ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20190117_TIL">
-<meta property="og:url" content="http://namwoo.github.io/2019/01/17/20190117-TIL/index.html">
+<meta property="og:title" content="20190117_TMQ">
+<meta property="og:url" content="http://namwoo.github.io/2019/01/17/20190117-TMQ/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
-<meta property="og:description" content="히든 레이어 여럿일때 이렇게 처리. 123456checkpoint = &amp;#123;&apos;input_size&apos;: 784,              &apos;output_size&apos;: 10,              &apos;hidden_layers&apos;: [each.out_features for each in model.hidden_layers],              &apos;state_d">
+<meta property="og:description" content="아래 질문들은 어제 질문인데 정리하다보니 하루가 넘어가서 새벽 4시 ㅡㅡ q1아래 코드 이해불가1234567...# loss = criterion(logits, labels)...running_loss += loss.item()...acuracy = running_loss/len(trainloader)... running_loss를 왜 append 해주는">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-16T18:52:44.624Z">
+<meta property="og:updated_time" content="2019-01-16T18:52:22.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20190117_TIL">
-<meta name="twitter:description" content="히든 레이어 여럿일때 이렇게 처리. 123456checkpoint = &amp;#123;&apos;input_size&apos;: 784,              &apos;output_size&apos;: 10,              &apos;hidden_layers&apos;: [each.out_features for each in model.hidden_layers],              &apos;state_d">
+<meta name="twitter:title" content="20190117_TMQ">
+<meta name="twitter:description" content="아래 질문들은 어제 질문인데 정리하다보니 하루가 넘어가서 새벽 4시 ㅡㅡ q1아래 코드 이해불가1234567...# loss = criterion(logits, labels)...running_loss += loss.item()...acuracy = running_loss/len(trainloader)... running_loss를 왜 append 해주는">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/2019/01/17/20190117-TIL/">
+  <link rel="canonical" href="http://namwoo.github.io/2019/01/17/20190117-TMQ/">
 
 
 
@@ -353,8 +353,60 @@
       
 
       
-        <p>히든 레이어 여럿일때 이렇게 처리.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">checkpoint = &#123;<span class="string">'input_size'</span>: <span class="number">784</span>,</span><br><span class="line">              <span class="string">'output_size'</span>: <span class="number">10</span>,</span><br><span class="line">              <span class="string">'hidden_layers'</span>: [each.out_features <span class="keyword">for</span> each <span class="keyword">in</span> model.hidden_layers],</span><br><span class="line">              <span class="string">'state_dict'</span>: model.state_dict()&#125;</span><br><span class="line"></span><br><span class="line">torch.save(checkpoint, <span class="string">'checkpoint.pth'</span>)</span><br></pre></td></tr></table></figure>
+        <h2 id="히든-레이어-여럿일때-이렇게-처리"><a href="#히든-레이어-여럿일때-이렇게-처리" class="headerlink" title="히든 레이어 여럿일때 이렇게 처리."></a>히든 레이어 여럿일때 이렇게 처리.</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">checkpoint = &#123;<span class="string">'input_size'</span>: <span class="number">784</span>,</span><br><span class="line">              <span class="string">'output_size'</span>: <span class="number">10</span>,</span><br><span class="line">              <span class="string">'hidden_layers'</span>: [each.out_features <span class="keyword">for</span> each <span class="keyword">in</span> model.hidden_layers],</span><br><span class="line">              <span class="string">'state_dict'</span>: model.state_dict()&#125;</span><br><span class="line"></span><br><span class="line">torch.save(checkpoint, <span class="string">'checkpoint.pth'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Batch-Normalization-in-Deep-Networks"><a href="#Batch-Normalization-in-Deep-Networks" class="headerlink" title="Batch Normalization in Deep Networks"></a>Batch Normalization in Deep Networks</h2><ul>
+<li><a href="https://www.learnopencv.com/batch-normalization-in-deep-networks/" target="_blank" rel="noopener">https://www.learnopencv.com/batch-normalization-in-deep-networks/</a></li>
+<li>읽어봤지만 정리는 안함. ㅜㅜ </li>
+</ul>
+<h2 id="Dropout-Neural-Networks"><a href="#Dropout-Neural-Networks" class="headerlink" title="Dropout Neural Networks"></a>Dropout Neural Networks</h2><ul>
+<li><a href="https://www.python-course.eu/neural_networks_with_dropout.php" target="_blank" rel="noopener">https://www.python-course.eu/neural_networks_with_dropout.php</a></li>
+<li>Overfitting 오버피팅 줄이기 위해서 Dropout 하는거 개념 다시 정리<ul>
+<li>아니 도대체 몇번을 또 보고 읽고 이해하는지..ㅡㅡ</li>
+</ul>
+</li>
+</ul>
+<h2 id="Fashion-MNIST"><a href="#Fashion-MNIST" class="headerlink" title="Fashion-MNIST"></a>Fashion-MNIST</h2><ul>
+<li><a href="https://github.com/zalandoresearch/fashion-mnist" target="_blank" rel="noopener">https://github.com/zalandoresearch/fashion-mnist</a></li>
+<li>데이터셋 확인</li>
+</ul>
+<h2 id="멀티프로세싱-관련"><a href="#멀티프로세싱-관련" class="headerlink" title="멀티프로세싱 관련"></a>멀티프로세싱 관련</h2><p>선구자 <a href="https://www.youtube.com/playlist?list=PL5tcWHG-UPH2HrF5M7-IIXK6JSRG0obYo" target="_blank" rel="noopener">https://www.youtube.com/playlist?list=PL5tcWHG-UPH2HrF5M7-IIXK6JSRG0obYo</a></p>
+<ol>
+<li>꼭 다시 가보자 **<ol>
+<li>Get 10x Speedup in Tensorflow Multi-Task Learning using Python Multiprocessing</li>
+<li><a href="https://hanxiao.github.io/2017/07/07/Get-10x-Speedup-in-Tensorflow-Multi-Task-Learning-using-Python-Multiprocessing/" target="_blank" rel="noopener">https://hanxiao.github.io/2017/07/07/Get-10x-Speedup-in-Tensorflow-Multi-Task-Learning-using-Python-Multiprocessing/</a></li>
+<li>다시 잘 읽고 정리 해보자.</li>
+</ol>
+</li>
+<li>한번쯤 봐볼만하지만 자세한 예와 설명은 없음.<ol>
+<li>How to speed up the data loader</li>
+<li><a href="https://discuss.pytorch.org/t/how-to-speed-up-the-data-loader/13740" target="_blank" rel="noopener">https://discuss.pytorch.org/t/how-to-speed-up-the-data-loader/13740</a><ol>
+<li>Rookie ask: how to speed up the loading speed in pytorch</li>
+<li><a href="https://discuss.pytorch.org/t/rookie-ask-how-to-speed-up-the-loading-speed-in-pytorch/4714" target="_blank" rel="noopener">https://discuss.pytorch.org/t/rookie-ask-how-to-speed-up-the-loading-speed-in-pytorch/4714</a><ol>
+<li><a href="https://github.com/python-pillow/Pillow/issues/835" target="_blank" rel="noopener">https://github.com/python-pillow/Pillow/issues/835</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>멀티프로세싱 issue<ol>
+<li><a href="https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing" target="_blank" rel="noopener">https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing</a></li>
+<li><a href="https://github.com/jhfjhfj1/autokeras/issues/106" target="_blank" rel="noopener">https://github.com/jhfjhfj1/autokeras/issues/106</a></li>
+<li><a href="https://github.com/pytorch/pytorch/issues/5858" target="_blank" rel="noopener">https://github.com/pytorch/pytorch/issues/5858</a><ol>
+<li><a href="https://pytorch.org/docs/stable/notes/windows.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/notes/windows.html</a> **</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>멀티프로세싱 docs<ol>
+<li><a href="https://pytorch.org/docs/stable/notes/multiprocessing.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/notes/multiprocessing.html</a></li>
+<li><a href="https://docs.python.org/3.6/library/multiprocessing.html" target="_blank" rel="noopener">https://docs.python.org/3.6/library/multiprocessing.html</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="나중에-꼭-다시-가서-확인해볼-곳"><a href="#나중에-꼭-다시-가서-확인해볼-곳" class="headerlink" title="나중에 꼭 다시 가서 확인해볼 곳"></a>나중에 꼭 다시 가서 확인해볼 곳</h2><ul>
+<li><a href="https://opencv-python.readthedocs.io/en/latest/doc/01.imageStart/imageStart.html" target="_blank" rel="noopener">https://opencv-python.readthedocs.io/en/latest/doc/01.imageStart/imageStart.html</a></li>
+</ul>
 
       
     </div>
@@ -467,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -529,6 +590,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#히든-레이어-여럿일때-이렇게-처리"><span class="nav-number">1.</span> <span class="nav-text">히든 레이어 여럿일때 이렇게 처리.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-Normalization-in-Deep-Networks"><span class="nav-number">2.</span> <span class="nav-text">Batch Normalization in Deep Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-Neural-Networks"><span class="nav-number">3.</span> <span class="nav-text">Dropout Neural Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fashion-MNIST"><span class="nav-number">4.</span> <span class="nav-text">Fashion-MNIST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#멀티프로세싱-관련"><span class="nav-number">5.</span> <span class="nav-text">멀티프로세싱 관련</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#나중에-꼭-다시-가서-확인해볼-곳"><span class="nav-number">6.</span> <span class="nav-text">나중에 꼭 다시 가서 확인해볼 곳</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
