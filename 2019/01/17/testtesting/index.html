@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
 <meta property="og:description" content="data scientist, biomedical Engineering">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-17T02:14:55.991Z">
+<meta property="og:updated_time" content="2019-01-17T02:42:40.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="All categories">
 <meta name="twitter:description" content="data scientist, biomedical Engineering">
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-17T11:01:48+09:00">2019-01-17</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-17T11:41:25+09:00">2019-01-17</time>
             
           </span>
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">1.4k</span>
+                <span title="Words count in article">2.1k</span>
               
 
               
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">1 mins.</span>
+                <span title="Reading time">2 mins.</span>
               
             </div>
           
@@ -431,7 +431,7 @@
       
 
       
-        <h1 id="다시-정리"><a href="#다시-정리" class="headerlink" title="다시 정리"></a>다시 정리</h1><h2 id="tag-amp-category-넣기"><a href="#tag-amp-category-넣기" class="headerlink" title="tag &amp; category 넣기"></a>tag &amp; category 넣기</h2><p>hexo-tag-cloud<br><img src="https://raw.githubusercontent.com/MikeCoder/hexo-tag-cloud/HEAD/img/example.jpg" alt="hexo-tag-cloud"></p>
+        <h1 id="다시-정리"><a href="#다시-정리" class="headerlink" title="다시 정리"></a>다시 정리</h1><h2 id="hexo-tag-cloud-넣기"><a href="#hexo-tag-cloud-넣기" class="headerlink" title="hexo-tag-cloud 넣기"></a>hexo-tag-cloud 넣기</h2><p>hexo-tag-cloud<br><img src="https://raw.githubusercontent.com/MikeCoder/hexo-tag-cloud/HEAD/img/example.jpg" alt="hexo-tag-cloud"></p>
 <ul>
 <li><a href="https://www.npmjs.com/package/hexo-tag-cloud?activeTab=readme" target="_blank" rel="noopener">https://www.npmjs.com/package/hexo-tag-cloud?activeTab=readme</a></li>
 </ul>
@@ -465,6 +465,21 @@
 <p>그것도 아니면 이게 잘 나오나??? </p>
 <p><img src="/bb.jpg" alt=""></p>
 <p><a href="https://www.npmjs.com/package/hexo-directory-category" target="_blank" rel="noopener">https://www.npmjs.com/package/hexo-directory-category</a></p>
+<h2 id="tags-categories-넣기"><a href="#tags-categories-넣기" class="headerlink" title="tags, categories 넣기"></a>tags, categories 넣기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>sources/categories/index.md</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: All categories</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">date: 2018-01-01 11:06:29</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>sources/tags/index.md</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: All tags</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">date: 2018-01-01 11:06:17</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>다 변경.</p>
+<h2 id="post-앞단-설정-법"><a href="#post-앞단-설정-법" class="headerlink" title="post 앞단 설정 법."></a>post 앞단 설정 법.</h2><ol>
+<li>comment 안보이게 하기. <ol>
+<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2</a></li>
+<li>필요없는 곳에선 아래와 같이 설정. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>앞단<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 제목도 처음에 터미널에 hexo n 하면서 생성되었음</span><br><span class="line">date: 날짜는 알아서 생성됨</span><br><span class="line">tags: [Hexo, Theme,Next]</span><br><span class="line">categories: [Today, MakingBlog]</span><br><span class="line">layout: default</span><br><span class="line">cover: /img/home-bg.jpg  커버이미지</span><br><span class="line">subtitle: 부제목</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -500,13 +515,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
+            <a href="/tags/Theme/" rel="tag"># Theme</a>
           
-            <a href="/tags/theme/" rel="tag"># theme</a>
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/next/" rel="tag"># next</a>
+            <a href="/tags/Next/" rel="tag"># Next</a>
           
         </div>
       
@@ -635,13 +648,22 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -654,7 +676,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/">next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yonsei-university/">yonsei university</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연세대/">연세대</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yonsei-university/">yonsei university</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연세대/">연세대</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -704,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#다시-정리"><span class="nav-number">1.</span> <span class="nav-text">다시 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-amp-category-넣기"><span class="nav-number">1.1.</span> <span class="nav-text">tag &amp; category 넣기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asset-folder-setting"><span class="nav-number">1.2.</span> <span class="nav-text">asset folder setting</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#다시-정리"><span class="nav-number">1.</span> <span class="nav-text">다시 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-tag-cloud-넣기"><span class="nav-number">1.1.</span> <span class="nav-text">hexo-tag-cloud 넣기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asset-folder-setting"><span class="nav-number">1.2.</span> <span class="nav-text">asset folder setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-categories-넣기"><span class="nav-number">1.3.</span> <span class="nav-text">tags, categories 넣기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post-앞단-설정-법"><span class="nav-number">1.4.</span> <span class="nav-text">post 앞단 설정 법.</span></a></li></ol></li></ol></div>
             
 
           </div>
