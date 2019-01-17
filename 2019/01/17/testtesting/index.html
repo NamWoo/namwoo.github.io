@@ -126,7 +126,7 @@
 
 
 
-  <title>testtesting | my Blog of Absolute and Subjective Knowledge</title>
+  <title>MakeMyBlog01 | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">testtesting</h2>
+          <h2 class="post-title" itemprop="name headline">MakeMyBlog01</h2>
         
 
         <div class="post-meta">
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-17T09:58:11+09:00">2019-01-17</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-17T10:26:30+09:00">2019-01-17</time>
             
           </span>
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">52</span>
+                <span title="Words count in article">1.3k</span>
               
 
               
@@ -431,10 +431,38 @@
       
 
       
-        <p>agfasg<br>a<br>asgags</p>
-<p><a href="https://hexo.io/docs/asset-folders" target="_blank" rel="noopener">https://hexo.io/docs/asset-folders</a></p>
+        <h1 id="다시-정리"><a href="#다시-정리" class="headerlink" title="다시 정리"></a>다시 정리</h1><h2 id="tag-amp-category-넣기"><a href="#tag-amp-category-넣기" class="headerlink" title="tag &amp; category 넣기"></a>tag &amp; category 넣기</h2><p>hexo-tag-cloud<br><img src="https://raw.githubusercontent.com/MikeCoder/hexo-tag-cloud/HEAD/img/example.jpg" alt="hexo-tag-cloud"></p>
+<ul>
+<li><a href="https://www.npmjs.com/package/hexo-tag-cloud?activeTab=readme" target="_blank" rel="noopener">https://www.npmjs.com/package/hexo-tag-cloud?activeTab=readme</a></li>
+</ul>
+<ol>
+<li>hexo폴더에 package.json에 <code>[&quot;hexo-tag-cloud&quot;: &quot;2.0.*&quot;]</code> 추가</li>
+<li>터미널에서 npm i hexo-tag-cloud 설치</li>
+<li>설치된 테마에따라 수정하는 파일명이 다르니 확인<ol>
+<li>ejs</li>
+<li>swig<ol>
+<li>나는 next theme니까 For swig Users</li>
+</ol>
+</li>
+<li>jade</li>
+</ol>
+</li>
+<li>theme 폴더에 next/layout/_macro/sidebar.swig 찾아서 요거 추가.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if site.tags.length &gt; 1 %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcloud.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcanvas.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;div class=&quot;widget-wrap&quot;&gt;</span><br><span class="line">    &lt;h3 class=&quot;widget-title&quot;&gt;Tag Cloud&lt;/h3&gt;</span><br><span class="line">    &lt;div id=&quot;myCanvasContainer&quot; class=&quot;widget tagcloud&quot;&gt;</span><br><span class="line">        &lt;canvas width=&quot;250&quot; height=&quot;250&quot; id=&quot;resCanvas&quot; style=&quot;width=100%&quot;&gt;</span><br><span class="line">            &#123;&#123; list_tags() &#125;&#125;</span><br><span class="line">        &lt;/canvas&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>hexo 폴더에  _config.yml에 이거 추가<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># hexo-tag-cloud</span><br><span class="line">tag_cloud:</span><br><span class="line">    textFont: Trebuchet MS, Helvetica</span><br><span class="line">    textColour: \#333</span><br><span class="line">    textHeight: 25</span><br><span class="line">    outlineColour: \#E2E1D1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="asset-folder-setting"><a href="#asset-folder-setting" class="headerlink" title="asset folder setting"></a>asset folder setting</h2><ul>
+<li><a href="https://hexo.io/docs/asset-folders" target="_blank" rel="noopener">https://hexo.io/docs/asset-folders</a></li>
+</ul>
+<p>테스트 해보기</p>
+<p>이게 잘 나오나?</p>
 
+<p>아님 이게 잘 나오나.</p>
 <img src="/2019/01/17/testtesting/bb.jpg" title="spaced title">
+<p>그것도 아니면 이게 잘 나오나??? </p>
 <p><img src="/bb.jpg" alt=""></p>
 
       
@@ -456,7 +484,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://namwoo.github.io/2019/01/17/testtesting/" title="testtesting">http://namwoo.github.io/2019/01/17/testtesting/</a>
+    <a href="http://namwoo.github.io/2019/01/17/testtesting/" title="MakeMyBlog01">http://namwoo.github.io/2019/01/17/testtesting/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -471,9 +499,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/TIL/" rel="tag"># TIL</a>
+            <a href="/tags/blog/" rel="tag"># blog</a>
           
-            <a href="/tags/TMQ/" rel="tag"># TMQ</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+            <a href="/tags/theme/" rel="tag"># theme</a>
           
         </div>
       
@@ -570,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -599,7 +640,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -612,7 +653,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yonsei-university/">yonsei university</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연세대/">연세대</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/">next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yonsei-university/">yonsei university</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연세대/">연세대</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -653,6 +694,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#다시-정리"><span class="nav-number">1.</span> <span class="nav-text">다시 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-amp-category-넣기"><span class="nav-number">1.1.</span> <span class="nav-text">tag &amp; category 넣기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asset-folder-setting"><span class="nav-number">1.2.</span> <span class="nav-text">asset folder setting</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -678,7 +735,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">28k</span>
+    <span title="Site words total count">30k</span>
   
 
   
@@ -687,7 +744,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">28 mins.</span>
+    <span title="Site reading time">30 mins.</span>
   
 </div>
 
