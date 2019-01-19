@@ -126,7 +126,7 @@
 
 
 
-  <title>Archive | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190120_TIL | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -172,7 +172,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -304,391 +304,245 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/20/20190120-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">20190120_TIL</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T05:52:14+09:00">2019-01-20</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-20T08:07:18+09:00">2019-01-20</time>
+            
+          </span>
+
           
-        
-        Um..! 21 posts in total. Keep on posting.
-      </span>
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/20/20190120-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/20/20190120-TIL/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">1.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">2 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
-        
-        
-        
+      
+        <p>자. 오늘도 하나씩. 일단. 오늘 예정은</p>
+<ol>
+<li>프로젝트 제출건 코멘트 해결</li>
+<li>Coursera 정리</li>
+<li>유 초, 유 말 정리</li>
+</ol>
+<h2 id="Project-Comment-정리"><a href="#Project-Comment-정리" class="headerlink" title="Project Comment 정리"></a>Project Comment 정리</h2><p>Project 2: Create Your Own Image Classifier</p>
+<h3 id="Comment1"><a href="#Comment1" class="headerlink" title="Comment1"></a>Comment1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">There is a function that successfully loads a checkpoint and rebuilds the model.</span><br><span class="line"></span><br><span class="line">This is in line with the comments in the saving section. You can recreate the model using `model = getattr(models, arch)(pretrained=True)` where arch is the architecture string. </span><br><span class="line"></span><br><span class="line">You would also need to recreate the classifier using nn.Sequential(), and the input, output, and hidden sizes. Your current code is using the previously defined classifier object, which isn&apos;t saved in the checkpoint file, and would break your code if you attempted the load the model from the file without executing all your code above, which defeats the purpose of having a loading function, which should be usable by anyone having only access to the checkpoint file.</span><br></pre></td></tr></table></figure>
+<h3 id="그러니까-이건"><a href="#그러니까-이건" class="headerlink" title="그러니까 이건"></a>그러니까 이건</h3><p>저걸 처음 짤 때는 중간중간 빵꾸가 너무 많았다. 가장 코딩에서 잘 안풀렸던 부분이 후반부. model을 만들고 학습을 시켜서 save를 할 때 자꾸 꼬이는 게.. 딕셔너리에서 불러오고 모델에 있는 각종 파라메터를 어떻게 부분부분 솎아내서 부러오고 만들고 저장시키고 뭘 저장시킬지 몰라서 그냥 하고 싶은.. 내가 할 수 있는 것만 저장해서 save 시켰다. 이젠 쪼금 더 발전해 있으니까 보다 정확히, 모델에 있는 각종 요소들을 저장시키자.</p>
+<ul>
+<li>arch</li>
+<li>input sizes</li>
+<li>hidden sizes</li>
+<li>output sizes</li>
+</ul>
+<p>-지금 해결중</p>
+<h3 id="Comment2"><a href="#Comment2" class="headerlink" title="Comment2"></a>Comment2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The trained model is saved as a checkpoint along with associated hyperparameters and the class_to_idx dictionary</span><br><span class="line"></span><br><span class="line">Some information is missing from the saving code. You should save enough information to be able to reconstruct the model completely. You can save the architecture string, such as &quot;vgg19&quot;, and would need to save additional information such as input, and hidden size so that you can recreate the classifier as well. The goal is to be able to provide the checkpoint file to someone else and run the loading function to recreate your model completely</span><br></pre></td></tr></table></figure>
 
-        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Namwoo Kim
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://namwoo.github.io/2019/01/20/20190120-TIL/" title="20190120_TIL">http://namwoo.github.io/2019/01/20/20190120-TIL/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
+            <a href="/tags/TIL/" rel="tag"># TIL</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
           </div>
         
-        
 
         
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/20/20190120-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190120_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-20T05:52:14+09:00" content="2019-01-20">
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/19/noCUDA/" rel="next" title="noCUDA">
+                <i class="fa fa-chevron-left"></i> noCUDA
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/19/noCUDA/" itemprop="url">
-              
-                <span itemprop="name">noCUDA</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-19T05:50:33+09:00" content="2019-01-19">
-          01-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/18/20190118-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190118_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-18T04:48:08+09:00" content="2019-01-18">
-          01-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/17/testtesting/" itemprop="url">
-              
-                <span itemprop="name">MakeMyBlog01</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-17T09:55:21+09:00" content="2019-01-17">
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/17/20190117-TMQ/" itemprop="url">
-              
-                <span itemprop="name">20190117_TMQ</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-17T03:03:35+09:00" content="2019-01-17">
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/17/20190117-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190117_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-17T01:19:19+09:00" content="2019-01-17">
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/16/20190116-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190116_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-16T02:28:27+09:00" content="2019-01-16">
-          01-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/15/20190115-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190115_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-15T01:45:14+09:00" content="2019-01-15">
-          01-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/14/20190114-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190114_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-14T12:42:04+09:00" content="2019-01-14">
-          01-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/13/20190113-TIL/" itemprop="url">
-              
-                <span itemprop="name">20190113_TIL</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-13T01:01:57+09:00" content="2019-01-13">
-          01-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/01/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/01/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -696,6 +550,16 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments" data-href="http://namwoo.github.io/2019/01/20/20190120-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -716,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -807,6 +680,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Comment-정리"><span class="nav-number">1.</span> <span class="nav-text">Project Comment 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment1"><span class="nav-number">1.1.</span> <span class="nav-text">Comment1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#그러니까-이건"><span class="nav-number">1.2.</span> <span class="nav-text">그러니까 이건</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment2"><span class="nav-number">1.3.</span> <span class="nav-text">Comment2</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -937,6 +826,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
 
   
 
@@ -954,6 +847,18 @@
       <script id="dsq-count-scr" src="https://nwism.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://namwoo.github.io/2019/01/20/20190120-TIL/';
+          this.page.identifier = '2019/01/20/20190120-TIL/';
+          this.page.title = '20190120_TIL';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://nwism.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
