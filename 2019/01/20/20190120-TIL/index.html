@@ -78,17 +78,17 @@
 
 
 
-<meta name="description" content="data scientist, biomedical Engineering">
+<meta name="description" content="categories:  categoryA categoryB">
 <meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="http://namwoo.github.io/schedule/index.html">
+<meta property="og:title" content="All categories">
+<meta property="og:url" content="http://namwoo.github.io/categories/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
-<meta property="og:description" content="data scientist, biomedical Engineering">
+<meta property="og:description" content="categories:  categoryA categoryB">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-16T20:36:08.705Z">
+<meta property="og:updated_time" content="2019-01-17T13:08:27.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="schedule">
-<meta name="twitter:description" content="data scientist, biomedical Engineering">
+<meta name="twitter:title" content="All categories">
+<meta name="twitter:description" content="categories:  categoryA categoryB">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/schedule/">
+  <link rel="canonical" href="http://namwoo.github.io/categories/">
 
 
 
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-20T08:07:18+09:00">2019-01-20</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-21T20:20:48+09:00">2019-01-21</time>
             
           </span>
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">1.8k</span>
+                <span title="Words count in article">3.8k</span>
               
 
               
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">4 mins.</span>
               
             </div>
           
@@ -438,16 +438,59 @@
 <li>유 초, 유 말 정리</li>
 </ol>
 <h2 id="Project-Comment-정리"><a href="#Project-Comment-정리" class="headerlink" title="Project Comment 정리"></a>Project Comment 정리</h2><p>Project 2: Create Your Own Image Classifier</p>
-<h3 id="Comment1"><a href="#Comment1" class="headerlink" title="Comment1"></a>Comment1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">There is a function that successfully loads a checkpoint and rebuilds the model.</span><br><span class="line"></span><br><span class="line">This is in line with the comments in the saving section. You can recreate the model using `model = getattr(models, arch)(pretrained=True)` where arch is the architecture string. </span><br><span class="line"></span><br><span class="line">You would also need to recreate the classifier using nn.Sequential(), and the input, output, and hidden sizes. Your current code is using the previously defined classifier object, which isn&apos;t saved in the checkpoint file, and would break your code if you attempted the load the model from the file without executing all your code above, which defeats the purpose of having a loading function, which should be usable by anyone having only access to the checkpoint file.</span><br></pre></td></tr></table></figure>
-<h3 id="그러니까-이건"><a href="#그러니까-이건" class="headerlink" title="그러니까 이건"></a>그러니까 이건</h3><p>저걸 처음 짤 때는 중간중간 빵꾸가 너무 많았다. 가장 코딩에서 잘 안풀렸던 부분이 후반부. model을 만들고 학습을 시켜서 save를 할 때 자꾸 꼬이는 게.. 딕셔너리에서 불러오고 모델에 있는 각종 파라메터를 어떻게 부분부분 솎아내서 부러오고 만들고 저장시키고 뭘 저장시킬지 몰라서 그냥 하고 싶은.. 내가 할 수 있는 것만 저장해서 save 시켰다. 이젠 쪼금 더 발전해 있으니까 보다 정확히, 모델에 있는 각종 요소들을 저장시키자.</p>
+<h3 id="Comment1"><a href="#Comment1" class="headerlink" title="Comment1"></a>Comment1</h3><ol>
+<li>흩어져 있는 import 모으기<ol>
+<li>딱 하나 떨어져 있었는데 이건 그냥 def 로 정의하는 느낌으로 다가 한거였는데… 음.. </li>
+<li>해결</li>
+</ol>
+</li>
+<li>num_workers<ol>
+<li>쓸 수 있으면 쓰라고 했었네? 오호.</li>
+<li>오류뜸. 안됨.</li>
+<li>차선책으로 <code>pin_memory=True</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="num-workers-and-pin-memory"><a href="#num-workers-and-pin-memory" class="headerlink" title="num_workers and pin_memory"></a>num_workers and pin_memory</h4><p>When to set pin_memory to true?</p>
 <ul>
-<li>arch</li>
-<li>input sizes</li>
-<li>hidden sizes</li>
-<li>output sizes</li>
+<li><a href="https://discuss.pytorch.org/t/when-to-set-pin-memory-to-true/19723" target="_blank" rel="noopener">https://discuss.pytorch.org/t/when-to-set-pin-memory-to-true/19723</a></li>
 </ul>
-<p>-지금 해결중</p>
-<h3 id="Comment2"><a href="#Comment2" class="headerlink" title="Comment2"></a>Comment2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The trained model is saved as a checkpoint along with associated hyperparameters and the class_to_idx dictionary</span><br><span class="line"></span><br><span class="line">Some information is missing from the saving code. You should save enough information to be able to reconstruct the model completely. You can save the architecture string, such as &quot;vgg19&quot;, and would need to save additional information such as input, and hidden size so that you can recreate the classifier as well. The goal is to be able to provide the checkpoint file to someone else and run the loading function to recreate your model completely</span><br></pre></td></tr></table></figure>
+<p>How to Optimize Data Transfers in CUDA C/C++</p>
+<ul>
+<li><a href="https://devblogs.nvidia.com/how-optimize-data-transfers-cuda-cc/" target="_blank" rel="noopener">https://devblogs.nvidia.com/how-optimize-data-transfers-cuda-cc/</a></li>
+</ul>
+<p>How to Optimize Data Transfers in CUDA C/C++</p>
+<ul>
+<li><a href="https://devblogs.nvidia.com/how-optimize-data-transfers-cuda-cc/" target="_blank" rel="noopener">https://devblogs.nvidia.com/how-optimize-data-transfers-cuda-cc/</a></li>
+<li><a href="https://github.com/NVIDIA-developer-blog/code-samples/blob/master/series/cuda-cpp/optimize-data-transfers/bandwidthtest.cu" target="_blank" rel="noopener">https://github.com/NVIDIA-developer-blog/code-samples/blob/master/series/cuda-cpp/optimize-data-transfers/bandwidthtest.cu</a></li>
+</ul>
+<p>왜 안되는지 모르겠고 저기서 말하는 num_workers 뜻도 아직 잘 모르겠다. CPU 프로세서 동시 구동하는 갯수인건지.. 멀티프로세싱할 수 있는 갯수 말하는 건지.. 일단 넘기고 다시 해야지… 하지만 <code>pin_memory=True</code> 는 잘 된다. 속도가 빠른지 느려진지는 전혀 모르겠지만…</p>
+<h3 id="model-selection"><a href="#model-selection" class="headerlink" title="model selection"></a>model selection</h3><p><code>model = getattr(models, arch)(pretrained=True)</code> </p>
+<p>이렇게 쉬운 방법이 있었는데 몰랐다니…</p>
+<p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="noopener">https://docs.python.org/3/library/functions.html</a></p>
+<p><code>getattr(object, name[, default])</code><br>Return the value of the named attribute of object. name must be a string. If the string is the name of one of the object’s attributes, the result is the value of that attribute. For example, <code>getattr(x, &#39;foobar&#39;)</code> is equivalent to <code>x.foobar</code>. If the named attribute does not exist, default is returned if provided, otherwise AttributeError is raised.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">getattr(x, <span class="string">'foobar'</span>)</span><br><span class="line">x.foobar</span><br></pre></td></tr></table></figure>
+<p><code>setattr(object, name, value)</code><br>This is the counterpart of <code>getattr()</code>. The arguments are an object, a string and an arbitrary value. The string may name an existing attribute or a new attribute. The function assigns the value to the attribute, provided the object allows it. For example, <code>setattr(x, &#39;foobar&#39;, 123)</code> is equivalent <code>to x.foobar = 123</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setattr(x, <span class="string">'foobar'</span>, <span class="number">123</span>)</span><br><span class="line">x.foobar = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+<p>앞으로 유용하게 사용할듯.</p>
+<h2 id="python-Image-resize-파이썬-이미지-크기조정"><a href="#python-Image-resize-파이썬-이미지-크기조정" class="headerlink" title="python Image resize 파이썬 이미지 크기조정"></a>python Image resize 파이썬 이미지 크기조정</h2><p><a href="http://mjdeeplearning.tistory.com/m/64?category=1021886" target="_blank" rel="noopener">출처</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">image = Image.open(&apos;./1.jpg&apos;)</span><br><span class="line">resize_image = image.resize((512,512))</span><br><span class="line">resize_image.save(&apos;./2.jpg&apos;)</span><br></pre></td></tr></table></figure>
+<p><a href="https://code.i-harness.com/ko-kr/q/42e1a" target="_blank" rel="noopener">https://code.i-harness.com/ko-kr/q/42e1a</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new_width  = 680</span><br><span class="line">new_height = new_width * height / width </span><br><span class="line">new_height = 680</span><br><span class="line">new_width  = new_height * width / height</span><br><span class="line">img = img.resize((new_width, new_height), Image.ANTIALIAS)</span><br></pre></td></tr></table></figure>
+<p><a href="https://gist.github.com/agalea91/12149be6d4f64ba61c7b1d222fce3174" target="_blank" rel="noopener">https://gist.github.com/agalea91/12149be6d4f64ba61c7b1d222fce3174</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resize</span><span class="params">(img_path, max_px_size, output_folder)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> Image.open(img_path) <span class="keyword">as</span> img:</span><br><span class="line">        width_0, height_0 = img.size</span><br><span class="line">        out_f_name = os.path.split(img_path)[<span class="number">-1</span>]</span><br><span class="line">        out_f_path = os.path.join(output_folder, out_f_name)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> max((width_0, height_0)) &lt;= max_px_size:</span><br><span class="line">            print(<span class="string">'writing &#123;&#125; to disk (no change from original)'</span>.format(out_f_path))</span><br><span class="line">            img.save(out_f_path)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> width_0 &gt; height_0:</span><br><span class="line">            wpercent = max_px_size / float(width_0)</span><br><span class="line">            hsize = int(float(height_0) * float(wpercent))</span><br><span class="line">            img = img.resize((max_px_size, hsize), Image.ANTIALIAS)</span><br><span class="line">            print(<span class="string">'writing &#123;&#125; to disk'</span>.format(out_f_path))</span><br><span class="line">            img.save(out_f_path)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">if</span> width_0 &lt; height_0:</span><br><span class="line">            hpercent = max_px_size / float(height_0)</span><br><span class="line">            wsize = int(float(width_0) * float(hpercent))</span><br><span class="line">            img = img.resize((wsize, max_px_size), Image.ANTIALIAS)</span><br><span class="line">            print(<span class="string">'writing &#123;&#125; to disk'</span>.format(out_f_path))</span><br><span class="line">            img.save(out_f_path)</span><br><span class="line">            <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<h1 id="Today-I-listened"><a href="#Today-I-listened" class="headerlink" title="Today I listened"></a>Today I listened</h1><p>코딩하면서 노래듣다가 찾아들은것들…</p>
+<ul>
+<li>Franz Schubert: Erlkönig..<ul>
+<li><a href="https://blog.naver.com/johnleedr/221215711841" target="_blank" rel="noopener">https://blog.naver.com/johnleedr/221215711841</a></li>
+</ul>
+</li>
+<li>Wagner - Das Rheingold - Entry of the Gods Into Valhalla<ul>
+<li><a href="http://extmovie.maxmovie.com/xe/aliencovenant/19623755" target="_blank" rel="noopener">http://extmovie.maxmovie.com/xe/aliencovenant/19623755</a></li>
+</ul>
+</li>
+<li>Despacito - Luis Fonsi ft.Daddy Yankee (French Version | Version Française by Chloé - COVER )</li>
+</ul>
 
       
     </div>
@@ -609,7 +652,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -644,7 +687,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -694,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Comment-정리"><span class="nav-number">1.</span> <span class="nav-text">Project Comment 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment1"><span class="nav-number">1.1.</span> <span class="nav-text">Comment1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#그러니까-이건"><span class="nav-number">1.2.</span> <span class="nav-text">그러니까 이건</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment2"><span class="nav-number">1.3.</span> <span class="nav-text">Comment2</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Comment-정리"><span class="nav-number">1.</span> <span class="nav-text">Project Comment 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment1"><span class="nav-number">1.1.</span> <span class="nav-text">Comment1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#num-workers-and-pin-memory"><span class="nav-number">1.1.1.</span> <span class="nav-text">num_workers and pin_memory</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model-selection"><span class="nav-number">1.2.</span> <span class="nav-text">model selection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-Image-resize-파이썬-이미지-크기조정"><span class="nav-number">2.</span> <span class="nav-text">python Image resize 파이썬 이미지 크기조정</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Today-I-listened"><span class="nav-number"></span> <span class="nav-text">Today I listened</span></a></li></div>
             
 
           </div>
@@ -726,7 +769,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">37k</span>
+    <span title="Site words total count">46k</span>
   
 
   
@@ -735,7 +778,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">37 mins.</span>
+    <span title="Site reading time">46 mins.</span>
   
 </div>
 
