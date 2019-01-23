@@ -80,14 +80,14 @@
 
 <meta name="description" content="data scientist, biomedical Engineering">
 <meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="http://namwoo.github.io/schedule/index.html">
+<meta property="og:title" content="All tags">
+<meta property="og:url" content="http://namwoo.github.io/tags/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
 <meta property="og:description" content="data scientist, biomedical Engineering">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-16T20:36:08.705Z">
+<meta property="og:updated_time" content="2019-01-17T02:44:03.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="schedule">
+<meta name="twitter:title" content="All tags">
 <meta name="twitter:description" content="data scientist, biomedical Engineering">
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/schedule/">
+  <link rel="canonical" href="http://namwoo.github.io/tags/">
 
 
 
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-22T19:09:46+09:00">2019-01-22</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-23T11:54:58+09:00">2019-01-23</time>
             
           </span>
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">0</span>
+                <span title="Words count in article">593</span>
               
 
               
@@ -431,7 +431,28 @@
       
 
       
-        
+        <h1 id="R"><a href="#R" class="headerlink" title="R"></a>R</h1><p>Coursera 에 Johns Hopkins University에서 만든 Data Science specialization 과정을 진행중인데 R 버전이 낮아 실습 패키지 실행이 안된다. 업뎃을 해보자.</p>
+<h2 id="R-studio에서-R-업데이트"><a href="#R-studio에서-R-업데이트" class="headerlink" title="R studio에서 R 업데이트"></a>R studio에서 R 업데이트</h2><ol>
+<li>R studio라면 sessionInfo() 로 버전 확인.<ol>
+<li>버전확인하는 방법 많음</li>
+</ol>
+</li>
+<li>R studio에서 직접은 안되고 R Gui로 가서 업뎃해야 한단다.</li>
+</ol>
+<p>R gui에서</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.package(<span class="string">"installr"</span>); <span class="keyword">library</span>(installr)</span><br><span class="line">updateR()</span><br></pre></td></tr></table></figure>
+<h2 id="swirl-package-업데이트"><a href="#swirl-package-업데이트" class="headerlink" title="swirl package 업데이트"></a>swirl package 업데이트</h2><p>그 다음 그냥 기본 <code>library(swirl)</code> 에는 </p>
+<ul>
+<li>Manipulating Data with dplyr</li>
+<li>Grouping and Chaining with dplyr</li>
+<li>Tidying Data with tidyr</li>
+</ul>
+<p>이러한 과정이 없다. (Week3: Getting and Cleaning Data) 추가설치를 하려면</p>
+<p>R Studio에서</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(swirl)</span><br><span class="line">uninstall_all_courses()</span><br><span class="line">install_course(<span class="string">"Getting and Cleaning Data"</span>)</span><br><span class="line">swirl()</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/swirldev/swirl_courses/issues/295" target="_blank" rel="noopener">ref</a></p>
+<p>잘 된다~</p>
+
       
     </div>
     
@@ -463,6 +484,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TIL/" rel="tag"># TIL</a>
+          
+            <a href="/tags/R/" rel="tag"># R</a>
+          
+        </div>
       
 
       
@@ -561,8 +590,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -577,7 +615,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -599,7 +637,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -612,7 +650,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -653,6 +691,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#R"><span class="nav-number">1.</span> <span class="nav-text">R</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#R-studio에서-R-업데이트"><span class="nav-number">1.1.</span> <span class="nav-text">R studio에서 R 업데이트</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swirl-package-업데이트"><span class="nav-number">1.2.</span> <span class="nav-text">swirl package 업데이트</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -678,7 +732,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">46k</span>
+    <span title="Site words total count">47k</span>
   
 
   
@@ -687,7 +741,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">46 mins.</span>
+    <span title="Site reading time">47 mins.</span>
   
 </div>
 
