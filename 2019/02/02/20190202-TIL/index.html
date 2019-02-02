@@ -126,7 +126,7 @@
 
 
 
-  <title>MakeMyBlog01 | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190202_TIL | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/17/testtesting/">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/02/20190202-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Namwoo Kim">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MakeMyBlog01</h2>
+          <h2 class="post-title" itemprop="name headline">20190202_TIL</h2>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-17T09:55:21+09:00">2019-01-17</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-02T08:37:51+09:00">2019-02-02</time>
             
 
             
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-17T11:41:25+09:00">2019-01-17</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-02T14:03:02+09:00">2019-02-02</time>
             
           </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/17/testtesting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/17/testtesting/" itemprop="commentCount">0</span> comments
+                <a href="/2019/02/02/20190202-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/02/20190202-TIL/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">2.1k</span>
+                <span title="Words count in article">3k</span>
               
 
               
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">3 mins.</span>
               
             </div>
           
@@ -431,55 +431,33 @@
       
 
       
-        <h1 id="다시-정리"><a href="#다시-정리" class="headerlink" title="다시 정리"></a>다시 정리</h1><h2 id="hexo-tag-cloud-넣기"><a href="#hexo-tag-cloud-넣기" class="headerlink" title="hexo-tag-cloud 넣기"></a>hexo-tag-cloud 넣기</h2><p>hexo-tag-cloud<br><img src="https://raw.githubusercontent.com/MikeCoder/hexo-tag-cloud/HEAD/img/example.jpg" alt="hexo-tag-cloud"></p>
+        <p>비지도학습, Unsupervised Learning, Clustering, Feature Scaling</p>
+<h1 id="데이터-만들기"><a href="#데이터-만들기" class="headerlink" title="데이터 만들기"></a>데이터 만들기</h1><p>넘파이 모듈을 사용해 원하는 데이터의 형태를 정의할 수 있다. <a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.RandomState.html" target="_blank" rel="noopener">refer</a></p>
+<h3 id="numpy-random-RandomState-seed-None"><a href="#numpy-random-RandomState-seed-None" class="headerlink" title="numpy.random.RandomState(seed = None)"></a><code>numpy.random.RandomState(seed = None)</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">n_points = <span class="number">100</span></span><br><span class="line">X = np.random.RandomState(<span class="number">3200000</span>).uniform(<span class="number">-3</span>, <span class="number">3</span>, [n_points, <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 <ul>
-<li><a href="https://www.npmjs.com/package/hexo-tag-cloud?activeTab=readme" target="_blank" rel="noopener">https://www.npmjs.com/package/hexo-tag-cloud?activeTab=readme</a></li>
+<li>seed = 3200000<ul>
+<li>설정해주면 랜덤으로 나오는 데이터가 다음에 실행해도 또 다음에 실행해도 같은 랜덤값으로 출력되게 해준다. 그래서 실습할 때나 테스트 할 때, 또 다른 사람에게 확인할 때 항상 다른 데이터가 아닌 같은 랜덤데이터가 출력 될 수 있도록 해준다.</li>
 </ul>
-<ol>
-<li>hexo폴더에 package.json에 <code>[&quot;hexo-tag-cloud&quot;: &quot;2.0.*&quot;]</code> 추가</li>
-<li>터미널에서 npm i hexo-tag-cloud 설치</li>
-<li>설치된 테마에따라 수정하는 파일명이 다르니 확인<ol>
-<li>ejs</li>
-<li>swig<ol>
-<li>나는 next theme니까 For swig Users</li>
-</ol>
 </li>
-<li>jade</li>
-</ol>
-</li>
-<li>theme 폴더에 next/layout/_macro/sidebar.swig 찾아서 요거 추가.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if site.tags.length &gt; 1 %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcloud.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcanvas.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;div class=&quot;widget-wrap&quot;&gt;</span><br><span class="line">    &lt;h3 class=&quot;widget-title&quot;&gt;Tag Cloud&lt;/h3&gt;</span><br><span class="line">    &lt;div id=&quot;myCanvasContainer&quot; class=&quot;widget tagcloud&quot;&gt;</span><br><span class="line">        &lt;canvas width=&quot;250&quot; height=&quot;250&quot; id=&quot;resCanvas&quot; style=&quot;width=100%&quot;&gt;</span><br><span class="line">            &#123;&#123; list_tags() &#125;&#125;</span><br><span class="line">        &lt;/canvas&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>hexo 폴더에  _config.yml에 이거 추가<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># hexo-tag-cloud</span><br><span class="line">tag_cloud:</span><br><span class="line">    textFont: Trebuchet MS, Helvetica</span><br><span class="line">    textColour: \#333</span><br><span class="line">    textHeight: 25</span><br><span class="line">    outlineColour: \#E2E1D1</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="asset-folder-setting"><a href="#asset-folder-setting" class="headerlink" title="asset folder setting"></a>asset folder setting</h2><ul>
-<li><a href="https://hexo.io/docs/asset-folders" target="_blank" rel="noopener">https://hexo.io/docs/asset-folders</a></li>
+<li>uniform(low, high, size)<ul>
+<li>low, high, size 의 파라메터가 정의되며 위 코드에선 -3부터 3까지의 숫자가 100x2 행렬로 랜덤으로 생성되게끔 한다.</li>
 </ul>
-<p>테스트 해보기</p>
-<p>이게 잘 나오나?</p>
-
-<p>아님 이게 잘 나오나.</p>
-
-<p>그것도 아니면 이게 잘 나오나??? </p>
-<p><img src="/bb.jpg" alt=""></p>
-<p><a href="https://www.npmjs.com/package/hexo-directory-category" target="_blank" rel="noopener">https://www.npmjs.com/package/hexo-directory-category</a></p>
-<h2 id="tags-categories-넣기"><a href="#tags-categories-넣기" class="headerlink" title="tags, categories 넣기"></a>tags, categories 넣기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>sources/categories/index.md</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: All categories</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">date: 2018-01-01 11:06:29</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>sources/tags/index.md</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: All tags</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">date: 2018-01-01 11:06:17</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>다 변경.</p>
-<h2 id="post-앞단-설정-법"><a href="#post-앞단-설정-법" class="headerlink" title="post 앞단 설정 법."></a>post 앞단 설정 법.</h2><ol>
-<li>comment 안보이게 하기. <ol>
-<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2</a></li>
-<li>필요없는 곳에선 아래와 같이 설정. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
+</ul>
+<h3 id="numpy-absolute"><a href="#numpy-absolute" class="headerlink" title="numpy.absolute()"></a><code>numpy.absolute()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X_abs = np.absolute(X)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>numpy.absolute(x, /, out=None, *, where=True, casting=&#39;same_kind&#39;, order=&#39;K&#39;, dtype=None, subok=True[, signature, extobj]) = &lt;ufunc &#39;absolute&#39;&gt;</code><ul>
+<li>딱히 다른 파라메터는 필요없는거 같고 수학적 정의 그대로 음수를 양수로 바꿔주는 절대값 함수.</li>
+</ul>
 </li>
-</ol>
-<p>앞단<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 제목도 처음에 터미널에 hexo n 하면서 생성되었음</span><br><span class="line">date: 날짜는 알아서 생성됨</span><br><span class="line">tags: [Hexo, Theme,Next]</span><br><span class="line">categories: [Today, MakingBlog]</span><br><span class="line">layout: default</span><br><span class="line">cover: /img/home-bg.jpg  커버이미지</span><br><span class="line">subtitle: 부제목</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = np.array([-1.2, 1.2])</span><br><span class="line">&gt;&gt;&gt; np.absolute(x)</span><br><span class="line">array([ 1.2,  1.2])</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; np.absolute(1.2 + 1j)</span><br><span class="line">1.5620499351813308</span><br></pre></td></tr></table></figure>
+<h3 id="logical-and"><a href="#logical-and" class="headerlink" title="logical_and"></a>logical_and</h3><p>그리고 다양한 논리함수들. np doc에 자세한 설명과 예제까지.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_and(<span class="keyword">True</span>, <span class="keyword">False</span>)</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_and([<span class="keyword">True</span>, <span class="keyword">False</span>], [<span class="keyword">False</span>, <span class="keyword">False</span>])</span><br><span class="line">array([<span class="keyword">False</span>, <span class="keyword">False</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_and(x&gt;<span class="number">1</span>, x&lt;<span class="number">4</span>)</span><br><span class="line">array([<span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="logical-or"><a href="#logical-or" class="headerlink" title="logical_or"></a>logical_or</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_or(<span class="keyword">True</span>, <span class="keyword">False</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_or([<span class="keyword">True</span>, <span class="keyword">False</span>], [<span class="keyword">False</span>, <span class="keyword">False</span>])</span><br><span class="line">array([ <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_or(x &lt; <span class="number">1</span>, x &gt; <span class="number">3</span>)</span><br><span class="line">array([ <span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="logical-not"><a href="#logical-not" class="headerlink" title="logical_not"></a>logical_not</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_not(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_not([<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">array([<span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_not(x&lt;<span class="number">3</span>)</span><br><span class="line">array([<span class="keyword">False</span>, <span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="logical-xor"><a href="#logical-xor" class="headerlink" title="logical_xor"></a>logical_xor</h3><h3 id="bitwise-and"><a href="#bitwise-and" class="headerlink" title="bitwise_and"></a>bitwise_and</h3><h2 id="종합"><a href="#종합" class="headerlink" title="종합"></a>종합</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_data</span><span class="params">()</span>:</span></span><br><span class="line">    n_points = <span class="number">120</span></span><br><span class="line">    X = np.random.RandomState(<span class="number">3200000</span>).uniform(<span class="number">-3</span>, <span class="number">3</span>, [n_points, <span class="number">2</span>])</span><br><span class="line">    X_abs = np.absolute(X)</span><br><span class="line"></span><br><span class="line">    inner_ring_flag = np.logical_and(X_abs[:,<span class="number">0</span>] &lt; <span class="number">1.2</span>, X_abs[:,<span class="number">1</span>] &lt; <span class="number">1.2</span>)</span><br><span class="line">    outer_ring_flag = X_abs.sum(axis = <span class="number">1</span>) &gt; <span class="number">5.3</span></span><br><span class="line">    keep = np.logical_not(np.logical_or(inner_ring_flag, outer_ring_flag))</span><br><span class="line"></span><br><span class="line">    X = X[keep]</span><br><span class="line">    X = X[:<span class="number">60</span>] <span class="comment"># only keep first 100</span></span><br><span class="line">    X1 = np.matmul(X, np.array([[<span class="number">2.5</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">100</span>]])) + np.array([<span class="number">22.5</span>, <span class="number">500</span>])</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    plt.figure(figsize = [<span class="number">15</span>,<span class="number">15</span>])</span><br><span class="line"></span><br><span class="line">    plt.scatter(X1[:,<span class="number">0</span>], X1[:,<span class="number">1</span>], s = <span class="number">64</span>, c = plot_colors[<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line">    plt.xlabel(<span class="string">'5k Completion Time (min)'</span>, size = <span class="number">30</span>)</span><br><span class="line">    plt.xticks(np.arange(<span class="number">15</span>, <span class="number">30</span>+<span class="number">5</span>, <span class="number">5</span>), fontsize = <span class="number">30</span>)</span><br><span class="line">    plt.ylabel(<span class="string">'Test Score (raw)'</span>, size = <span class="number">30</span>)</span><br><span class="line">    plt.yticks(np.arange(<span class="number">200</span>, <span class="number">800</span>+<span class="number">200</span>, <span class="number">200</span>), fontsize = <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">    ax = plt.gca()</span><br><span class="line">    ax.spines[<span class="string">'top'</span>].set_visible(<span class="keyword">False</span>)</span><br><span class="line">    ax.spines[<span class="string">'right'</span>].set_visible(<span class="keyword">False</span>)</span><br><span class="line">    [side.set_linewidth(<span class="number">2</span>) <span class="keyword">for</span> side <span class="keyword">in</span> ax.spines.values()]</span><br><span class="line">    ax.tick_params(width = <span class="number">2</span>)</span><br><span class="line">    plt.savefig(<span class="string">'C18_FeatScalingEx_01.png'</span>, transparent = <span class="keyword">True</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    data = pd.DataFrame(X1)</span><br><span class="line">    data.columns = [<span class="string">'5k_Time'</span>, <span class="string">'Raw_Test_Score'</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
+<p>파라메터 추가해서 시간하고 분에따라 graph title 달라지게 수정해야겠음.</p>
 
       
     </div>
@@ -500,7 +478,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://namwoo.github.io/2019/01/17/testtesting/" title="MakeMyBlog01">http://namwoo.github.io/2019/01/17/testtesting/</a>
+    <a href="http://namwoo.github.io/2019/02/02/20190202-TIL/" title="20190202_TIL">http://namwoo.github.io/2019/02/02/20190202-TIL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -515,11 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Theme/" rel="tag"># Theme</a>
-          
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-            <a href="/tags/Next/" rel="tag"># Next</a>
+            <a href="/tags/TIL/" rel="tag"># TIL</a>
           
         </div>
       
@@ -550,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/17/20190117-TMQ/" rel="next" title="20190117_TMQ">
-                <i class="fa fa-chevron-left"></i> 20190117_TMQ
+              <a href="/2019/01/29/20190129-TIL/" rel="next" title="20190129_TIL">
+                <i class="fa fa-chevron-left"></i> 20190129_TIL
               </a>
             
           </div>
@@ -559,10 +533,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/18/20190118-TIL/" rel="prev" title="20190118_TIL">
-                20190118_TIL <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,7 +563,7 @@
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://namwoo.github.io/2019/01/17/testtesting/" data-numposts="10" data-width="100%" data-colorscheme="light">
+      <div class="fb-comments" data-href="http://namwoo.github.io/2019/02/02/20190202-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
       </div>
     </div>
 
@@ -730,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#다시-정리"><span class="nav-number">1.</span> <span class="nav-text">다시 정리</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-tag-cloud-넣기"><span class="nav-number">1.1.</span> <span class="nav-text">hexo-tag-cloud 넣기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asset-folder-setting"><span class="nav-number">1.2.</span> <span class="nav-text">asset folder setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-categories-넣기"><span class="nav-number">1.3.</span> <span class="nav-text">tags, categories 넣기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post-앞단-설정-법"><span class="nav-number">1.4.</span> <span class="nav-text">post 앞단 설정 법.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#데이터-만들기"><span class="nav-number">1.</span> <span class="nav-text">데이터 만들기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy-random-RandomState-seed-None"><span class="nav-number">1.0.1.</span> <span class="nav-text">numpy.random.RandomState(seed = None)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy-absolute"><span class="nav-number">1.0.2.</span> <span class="nav-text">numpy.absolute()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical-and"><span class="nav-number">1.0.3.</span> <span class="nav-text">logical_and</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical-or"><span class="nav-number">1.0.4.</span> <span class="nav-text">logical_or</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical-not"><span class="nav-number">1.0.5.</span> <span class="nav-text">logical_not</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical-xor"><span class="nav-number">1.0.6.</span> <span class="nav-text">logical_xor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitwise-and"><span class="nav-number">1.0.7.</span> <span class="nav-text">bitwise_and</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#종합"><span class="nav-number">1.1.</span> <span class="nav-text">종합</span></a></li></ol></div>
             
 
           </div>
@@ -890,9 +860,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://namwoo.github.io/2019/01/17/testtesting/';
-          this.page.identifier = '2019/01/17/testtesting/';
-          this.page.title = 'MakeMyBlog01';
+          this.page.url = 'http://namwoo.github.io/2019/02/02/20190202-TIL/';
+          this.page.identifier = '2019/02/02/20190202-TIL/';
+          this.page.title = '20190202_TIL';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://nwism.disqus.com/embed.js';
