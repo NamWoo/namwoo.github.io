@@ -126,7 +126,7 @@
 
 
 
-  <title>20190211_TIL | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190213_TIL | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/11/20190211-TIL/">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/13/20190213-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Namwoo Kim">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">20190211_TIL</h2>
+          <h2 class="post-title" itemprop="name headline">20190213_TIL</h2>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T20:01:36+09:00">2019-02-11</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T11:56:40+09:00">2019-02-13</time>
             
 
             
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-11T20:08:58+09:00">2019-02-11</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-13T12:14:43+09:00">2019-02-13</time>
             
           </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/11/20190211-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/11/20190211-TIL/" itemprop="commentCount">0</span> comments
+                <a href="/2019/02/13/20190213-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/13/20190213-TIL/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">175</span>
+                <span title="Words count in article">1.7k</span>
               
 
               
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">1 mins.</span>
+                <span title="Reading time">2 mins.</span>
               
             </div>
           
@@ -431,17 +431,22 @@
       
 
       
-        <p>Link: Details of the Adjusted Rand index <a href="http://faculty.washington.edu/kayee/pca/supp.pdf" target="_blank" rel="noopener">PDF</a></p>
-<p>Density-Based Clustering Validation <a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=83C3BD5E078B1444CB26E243975507E1?doi=10.1.1.707.9034&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">PDF</a></p>
+        <h2 id="Random-Projection"><a href="#Random-Projection" class="headerlink" title="Random Projection"></a>Random Projection</h2><p> [Note: this lesson comes after a lesson explaining Principal Component Analysis]</p>
+<p>Paper: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.76.8124&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Random projection in dimensionality reduction: Applications to image and text data</a></p>
+<p>This paper examines using Random Projection to reduce the dimensionality of image and text data. It shows how Random Projection proves to be a computationally simple method of dimensionality reduction, while still preserving the similarities of data vectors to a high degree. The paper shows this on real-world datasets including noisy and noiseless images of natural scenes, and text documents from a newsgroup corpus.</p>
+<p>Paper: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.76.8124&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Random Projections for k-means Clustering</a></p>
+<p>This paper uses Random Projection as an efficient dimensionality reduction step before conducting k-means clustering on a dataset of 400 face images of dimensions 64 × 64.</p>
+<p>차원 감소에 대해 설명. 첫번쨰 방법은 임의의 투영법, Random Projection. pCA보다 계산상 효율적이다. 데이터세트가 있는 경우 일반적으로 사용된다. PCA는 차원이 너무 많아 계산이 힘들다. </p>
+<p>PCA는 분산이 최대화 되는 벡터 또는 방향을 찾아서 차원을 줄이고 정보를 잃을 때 가장 적은 정보량을 잃게 된다. Random projection은 랜덤으로 그은 선에 투영된 점을 단순히 축소했다 할 수 있다. </p>
+<p>이론적 배경은 데이터에 랜덤행렬을 곱한 것.<br>Johnson-Lindenstrauss lemma 보조정리</p>
+<p><img src="img/01-001.png" alt="01-001"><br><img src="img/01-002.png" alt="01-002"><br><img src="img/01-003.png" alt="01-003"><br><img src="img/01-004.png" alt="01-004"><br><img src="img/01-005.png" alt="01-005"></p>
 <ul>
-<li>Cluster Validation<ul>
-<li>Adjusted Rand Index</li>
-<li>Silhouette score</li>
+<li>Paper: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.322.679&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">“Independent component analysis: algorithms and applications” (pdf)</a></li>
 </ul>
-</li>
-<li>PCA</li>
-</ul>
-<p>PCA를 이런 식으로 다시 접하니 또 새롭네.</p>
+<p>nonGaussian 이어야한다. 어떻게? negentropy 엔트로피, 정보이론. 독립적.이어야 한다. </p>
+<p>Paper: <a href="http://papers.nips.cc/paper/1091-independent-component-analysis-of-electroencephalographic-data.pdf" target="_blank" rel="noopener">Independent Component Analysis of Electroencephalographic Data [PDF]</a></p>
+<p>This paper is an example of how ICA is used to transform EEG scan data to do blind source separation. For example, on the left are the readings of 14 channels from an EEG scan that lasted 4.5 seconds. On the right are the independent components extracted from that dataset:</p>
+<p>Paper: <a href="https://pdfs.semanticscholar.org/a34b/e08a20eba7523600203a32abb026a8dd85a3.pdf" target="_blank" rel="noopener">Applying Independent Component Analysis to Factor Model in Finance [PDF]</a></p>
 
       
     </div>
@@ -462,7 +467,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://namwoo.github.io/2019/02/11/20190211-TIL/" title="20190211_TIL">http://namwoo.github.io/2019/02/11/20190211-TIL/</a>
+    <a href="http://namwoo.github.io/2019/02/13/20190213-TIL/" title="20190213_TIL">http://namwoo.github.io/2019/02/13/20190213-TIL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -508,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/10/20190210-TIL/" rel="next" title="20190210_TIL">
-                <i class="fa fa-chevron-left"></i> 20190210_TIL
+              <a href="/2019/02/12/20190212-TIL/" rel="next" title="20190212_TIL">
+                <i class="fa fa-chevron-left"></i> 20190212_TIL
               </a>
             
           </div>
@@ -517,10 +522,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/12/20190212-TIL/" rel="prev" title="20190212_TIL">
-                20190212_TIL <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -551,7 +552,7 @@
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://namwoo.github.io/2019/02/11/20190211-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
+      <div class="fb-comments" data-href="http://namwoo.github.io/2019/02/13/20190213-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
       </div>
     </div>
 
@@ -578,8 +579,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -669,6 +679,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-Projection"><span class="nav-number">1.</span> <span class="nav-text">Random Projection</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -823,9 +849,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://namwoo.github.io/2019/02/11/20190211-TIL/';
-          this.page.identifier = '2019/02/11/20190211-TIL/';
-          this.page.title = '20190211_TIL';
+          this.page.url = 'http://namwoo.github.io/2019/02/13/20190213-TIL/';
+          this.page.identifier = '2019/02/13/20190213-TIL/';
+          this.page.title = '20190213_TIL';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://nwism.disqus.com/embed.js';
