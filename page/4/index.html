@@ -319,6 +319,211 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/16/20190116-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/16/20190116-TIL/" itemprop="url">20190116_TIL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-16T02:28:27+09:00">2019-01-16</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-16T08:40:08+09:00">2019-01-16</time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/16/20190116-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/16/20190116-TIL/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">2.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">3 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>참고</p>
+<p><a href="https://machinelearningmastery.com/transfer-learning-for-deep-learning/" target="_blank" rel="noopener">https://machinelearningmastery.com/transfer-learning-for-deep-learning/</a></p>
+<h3 id="주피터-노트북-시작폴더-변경법"><a href="#주피터-노트북-시작폴더-변경법" class="headerlink" title="주피터 노트북 시작폴더 변경법"></a>주피터 노트북 시작폴더 변경법</h3><p><a href="https://code.i-harness.com/ko-kr/q/219f244" target="_blank" rel="noopener">https://code.i-harness.com/ko-kr/q/219f244</a></p>
+<hr>
+<h3 id="어제해야한거-오늘로-미룬거-부터"><a href="#어제해야한거-오늘로-미룬거-부터" class="headerlink" title="어제해야한거 오늘로 미룬거 부터."></a>어제해야한거 오늘로 미룬거 부터.</h3><p>아래 코맨트 아직 미처리.</p>
+<ol start="3">
+<li><p>This is in line with the comments in the saving section. You can recreate the model using model = getattr(models, arch)(pretrained=True) where arch is the architecture string. You would also need to recreate the classifier using nn.Sequential(), and the input, output, and hidden sizes. Your current code is using the previously defined classifier object, which isn’t saved in the checkpoint file, and would break your code if you attempted the load the model from the file without executing all your code above, which defeats the purpose of having a loading function, which should be usable by anyone having only access to the checkpoint file.  </p>
+<ul>
+<li><p>모델 선택할 때 나는 이런 느낌으로 다가 했는데</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> arch==<span class="string">'vgg19_bn'</span>:</span><br><span class="line">    model = models.vgg19_bn(pretrained=<span class="keyword">True</span>)</span><br><span class="line">    model_nameprint = <span class="string">'Default architecture : '</span> + arch</span><br><span class="line"><span class="keyword">elif</span> arch==<span class="string">'vgg13'</span>:</span><br><span class="line">    model = models.vgg13(pretrained=<span class="keyword">True</span>)</span><br><span class="line">    model_nameprint = <span class="string">'Selected architecture : '</span> + arch</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    selected = <span class="string">'models.'</span>+ arch + <span class="string">'(pretrained=True)'</span></span><br><span class="line">    model = selected</span><br><span class="line">    model_nameprint = <span class="string">'Selected architecture : '</span> + arch</span><br><span class="line">    print(model)</span><br><span class="line">    <span class="keyword">raise</span> ValueError(<span class="string">'Unexpected network architecture'</span>, arch)  <span class="comment">##   flag !!!</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이거 말고 아래로 바꾸라고 함.</p>
+</li>
+<li>Using model = getattr(models, arch)(pretrained=True)should load the proper model without the need for an if else statement</li>
+</ul>
+</li>
+<li><p>Some information is missing from the saving code. You should save enough information to be able to reconstruct the model completely. You can save the architecture string, such as “vgg19”, and would need to save additional information such as input, and hidden size so that you can recreate the classifier as well. The goal is to be able to provide the checkpoint file to someone else and run the loading function to recreate your model completely  </p>
+</li>
+<li>Even though the plot and images are displayed properly, the names of the flowers are incorrect. To be able to get the correct names, you need to first reverse the class_to_to_idx dictionary, and use the topk labels as keys to get the correct class ids. Once you have the class ids, you can then use the class ids strings as keys in the cat_to_name dictionary to retrieve the correct class names. This is why you’re only getting 20-30% of the correct names even though your accuracy is close to 90%.  </li>
+<li>You should be printing the training and validation loss during each epoch of training. Only the training loss is printed here.</li>
+</ol>
+<h2 id="multiprocessing-module"><a href="#multiprocessing-module" class="headerlink" title="multiprocessing module"></a>multiprocessing module</h2><ul>
+<li>컴이 못따라가줘서 찾아보다보니 알게된 멀티프로세싱. </li>
+<li>내 컴으로 cuda 사용시 gtx1050 2gb, 메모리 부족으로 큰건 돌릴 수 없음…</li>
+<li>개별로 실행 잘 되는 건 확인 했는데, 실제 내가 사용하는 학습 알고리즘에 적용되는지 넣어보기.</li>
+</ul>
+<p>참고.</p>
+<div style="padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px;"><br><img src="https://www.google.com/s2/favicons?domain=medium.com" style="vertical-align: middle; width:16px; height:16px"><br><a style="vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none;" href="https://medium.com/@josh_2774/deep-learning-with-pytorch-9574e74d17ad" target="_blank" rel="noopener">Deep Learning With PyTorch &ndash; Josh Bernhard &ndash; Medium</a><br></div>
+
+
+<div style="padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px;"><br><img src="https://www.google.com/s2/favicons?domain=ratsgo.github.io" style="vertical-align: middle; width:16px; height:16px"><br><a style="vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none;" href="https://ratsgo.github.io/deep%20learning/2017/04/22/NNtricks/" target="_blank" rel="noopener">딥러닝 학습 기술들 &middot; ratsgo’s blog</a><br></div>
+
+
+<div style="padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px;"><br><img src="https://www.google.com/s2/favicons?domain=umbum.tistory.com" style="vertical-align: middle; width:16px; height:16px"><br><a style="vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none;" href="http://umbum.tistory.com/category/Machine%20Learning/Theory" target="_blank" rel="noopener">‘Machine Learning/Theory’ 카테고리의 글 목록 :: UMBUM</a><br></div>
+
+
+<div style="padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px;"><br><img src="https://www.google.com/s2/favicons?domain=cs231n.github.io" style="vertical-align: middle; width:16px; height:16px"><br><a style="vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none;" href="http://cs231n.github.io/convolutional-networks/" target="_blank" rel="noopener">CS231n Convolutional Neural Networks for Visual Recognition</a><br></div>
+
+
+<div style="padding-left: 24px; padding-top: 8px; position: relative; font-size: 13px;"><br><img src="https://www.google.com/s2/favicons?domain=github.com" style="vertical-align: middle; width:16px; height:16px"><br><a style="vertical-align: middle; padding-left: 10px; padding-right: 12px; text-decoration: none;" href="https://github.com/umbum" target="_blank" rel="noopener">umbum (umbum)</a><br></div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/15/20190115-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2102,180 +2307,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2018/12/11/tree/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Namwoo Kim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/11/tree/" itemprop="url">tree</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T08:27:27+09:00">2018-12-11</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-17T12:17:31+09:00">2019-01-17</time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/11/tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2018/12/11/tree/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">578</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>올해도 이뻐보이네.</p>
-<p><img src="https://user-images.githubusercontent.com/8021479/49768364-7bf0eb00-fd1f-11e8-9dbe-1548ee739b1b.jpg" alt="20181207_174022"></p>
-<p>설명회가 있어서 가뜩이나 복잡해진 금요일 저녁 신촌이기에 미리미리 가있으려 했지만.. 역시 꼼지락 거리다 늦장 부리기도 했고..<br>부랴부랴 뛰어서 시간 맞춰서 간신히 도착했으나….</p>
-<p>경영관에서는 대우관으로요.<br>대우관에서는 경영관으로요.<br>잉? 대우관 별관 가봤더니 대우관으로요.<br>읭? 경영관 같은데요?</p>
-<p>인터넷 다른 모든 글에는 경영관이었는데 공지 설명글 마지막에 <strong>대우관.</strong></p>
-<p>결과적으로 대우관은 나중에 저기서 강의하겠다는 내용이었고<br>또 오늘이 아닌 다음주에 진행하는 거였기 때문에 아무도 없었던 …..</p>
-<p>올해가 끝나가기 전에도 바보짓 하는 바보 같은 나의 행동에 감탄하며<br>집에가려고 경영관 중앙 엘레베이터를 탔는데 (통유리라 사방이 잘보임, 그리고 나 혼자)<br>바로 밑에 층에서 직원이라기엔 어리고 대학원생 처럼 보이는 여자분 한 분이 타자마자<br>트름을..꺼억.. 일반적인 소리 큰 트름이 아닌, 속에서 기 모아 올라오는 소리 적고 내용 가득 담은 그 트름을. ㅡㅡ</p>
-<p>가뜩이나 바보 같은 짓 한 나 더 정신차리라고 맡으라고 쏟아내신 거겠지.. 암 난 혼나야지..</p>
-<p>그렇게 나오는데 트리에 불이 환한거 보고 나는 바보 같지만 저건 이뻐서 찰칵.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2326,7 +2357,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2361,7 +2392,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
