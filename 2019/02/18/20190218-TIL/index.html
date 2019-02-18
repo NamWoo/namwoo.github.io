@@ -78,17 +78,17 @@
 
 
 
-<meta name="description" content="categories:  categoryA categoryB">
+<meta name="description" content="data scientist, biomedical Engineering">
 <meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="http://namwoo.github.io/categories/index.html">
+<meta property="og:title" content="schedule">
+<meta property="og:url" content="http://namwoo.github.io/schedule/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
-<meta property="og:description" content="categories:  categoryA categoryB">
+<meta property="og:description" content="data scientist, biomedical Engineering">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-17T13:08:27.414Z">
+<meta property="og:updated_time" content="2019-01-16T20:36:08.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
-<meta name="twitter:description" content="categories:  categoryA categoryB">
+<meta name="twitter:title" content="schedule">
+<meta name="twitter:description" content="data scientist, biomedical Engineering">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/categories/">
+  <link rel="canonical" href="http://namwoo.github.io/schedule/">
 
 
 
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-18T15:15:14+09:00">2019-02-18</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-18T22:18:55+09:00">2019-02-18</time>
             
           </span>
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">845</span>
+                <span title="Words count in article">1.4k</span>
               
 
               
@@ -432,7 +432,7 @@
 
       
         <p>스스로가 꽤 진전이 있다고 생각했는데 아직도 전처리 중……ㅡㅡ<br>대충 90만개 행 x 85개 열 데이터 셋을 이리저리 뜯어보는 중에</p>
-<h1 id="결측치에-대하여"><a href="#결측치에-대하여" class="headerlink" title="결측치에 대하여"></a>결측치에 대하여</h1><ol>
+<h1 id="결측치에-대하여"><a href="#결측치에-대하여" class="headerlink" title="결측치에 대하여"></a>결측치에 대하여</h1><h2 id="과정"><a href="#과정" class="headerlink" title="과정"></a>과정</h2><ol>
 <li>각각의 열마다 또 각각 따로 정의된 missing values 가 있어 모두 따로 정의했다.<ol>
 <li>이건 따로 csv로 정의되어 있어 비교대조 진행</li>
 <li>그래서 빈칸이든 missing values든 error values든 모두 np.nan 로 변환</li>
@@ -454,19 +454,24 @@
 </ol>
 <p><strong>잘하고 있는 짓인거?</strong> 전체 데이터의 10%면 어마어마한건데…. PCA나 fastICA 진행시 차이가 있을까? 이건 결과값가지고 비교해볼 수 밖에..</p>
 <ol start="5">
-<li>0또는1, Yes or No 같은 이진값들 확인 후 0,1로 통일.<ol>
-<li>근데 어떤 행에는 <code>O</code>, <code>W</code> 이런 이진값이 있었는데..?? 그냥 바꿔버림…;;</li>
-<li>1과 0 그리고 1.0과 0.0<ol>
-<li>데이터들이 그냥 정수 인데 <code>.0</code> 이 붙어있는 실수화 되어있다.</li>
+<li>0 또는 1, Yes or No, Y, or N, O or X 등 과 같은 이진값들 확인 후 0,1로 통일.<ol>
+<li>근데 어떤 행에는 <code>O</code>, <code>W</code> 이런 이진값이 있었는데..?? 어느게 1? 어느게 0? 그냥 바꿔 내맘대로 바꿈</li>
+<li>1과 0 그리고 1.0과 0.0, int or float<ol>
+<li>데이터들이 그냥 정수 인데 <code>.0</code> 이 붙어있는 실수화 되어있다. 소수점 이하 수치가 있으면 고민하지도 않았음.</li>
 <li>이런 int와 float 차이는 어떻게? </li>
 <li>싹 int로 바꿔 버리고 싶었는데 안에 np.nan 있기에 int 불가</li>
 <li>그냥 싹 float로 바꿔? 아님 그냥 나둬? </li>
 <li>일단 놔두고 나중에 비교해보기?</li>
 </ol>
 </li>
+<li>그냥 np.nan 빼고 모두 int로 바꿔버림</li>
 </ol>
 </li>
 </ol>
+<p><strong>잘… 하는거 맞겠…지?</strong></p>
+<h2 id="화남"><a href="#화남" class="headerlink" title="화남"></a>화남</h2><p>csv 단일 파일만 150MB. 데이터가 이 정도면 크지 않다고 생각하는데 <code>.copy()</code> 수 단계 거치고 솎아내고 걸러내고 따로 뽑아비교하고.. 점점 커져가다보니 Jupyter가 밀리기 시작함. ipython 말고 그냥 일반 python으로 하고 싶어도 실제 그래프를 보면서 데이터를 비교하고 대조하고 그리고 글도 써내려가고 싶은데… </p>
+<p>그리고 클라우드 기반 ipython 사용중이라 리눅스 가상환경 설정도 맞춰줘야함.. import 오류 떄문에 한 고생.. 작성한 cells 모두 실행해놓아도 환경설정 오류나면 import 오류나면서 싹 다시 해야함….. 또 엄청 기다림… 오늘도 도대체 코딩한 시간보다 기다린 시간이 더 많음…. 말도 안돼…</p>
+<p>마지막엔 잘 되고 있었는데 끝에가서 크롬 뒤로가기 실행돼서 싹 초기화… 열받아서 드러누음. ㅡㅡ</p>
 
       
     </div>
@@ -709,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#결측치에-대하여"><span class="nav-number">1.</span> <span class="nav-text">결측치에 대하여</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#결측치에-대하여"><span class="nav-number">1.</span> <span class="nav-text">결측치에 대하여</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#과정"><span class="nav-number">1.1.</span> <span class="nav-text">과정</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#화남"><span class="nav-number">1.2.</span> <span class="nav-text">화남</span></a></li></ol></li></ol></div>
             
 
           </div>
