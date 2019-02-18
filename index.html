@@ -78,17 +78,17 @@
 
 
 
-<meta name="description" content="data scientist, biomedical Engineering">
+<meta name="description" content="categories:  categoryA categoryB">
 <meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="http://namwoo.github.io/schedule/index.html">
+<meta property="og:title" content="All categories">
+<meta property="og:url" content="http://namwoo.github.io/categories/index.html">
 <meta property="og:site_name" content="my Blog of Absolute and Subjective Knowledge">
-<meta property="og:description" content="data scientist, biomedical Engineering">
+<meta property="og:description" content="categories:  categoryA categoryB">
 <meta property="og:locale" content="euc-kr">
-<meta property="og:updated_time" content="2019-01-16T20:36:08.705Z">
+<meta property="og:updated_time" content="2019-01-17T13:08:27.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="schedule">
-<meta name="twitter:description" content="data scientist, biomedical Engineering">
+<meta name="twitter:title" content="All categories">
+<meta name="twitter:description" content="categories:  categoryA categoryB">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://namwoo.github.io/schedule/">
+  <link rel="canonical" href="http://namwoo.github.io/categories/">
 
 
 
@@ -364,7 +364,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-18T09:37:33+09:00">2019-02-18</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-18T15:15:14+09:00">2019-02-18</time>
             
           </span>
 
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">33</span>
+                <span title="Words count in article">845</span>
               
 
               
@@ -436,7 +436,42 @@
       
         
           
-            <p>스스로가 꽤 진전이 있다고 생각했는데 아직도 전처리 중……</p>
+            <p>스스로가 꽤 진전이 있다고 생각했는데 아직도 전처리 중……ㅡㅡ<br>대충 90만개 행 x 85개 열 데이터 셋을 이리저리 뜯어보는 중에</p>
+<h1 id="결측치에-대하여"><a href="#결측치에-대하여" class="headerlink" title="결측치에 대하여"></a>결측치에 대하여</h1><ol>
+<li>각각의 열마다 또 각각 따로 정의된 missing values 가 있어 모두 따로 정의했다.<ol>
+<li>이건 따로 csv로 정의되어 있어 비교대조 진행</li>
+<li>그래서 빈칸이든 missing values든 error values든 모두 np.nan 로 변환</li>
+</ol>
+</li>
+<li>행 별로 기준 결측치 퍼센트 15% 부터 30% 까지 나열<ol>
+<li>18%부터 출력되는 행이 6개 확인</li>
+<li>한 행에 결측치 18% 이상인 행 drop</li>
+</ol>
+</li>
+<li>열 별로 기준 결측치 확인</li>
+</ol>
+<p><strong>여기서 의문</strong><br>행은 카테고리로 정의된 string 값이라, 그러니까 사람의 특징을 나열할 때 나이, 키, 몸무게 같은 특징을 나타내는데 열은 그냥 index도 아니고 그냥 내열된 값이다. 90만번까지 있는 이 열 중에 몇 개를 날려버려도 상관없는 것인가?</p>
+<ol start="4">
+<li>어쨌든 열 별로 기준 결측치 퍼센트로 확인<ol>
+<li>결측치가 40% 이상인 열 10만개 열 총 10% drop</li>
+</ol>
+</li>
+</ol>
+<p><strong>잘하고 있는 짓인거?</strong> 전체 데이터의 10%면 어마어마한건데…. PCA나 fastICA 진행시 차이가 있을까? 이건 결과값가지고 비교해볼 수 밖에..</p>
+<ol start="5">
+<li>0또는1, Yes or No 같은 이진값들 확인 후 0,1로 통일.<ol>
+<li>근데 어떤 행에는 <code>O</code>, <code>W</code> 이런 이진값이 있었는데..?? 그냥 바꿔버림…;;</li>
+<li>1과 0 그리고 1.0과 0.0<ol>
+<li>데이터들이 그냥 정수 인데 <code>.0</code> 이 붙어있는 실수화 되어있다.</li>
+<li>이런 int와 float 차이는 어떻게? </li>
+<li>싹 int로 바꿔 버리고 싶었는데 안에 np.nan 있기에 int 불가</li>
+<li>그냥 싹 float로 바꿔? 아님 그냥 나둬? </li>
+<li>일단 놔두고 나중에 비교해보기?</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
           
         
@@ -2190,7 +2225,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">59k</span>
+    <span title="Site words total count">60k</span>
   
 
   
@@ -2199,7 +2234,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">59 mins.</span>
+    <span title="Site reading time">1:01</span>
   
 </div>
 
