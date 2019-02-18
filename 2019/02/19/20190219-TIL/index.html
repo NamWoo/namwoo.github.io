@@ -126,7 +126,7 @@
 
 
 
-  <title>20190208_TIL | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190219_TIL | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/08/20190208-TIL/">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/19/20190219-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Namwoo Kim">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">20190208_TIL</h2>
+          <h2 class="post-title" itemprop="name headline">20190219_TIL</h2>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-08T18:21:12+09:00">2019-02-08</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T01:20:15+09:00">2019-02-19</time>
             
 
             
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-10T12:48:07+09:00">2019-02-10</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-19T01:50:53+09:00">2019-02-19</time>
             
           </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/08/20190208-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/08/20190208-TIL/" itemprop="commentCount">0</span> comments
+                <a href="/2019/02/19/20190219-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/19/20190219-TIL/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">50</span>
+                <span title="Words count in article">806</span>
               
 
               
@@ -431,7 +431,40 @@
       
 
       
-        <p>DBSCAN 하고 Gaussian Mixture Model (GMM) Clustering</p>
+        <h1 id="왜-안되지"><a href="#왜-안되지" class="headerlink" title="왜 안되지?"></a>왜 안되지?</h1><ul>
+<li>한 행만 보면 90만행 x 1열.</li>
+<li>죄다 float.</li>
+<li>중간 중간 <code>NaN</code>으로 정리한 결측치 다수…</li>
+</ul>
+<h2 id="float-gt-integer-로"><a href="#float-gt-integer-로" class="headerlink" title="float -&gt; integer 로"></a>float -&gt; integer 로</h2><ul>
+<li><code>NaN</code> 값은 놔두고 나머지 float 를 int 로 바꾸려한다.<ul>
+<li>이게 좋은 짓인진 모르겠지만 해놓고 비교해보려….</li>
+</ul>
+</li>
+</ul>
+<h3 id="과정"><a href="#과정" class="headerlink" title="과정"></a>과정</h3><p>대충 float 배열 값을<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">index    value</span><br><span class="line">1         1.0</span><br><span class="line">2         3.0</span><br><span class="line">3         4.0</span><br><span class="line">4         NaN</span><br><span class="line">5         1.0</span><br></pre></td></tr></table></figure></p>
+<p>이렇게 int 로.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">index    value</span><br><span class="line">1          1</span><br><span class="line">2          3</span><br><span class="line">3          4</span><br><span class="line">4        NaN</span><br><span class="line">5          1</span><br></pre></td></tr></table></figure></p>
+<h3 id="NaN-값-빼고-보기"><a href="#NaN-값-빼고-보기" class="headerlink" title="NaN 값 빼고 보기"></a>NaN 값 빼고 보기</h3><ol>
+<li><code>df_one_col[i].isnull()</code><ol>
+<li>이렇게 해서 <code>NaN</code> 있는 것 <strong>만</strong> 확인</li>
+</ol>
+</li>
+<li><code>~df_one_col[i].isnull()</code><ol>
+<li>역으로 <code>NaN</code> 없는 것 <strong>만</strong> 확인</li>
+</ol>
+</li>
+<li><code>df_one_col[i].loc[~df_one_col[i].isnull()]</code><ol>
+<li><code>.loc</code> 로 해당되는 셀만 뽑아내기</li>
+</ol>
+</li>
+<li><code>df_one_col[i].loc = df_one_col[i].loc[~df_one_col[i].isnull()]</code><ol>
+<li>결과값 다시 재정의</li>
+</ol>
+</li>
+</ol>
+<p>잉? 근데 안된다..</p>
+<p><code>df_one_col[i].loc[~df_one_col[i].isnull()]</code> 이렇게 따로 하면 바뀌는게 확인되는데 다시 정의하고 행확인해보면 안변해있다.. 왜지?? 또 왜…….ㅠㅠ</p>
+<p>대충 이런식..<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> column_name:</span><br><span class="line">    df_one_col[i] = df_one_col[i].loc[~df_one_col[i].isnull()].astype(int)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -452,7 +485,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://namwoo.github.io/2019/02/08/20190208-TIL/" title="20190208_TIL">http://namwoo.github.io/2019/02/08/20190208-TIL/</a>
+    <a href="http://namwoo.github.io/2019/02/19/20190219-TIL/" title="20190219_TIL">http://namwoo.github.io/2019/02/19/20190219-TIL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -498,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/07/20190207-TIL/" rel="next" title="20190207_TIL">
-                <i class="fa fa-chevron-left"></i> 20190207_TIL
+              <a href="/2019/02/18/20190218-TIL/" rel="next" title="20190218_TIL">
+                <i class="fa fa-chevron-left"></i> 20190218_TIL
               </a>
             
           </div>
@@ -507,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/10/20190210-TIL/" rel="prev" title="20190210_TIL">
-                20190210_TIL <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,7 +570,7 @@
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://namwoo.github.io/2019/02/08/20190208-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
+      <div class="fb-comments" data-href="http://namwoo.github.io/2019/02/19/20190219-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
       </div>
     </div>
 
@@ -568,8 +597,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -659,6 +697,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#왜-안되지"><span class="nav-number">1.</span> <span class="nav-text">왜 안되지?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#float-gt-integer-로"><span class="nav-number">1.1.</span> <span class="nav-text">float -&gt; integer 로</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#과정"><span class="nav-number">1.1.1.</span> <span class="nav-text">과정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN-값-빼고-보기"><span class="nav-number">1.1.2.</span> <span class="nav-text">NaN 값 빼고 보기</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -813,9 +867,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://namwoo.github.io/2019/02/08/20190208-TIL/';
-          this.page.identifier = '2019/02/08/20190208-TIL/';
-          this.page.title = '20190208_TIL';
+          this.page.url = 'http://namwoo.github.io/2019/02/19/20190219-TIL/';
+          this.page.identifier = '2019/02/19/20190219-TIL/';
+          this.page.title = '20190219_TIL';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://nwism.disqus.com/embed.js';
