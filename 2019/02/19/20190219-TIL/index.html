@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-19T01:50:53+09:00">2019-02-19</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-19T23:31:36+09:00">2019-02-19</time>
             
           </span>
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">806</span>
+                <span title="Words count in article">977</span>
               
 
               
@@ -465,6 +465,9 @@
 <p>잉? 근데 안된다..</p>
 <p><code>df_one_col[i].loc[~df_one_col[i].isnull()]</code> 이렇게 따로 하면 바뀌는게 확인되는데 다시 정의하고 행확인해보면 안변해있다.. 왜지?? 또 왜…….ㅠㅠ</p>
 <p>대충 이런식..<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> column_name:</span><br><span class="line">    df_one_col[i] = df_one_col[i].loc[~df_one_col[i].isnull()].astype(int)</span><br></pre></td></tr></table></figure></p>
+<h1 id="찾았다-네-이놈"><a href="#찾았다-네-이놈" class="headerlink" title="찾았다. 네 이놈."></a>찾았다. 네 이놈.</h1><p>결국 내 잘못.. 굳이 저리 어렵게 안돌리고도</p>
+<p>isin<br>apply<br>df_one_col = df_one_col.loc[~df_one_col[i].isnull(), ‘aa’] = afsafsa<br>그냥 이런 저런거 가지고 해결 완료.</p>
+<h2 id="isnull-gt-pd-nan"><a href="#isnull-gt-pd-nan" class="headerlink" title="isnull &gt; pd.nan"></a>isnull &gt; pd.nan</h2><p>if 문에선 pd.nan 안됨..</p>
 
       
     </div>
@@ -707,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#왜-안되지"><span class="nav-number">1.</span> <span class="nav-text">왜 안되지?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#float-gt-integer-로"><span class="nav-number">1.1.</span> <span class="nav-text">float -&gt; integer 로</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#과정"><span class="nav-number">1.1.1.</span> <span class="nav-text">과정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN-값-빼고-보기"><span class="nav-number">1.1.2.</span> <span class="nav-text">NaN 값 빼고 보기</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#왜-안되지"><span class="nav-number">1.</span> <span class="nav-text">왜 안되지?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#float-gt-integer-로"><span class="nav-number">1.1.</span> <span class="nav-text">float -&gt; integer 로</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#과정"><span class="nav-number">1.1.1.</span> <span class="nav-text">과정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN-값-빼고-보기"><span class="nav-number">1.1.2.</span> <span class="nav-text">NaN 값 빼고 보기</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#찾았다-네-이놈"><span class="nav-number">2.</span> <span class="nav-text">찾았다. 네 이놈.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#isnull-gt-pd-nan"><span class="nav-number">2.1.</span> <span class="nav-text">isnull &gt; pd.nan</span></a></li></ol></li></ol></div>
             
 
           </div>
