@@ -126,7 +126,7 @@
 
 
 
-  <title>20190118_TIL | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190307_TIL | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/18/20190118-TIL/">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/03/07/20190307-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Namwoo Kim">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">20190118_TIL</h2>
+          <h2 class="post-title" itemprop="name headline">20190307_TIL</h2>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-18T04:48:08+09:00">2019-01-18</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T23:18:56+09:00">2019-03-07</time>
             
 
             
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-20T07:45:41+09:00">2019-01-20</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-07T23:27:58+09:00">2019-03-07</time>
             
           </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/18/20190118-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/18/20190118-TIL/" itemprop="commentCount">0</span> comments
+                <a href="/2019/03/07/20190307-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/03/07/20190307-TIL/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">2.2k</span>
+                <span title="Words count in article">600</span>
               
 
               
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">1 mins.</span>
               
             </div>
           
@@ -431,65 +431,9 @@
       
 
       
-        <h2 id="궁금증-해결1"><a href="#궁금증-해결1" class="headerlink" title="궁금증 해결1"></a>궁금증 해결1</h2><h3 id="20190117-TMQ-q1"><a href="#20190117-TMQ-q1" class="headerlink" title="20190117-TMQ q1"></a>20190117-TMQ q1</h3><p>어제 올린 질문에 빠른 답이 왔다. <a href="https://namwoo.github.io/2019/01/17/20190117-TMQ/#q1">질문 링크 20190117-TMQ 중 q1</a> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment"># loss = criterion(logits, labels)</span></span><br><span class="line">...</span><br><span class="line">running_loss += loss.item()</span><br><span class="line">...</span><br><span class="line">acuracy = running_loss/len(trainloader)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="코멘트1"><a href="#코멘트1" class="headerlink" title="코멘트1"></a>코멘트1</h3><div class="note info"><p>For your second question, 938 is the number of batches. Since each time we add the loss of a batch into running loss, we average running loss by the number of batches to get the average loss per batch</p></div>
-<h3 id="이-답글을-보고"><a href="#이-답글을-보고" class="headerlink" title="이 답글을 보고"></a>이 답글을 보고</h3><ol>
-<li>내가 잘못 이해했던 부분이 있다는걸 깨닳았고 </li>
-<li>for문은 기존에 데이터셋에 있는 60000데이터포인트에 bath_size가 64니까 총 938번을 반복할꺼고 $64*938=60032$ 들어오는 이미지는 앞서 정한 bath에서 64개의 이미지가 들어오니 출력도 역시 64개, loss도 64개가 된다.<ol>
-<li><code>running_loss/len(trainloader)</code><ol>
-<li>64개의 이미지에서 나온 loss를 전체 반복할 횟수인 938로 나누면 </li>
-<li>처음은 한 반복에서 나온 loss값이지만 </li>
-<li>계속해서 반복해서 938번이 끝나면</li>
-<li>64개의 이미지씩 938번을 다 끝내게 되고</li>
-<li>얻은 모든 이미지에 대한 loss 값의 합으로 나눠줘서 평균, 그러니까 단 한 이미지에서 나오는 loss 값을 구할 수 있다.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="궁금증-해결2"><a href="#궁금증-해결2" class="headerlink" title="궁금증 해결2"></a>궁금증 해결2</h2><h3 id="20190117-TMQ-q2"><a href="#20190117-TMQ-q2" class="headerlink" title="20190117-TMQ q2"></a>20190117-TMQ q2</h3><p>마찬가지, 어제 올린 질문 두번째꺼. <a href="https://namwoo.github.io/2019/01/17/20190117-TMQ/#q2">질문 링크 20190117-TMQ 중 q2</a> </p>
-<p>위 코멘트를 보고 자려고 누워서 열심히 짱구를 굴렸는데 발가벗고 뛰어나가는 쏘크라테스처럼 벌떡 일어나서 컴터키고 앉아 적고 있다. 너무 집중을 했는지 누워서 졸았따.ㅡㅡ 앉아서 졸면 꾸벅, 꾸벅 하다 깨는데 바르게 누운 상태에서 생각하다 졸면 허리가 웅크리면서 굽.으려다 펴지고 굽.으려다 펴지는…….. 수면장애..겠…지?</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment"># log_ps = model(images)</span></span><br><span class="line">test_loss += criterion(log_ps, labels)</span><br><span class="line">...</span><br><span class="line"><span class="comment"># ps = torch.exp(log_ps)</span></span><br><span class="line">top_p, top_class = ps.topk(<span class="number">1</span>, dim=<span class="number">1</span>)</span><br><span class="line">equals = top_class == labels.view(*top_class.shape)</span><br><span class="line"><span class="comment"># accuracy += torch.mean(equals.type(torch.FloatTensor))</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="오호라"><a href="#오호라" class="headerlink" title="오호라"></a>오호라</h3><p>자려다 누워 생각하다 나온 .. 생각의 결론은..?</p>
-<ol>
-<li>조금 더 크게 생각해볼때 64개의 이미지씩 처리하니까 64개의 이미지와 그 이미지의 이름이 들어가고<ol>
-<li>모델을 통해 나온 이미지의 loss도 64개, 그리고 softmax해서 정규화도 64개</li>
-</ol>
-</li>
-<li><code>top_p, top_class = ps.topk(1, dim=1)</code> <ol>
-<li>그 이미지들이 무슨 이름인지 각각 확률로 5%, 10%, .. 등등 나열되어 있을 것이고 </li>
-<li>그 중에 가장 높은 확률로 무슨 이름인거 같다~ 라고 말하는 거 뽑아내서</li>
-<li>현재는 파라메터가 1이니까 딱 1개만, 만약에 5면 확률순으로 정렬해서 5개 뽑아내는것이고</li>
-</ol>
-</li>
-<li><code>equals = top_class == labels.view(*top_class.shape)</code><ol>
-<li>실제 라벨과 비교해서 같은게 있으면 1, 없으면 0으로 정리</li>
-<li>지금 총 64개의 이미지 중에 같은게, 맞춘게 1, 틀린게 0으로 되어 있는 것을</li>
-</ol>
-</li>
-<li><code>accuracy += torch.mean(equals.type(torch.FloatTensor))</code><ol>
-<li>평균을 구해서 확률을 구한다!!!!!</li>
-<li>유레카!!!!<ol>
-<li><code>equals.type(torch.FloatTensor)</code></li>
-<li>이건 0또는 1로 되어있는 bit type을 Float 로 바꿔줘서 평균구할 수 있게 하는.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="왜-이것들을-이해-못했을까"><a href="#왜-이것들을-이해-못했을까" class="headerlink" title="왜 이것들을 이해 못했을까?"></a>왜 이것들을 이해 못했을까?</h3><p>도미노처럼 앞에 있는 60000, 938, 728, 64 등의 숫자들이 꼬여서 헷갈린듯… 앞이 꼬이니 뒤에서 하나하나 풀려야되는데 특히 64렁 938하고 섞여서 끝 부분 확률 구할때 자꾸 938을 생각하지 않았을까? 938은 그냥 반복 횟수..인데.. </p>
-<p>어쨌거나 <strong>유레카</strong>!!! (잠은 또 못잔건 안비밀)</p>
-<hr>
-<h2 id="궁금증-해결3"><a href="#궁금증-해결3" class="headerlink" title="궁금증 해결3"></a>궁금증 해결3</h2><h3 id="number-worker-pin-memory"><a href="#number-worker-pin-memory" class="headerlink" title="number_worker, pin_memory"></a>number_worker, pin_memory</h3><p>항상 number_worker를 사용하면 오류가 떴다. 원래는 TMQ 에 올려야 하지만 해결될 거 같은 생각이 들어 미리 써놓고, 여기다 바로 쓸 생각으로 쓰고 있다. ;;</p>
-<!-- 
-default
-primary
-success
-info
-warning
-danger -->
+        <p>일주일동안, 아니지 원랜 내일까지, multiprocessing, openMP, MPI 이것들을 C와 Fortran으로 공부했다. 주로 fortran으로 학습하고 c로는 그냥 코드 이해하고 컴파일해보고 비교분석만 했고 주 코더가 될 Python으로는 openMP, MPI가 어떤 식으로 있고 사용되고 있는지 찾아봐야겠다. 벌써 3달쨰인가? 서울서 대전까지 스스로 내 차비내고 숙박비 내면서 격주 마다 일주일동안 먹고 자고 생활하면서 교육받은 보람이 참 있는 것 같다. 항상 혼자 해결하고 삽질했었는데 이렇게 현업에서 국내에서 가장 빠른 컴퓨터를 직접 구동하면서 실습하고 전문가가 옆에서 바로 바로 잡아주니 정말.. 너무 좋았다. 이제 이걸 내껄로 만드는 것만 남았고 또 응용해서 내가 추구하고자 하는 방향에 어떻게 접목시킬까는 나중문제지만 어쨌든… 앞으로 일주일짜리 2번 하고도 하루 더 남은 교육, 잘 받고 잘 정리해서 머리속에 차곡차곡 쌓아놓쟈.</p>
+<p>그동안 TIL 은 github private에 쌓았지만… 조금 더 정리하고 스켄도 뜨고 이해가 되면 언제고 public으로 돌려야지. </p>
+<p>하고 싶은 것도 많고 할 것도 많고 공부할 것도 많고 아쉬운 시간은 흘러만 가고.. </p>
 
       
     </div>
@@ -510,7 +454,7 @@ danger -->
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://namwoo.github.io/2019/01/18/20190118-TIL/" title="20190118_TIL">http://namwoo.github.io/2019/01/18/20190118-TIL/</a>
+    <a href="http://namwoo.github.io/2019/03/07/20190307-TIL/" title="20190307_TIL">http://namwoo.github.io/2019/03/07/20190307-TIL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -556,8 +500,8 @@ danger -->
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/17/testtesting/" rel="next" title="MakeMyBlog01">
-                <i class="fa fa-chevron-left"></i> MakeMyBlog01
+              <a href="/2019/03/03/20190303-TIL/" rel="next" title="20190303_TIL">
+                <i class="fa fa-chevron-left"></i> 20190303_TIL
               </a>
             
           </div>
@@ -565,10 +509,6 @@ danger -->
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/19/noCUDA/" rel="prev" title="noCUDA">
-                noCUDA <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -599,7 +539,7 @@ danger -->
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://namwoo.github.io/2019/01/18/20190118-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
+      <div class="fb-comments" data-href="http://namwoo.github.io/2019/03/07/20190307-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
       </div>
     </div>
 
@@ -626,17 +566,8 @@ danger -->
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -726,22 +657,6 @@ danger -->
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#궁금증-해결1"><span class="nav-number">1.</span> <span class="nav-text">궁금증 해결1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#20190117-TMQ-q1"><span class="nav-number">1.1.</span> <span class="nav-text">20190117-TMQ q1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#코멘트1"><span class="nav-number">1.2.</span> <span class="nav-text">코멘트1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#이-답글을-보고"><span class="nav-number">1.3.</span> <span class="nav-text">이 답글을 보고</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#궁금증-해결2"><span class="nav-number">2.</span> <span class="nav-text">궁금증 해결2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#20190117-TMQ-q2"><span class="nav-number">2.1.</span> <span class="nav-text">20190117-TMQ q2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#오호라"><span class="nav-number">2.2.</span> <span class="nav-text">오호라</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#왜-이것들을-이해-못했을까"><span class="nav-number">2.3.</span> <span class="nav-text">왜 이것들을 이해 못했을까?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#궁금증-해결3"><span class="nav-number">3.</span> <span class="nav-text">궁금증 해결3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#number-worker-pin-memory"><span class="nav-number">3.1.</span> <span class="nav-text">number_worker, pin_memory</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -896,9 +811,9 @@ danger -->
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://namwoo.github.io/2019/01/18/20190118-TIL/';
-          this.page.identifier = '2019/01/18/20190118-TIL/';
-          this.page.title = '20190118_TIL';
+          this.page.url = 'http://namwoo.github.io/2019/03/07/20190307-TIL/';
+          this.page.identifier = '2019/03/07/20190307-TIL/';
+          this.page.title = '20190307_TIL';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://nwism.disqus.com/embed.js';
