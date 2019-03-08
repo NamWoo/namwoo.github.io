@@ -319,6 +319,232 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/03/08/20190308-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/20190308-TIL/" itemprop="url">20190308_TIL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-08T12:09:48+09:00">2019-03-08</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-08T21:17:37+09:00">2019-03-08</time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/08/20190308-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/03/08/20190308-TIL/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">4.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">4 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="4일을-이어오던-삽질을-오늘-끝냈다"><a href="#4일을-이어오던-삽질을-오늘-끝냈다" class="headerlink" title="4일을 이어오던 삽질을 오늘 끝냈다."></a>4일을 이어오던 삽질을 오늘 끝냈다.</h1><h2 id="fortran-그리고-pthread"><a href="#fortran-그리고-pthread" class="headerlink" title="fortran 그리고 pthread"></a>fortran 그리고 pthread</h2><p>PuTTY에서 리눅스 서버 접속 후 사용하다가 내 컴퓨터 windows 환경에 직접 모듈, 컴파일러, 그리고 에디터를 연결해서 사용하려 했다. 에디터는 vs code 로 기존에 쓰고 있는 것을 사용할 것이었기에 컴파일러만 opensorce로 되어있는 gcc, gfortran, 그리고 상업컴파일러 intel 을 설치하려했다. (linux나 mac 도 아래 링크 다운 받는 곳에 각 플렛폼 따라 받으면 됨)</p>
+<h3 id="컴파일러-설치"><a href="#컴파일러-설치" class="headerlink" title="컴파일러 설치"></a>컴파일러 설치</h3><h4 id="GNU"><a href="#GNU" class="headerlink" title="GNU"></a>GNU</h4><p><a href="https://gcc.gnu.org/" target="_blank" rel="noopener">GCC.GNU.ORG</a> 여기서 최신 버전을 확인하고 오늘자 2019년 3월 8일 최신 released인  <code>GCC 8.3</code>을 받았다.</p>
+<ul>
+<li>버전 <a href="https://gcc.gnu.org/releases.html" target="_blank" rel="noopener">https://gcc.gnu.org/releases.html</a></li>
+<li>다운 <a href="https://gcc.gnu.org/mirrors.html" target="_blank" rel="noopener">https://gcc.gnu.org/mirrors.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Index of /software/gcc/releases/gcc-8.3.0</span><br><span class="line">[ICO]	Name	Last modified	Size	Description</span><br><span class="line">[PARENTDIR]	Parent Directory	 	-	 </span><br><span class="line">[DIR]	diffs/	2019-02-22 23:53	-	 </span><br><span class="line">[CMP]	gcc-8.3.0.tar.gz	2019-02-22 23:44	109M	 </span><br><span class="line">[CMP]	gcc-8.3.0.tar.gz.sig	2019-02-21 08:17	65	 </span><br><span class="line">[   ]	gcc-8.3.0.tar.xz	2019-02-22 23:43	61M	 </span><br><span class="line">[   ]	gcc-8.3.0.tar.xz.sig	2019-02-21 08:17	65	 </span><br><span class="line">[   ]	sha512.sum	2019-02-23 00:14	596</span><br></pre></td></tr></table></figure>
+<p>이걸 이제 어떻게.. 사용하는지.. 전혀 몰랐기에.. 이리 저리 뒤적거리며 시도해보다 <a href="https://gcc.gnu.org/wiki/GFortran" target="_blank" rel="noopener">https://gcc.gnu.org/wiki/GFortran</a> 이 곳에서 fortran, gfortran, compiler에 OpenMP까지 다양한 정보가 있는 것을 확인! 찾아들어갔다.</p>
+<ul>
+<li>버전 <a href="https://gcc.gnu.org/wiki/GFortran/News" target="_blank" rel="noopener">https://gcc.gnu.org/wiki/GFortran/News</a></li>
+<li>다운 <a href="https://gcc.gnu.org/wiki/GFortranBinaries#Windows" target="_blank" rel="noopener">https://gcc.gnu.org/wiki/GFortranBinaries#Windows</a></li>
+</ul>
+<p>위 사이트 Windows에 보면 </p>
+<ol>
+<li>MinGW for Win64</li>
+<li>MinGW (“native Windows” build)</li>
+<li>TDM GCC: MinGW/MinGW-W64 Builds</li>
+<li>Cygwin: The Cygwin project offers up-to-date builds of GCC and gfortran</li>
+</ol>
+<p>이렇게 4가지가 있는데 <code>MinGW for Win64</code> 에 <code>Mingw-w64</code>로 64비트에 각종 칩설정 부터 이것저것 시도하다 포기했고 <code>MinGW</code>로 다시 다운 받아서 설치했다.</p>
+<p><a href="http://www.mingw.org/" target="_blank" rel="noopener">http://www.mingw.org/</a> 이 홈페이지 download/installer 창 주소가 아래</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OSDN &gt; Find Software &gt; Software Development &gt; Code Generators &gt; MinGW - Minimalist GNU for Windows &gt; Download File List &gt; Package MinGW Installation Manager (mingw-get) &gt; Release MinGW-Get Version 0.6.3 (Beta)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>주소 <a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/" target="_blank" rel="noopener">https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/</a></li>
+</ul>
+<p>실행해보니 참 종류가 많았다. 처음 몇개만 설치해서 시도하다가 안되서 basic setup 몽땅 설치해서 시도했따.</p>
+<h3 id="오류"><a href="#오류" class="headerlink" title="오류"></a>오류</h3><p>내 컴퓨터의 코어는 4개 threads도 4개 아래 코드는 내 threads 개수 만큼 <code>Hello World</code>가 출력되는 코드로 가장 기본적이게 openmp 를 시도했지만.. </p>
+<p>fortran 코드</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">program</span></span> hello_world</span><br><span class="line"></span><br><span class="line"><span class="comment">!$omp parallel</span></span><br><span class="line">    <span class="built_in">print</span> *, <span class="string">'Hello World'</span></span><br><span class="line"><span class="comment">!$omp end parallel</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>c 코드<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> omp parallel</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>일단 병렬프로세싱이 아닌 일반 출력은 잘 된다.. 근데 .. openmp 시도시..<br>(openmp는 컴파일러 따라 다르지만 <code>-fopenmp</code> 이렇게 인자를 넣어줘야한다.)</p>
+<p>오류가 뙇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gfortran -fopenmp 01_hello.f90 -o 01_hello.x</span><br><span class="line"></span><br><span class="line">c:/mingw/bin/../lib/gcc/mingw32/8.2.0/../../../../mingw32/bin/ld.exe: cannot find -lpthread</span><br><span class="line">collect2.exe: error: ld returned 1 exit status</span><br></pre></td></tr></table></figure>
+<p>읭? <code>lpthread</code> 가 뭐지?</p>
+<p>여기서부터 별별 삽질은 다 해본 것 같다. 어쨌거나 저쨌거나 며칠 인터넷을 흘러다닌 끝에 </p>
+<blockquote>
+<p>Just run and open MinGW Installation Manager, which should be pre-installed with MinGW, select “All Packages” on the left panel, and on the right panel, search for “mingw32-pthreads-w32” packages and install them.</p>
+</blockquote>
+<p><a href="https://stackoverflow.com/questions/21827392/cannot-find-lpthread" target="_blank" rel="noopener">ref1</a><br><a href="https://stackoverflow.com/questions/39185248/eclipse-mingw-c-cannot-find-lpthread" target="_blank" rel="noopener">ref2</a></p>
+<p>다음과 같은 문구를 찾았고… 해답을 구했다…</p>
+<p>처음에 컴파일러 설치시 저 수많은 것들 중에…. <code>mingw32-pthreads-w32</code> 를 찾아서 설치했어야… 하는..</p>
+<p><img src="https://user-images.githubusercontent.com/8021479/54027676-b581a700-41e5-11e9-9f17-fa7ff3159c44.PNG" alt="pthread"></p>
+<p>저것 때문에 참… 그 고생을 했지만.. 어쨌든 실행은 잘 된다.</p>
+<p>fortran에서</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ gfortran -fopenmp 01_hello.f90 -o 01_hello.x</span><br><span class="line"></span><br><span class="line">$ 01_hello.x</span><br><span class="line"> Hello World</span><br><span class="line"> Hello World</span><br><span class="line"> Hello World</span><br><span class="line"> Hello World</span><br></pre></td></tr></table></figure>
+<p>c 에서.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -fopenmp 01_hello.c -o 01_hello.x</span><br><span class="line"></span><br><span class="line">$ 01_hello.x</span><br><span class="line">Hello World</span><br><span class="line">Hello World</span><br><span class="line">Hello World</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure></p>
+<p>내 쓰레드 개수만큼 잘 출력이 된다.</p>
+<p>하지만 intel compiler로는 또 오류가 발생중…… <code>qopenmp</code> 이게 왜 또 없다니?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ifort -qopenmp 01_hello.f90 -o 01_hello_i.x</span><br><span class="line">Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.2.190 Build 20190117</span><br><span class="line">Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.</span><br><span class="line">ifort: command line warning #10006: ignoring unknown option &apos;/qopenmp&apos;</span><br><span class="line"></span><br><span class="line">ifort: error #10037: could not find &apos;link&apos;</span><br></pre></td></tr></table></figure>
+<p>그리고 openmp 참고 사이트들.</p>
+<ul>
+<li><a href="https://www.openmp.org/specifications/" target="_blank" rel="noopener">https://www.openmp.org/specifications/</a></li>
+<li><a href="https://www.openmp.org/wp-content/uploads/OpenMP-API-Specification-5.0.pdf" target="_blank" rel="noopener">https://www.openmp.org/wp-content/uploads/OpenMP-API-Specification-5.0.pdf</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/libgomp/Runtime-Library-Routines.html#Runtime-Library-Routines" target="_blank" rel="noopener">https://gcc.gnu.org/onlinedocs/libgomp/Runtime-Library-Routines.html#Runtime-Library-Routines</a></li>
+</ul>
+<h2 id="또-그리고-파이썬으로"><a href="#또-그리고-파이썬으로" class="headerlink" title="또 그리고 파이썬으로"></a>또 그리고 파이썬으로</h2><p>어쨌든 GNU에서만이라도 되는걸 확인했으니 openMP 랑 MPI 그리고 python에서 어떻게 되는지도 시도해봐야한..다. 파이썬에서는 multiprocessing 으로 여러가지 모듈들이 있지만 openMP와 다른 단일인터프리터 잠금 개념(Global Interpreter Lock)이라고 하니 .. 코딩도 다 다르다.. </p>
+<p>아직 갈일이 산떠미지만.. 하나씩 모두 찾아보고 비교해보자.</p>
+<ul>
+<li>MPI for Python <a href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#running-python-scripts-with-mpi" target="_blank" rel="noopener">https://mpi4py.readthedocs.io/en/stable/tutorial.html#running-python-scripts-with-mpi</a></li>
+</ul>
+<p>Machine-learning-assisted materials discovery using failed experiments</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/03/07/20190307-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1909,212 +2135,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/18/20190218-TIL/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Namwoo Kim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/20190218-TIL/" itemprop="url">20190218_TIL</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T09:36:11+09:00">2019-02-18</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-18T22:18:55+09:00">2019-02-18</time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/18/20190218-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/18/20190218-TIL/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">1.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>스스로가 꽤 진전이 있다고 생각했는데 아직도 전처리 중……ㅡㅡ<br>대충 90만개 행 x 85개 열 데이터 셋을 이리저리 뜯어보는 중에</p>
-<h1 id="결측치에-대하여"><a href="#결측치에-대하여" class="headerlink" title="결측치에 대하여"></a>결측치에 대하여</h1><h2 id="과정"><a href="#과정" class="headerlink" title="과정"></a>과정</h2><ol>
-<li>각각의 열마다 또 각각 따로 정의된 missing values 가 있어 모두 따로 정의했다.<ol>
-<li>이건 따로 csv로 정의되어 있어 비교대조 진행</li>
-<li>그래서 빈칸이든 missing values든 error values든 모두 np.nan 로 변환</li>
-</ol>
-</li>
-<li>행 별로 기준 결측치 퍼센트 15% 부터 30% 까지 나열<ol>
-<li>18%부터 출력되는 행이 6개 확인</li>
-<li>한 행에 결측치 18% 이상인 행 drop</li>
-</ol>
-</li>
-<li>열 별로 기준 결측치 확인</li>
-</ol>
-<p><strong>여기서 의문</strong><br>행은 카테고리로 정의된 string 값이라, 그러니까 사람의 특징을 나열할 때 나이, 키, 몸무게 같은 특징을 나타내는데 열은 그냥 index도 아니고 그냥 내열된 값이다. 90만번까지 있는 이 열 중에 몇 개를 날려버려도 상관없는 것인가?</p>
-<ol start="4">
-<li>어쨌든 열 별로 기준 결측치 퍼센트로 확인<ol>
-<li>결측치가 40% 이상인 열 10만개 열 총 10% drop</li>
-</ol>
-</li>
-</ol>
-<p><strong>잘하고 있는 짓인거?</strong> 전체 데이터의 10%면 어마어마한건데…. PCA나 fastICA 진행시 차이가 있을까? 이건 결과값가지고 비교해볼 수 밖에..</p>
-<ol start="5">
-<li>0 또는 1, Yes or No, Y, or N, O or X 등 과 같은 이진값들 확인 후 0,1로 통일.<ol>
-<li>근데 어떤 행에는 <code>O</code>, <code>W</code> 이런 이진값이 있었는데..?? 어느게 1? 어느게 0? 그냥 바꿔 내맘대로 바꿈</li>
-<li>1과 0 그리고 1.0과 0.0, int or float<ol>
-<li>데이터들이 그냥 정수 인데 <code>.0</code> 이 붙어있는 실수화 되어있다. 소수점 이하 수치가 있으면 고민하지도 않았음.</li>
-<li>이런 int와 float 차이는 어떻게? </li>
-<li>싹 int로 바꿔 버리고 싶었는데 안에 np.nan 있기에 int 불가</li>
-<li>그냥 싹 float로 바꿔? 아님 그냥 나둬? </li>
-<li>일단 놔두고 나중에 비교해보기?</li>
-</ol>
-</li>
-<li>그냥 np.nan 빼고 모두 int로 바꿔버림</li>
-</ol>
-</li>
-</ol>
-<p><strong>잘… 하는거 맞겠…지?</strong></p>
-<h2 id="화남"><a href="#화남" class="headerlink" title="화남"></a>화남</h2><p>csv 단일 파일만 150MB. 데이터가 이 정도면 크지 않다고 생각하는데 <code>.copy()</code> 수 단계 거치고 솎아내고 걸러내고 따로 뽑아비교하고.. 점점 커져가다보니 Jupyter가 밀리기 시작함. ipython 말고 그냥 일반 python으로 하고 싶어도 실제 그래프를 보면서 데이터를 비교하고 대조하고 그리고 글도 써내려가고 싶은데… </p>
-<p>그리고 클라우드 기반 ipython 사용중이라 리눅스 가상환경 설정도 맞춰줘야함.. import 오류 떄문에 한 고생.. 작성한 cells 모두 실행해놓아도 환경설정 오류나면 import 오류나면서 싹 다시 해야함….. 또 엄청 기다림… 오늘도 도대체 코딩한 시간보다 기다린 시간이 더 많음…. 말도 안돼…</p>
-<p>마지막엔 잘 되고 있었는데 끝에가서 크롬 뒤로가기 실행돼서 싹 초기화… 열받아서 드러누음. ㅡㅡ</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2165,7 +2185,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2200,7 +2220,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -2266,7 +2286,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">67k</span>
+    <span title="Site words total count">71k</span>
   
 
   
@@ -2275,7 +2295,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">1:07</span>
+    <span title="Site reading time">1:11</span>
   
 </div>
 
