@@ -319,6 +319,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/13/20190213-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/20190213-TIL/" itemprop="url">20190213_TIL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T11:56:40+09:00">2019-02-13</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-13T22:16:18+09:00">2019-02-13</time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/20190213-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/13/20190213-TIL/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">2 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Random-Projection"><a href="#Random-Projection" class="headerlink" title="Random Projection"></a>Random Projection</h2><p> [Note: this lesson comes after a lesson explaining Principal Component Analysis]</p>
+<p>Paper: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.76.8124&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Random projection in dimensionality reduction: Applications to image and text data</a></p>
+<p>This paper examines using Random Projection to reduce the dimensionality of image and text data. It shows how Random Projection proves to be a computationally simple method of dimensionality reduction, while still preserving the similarities of data vectors to a high degree. The paper shows this on real-world datasets including noisy and noiseless images of natural scenes, and text documents from a newsgroup corpus.</p>
+<p>Paper: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.76.8124&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Random Projections for k-means Clustering</a></p>
+<p>This paper uses Random Projection as an efficient dimensionality reduction step before conducting k-means clustering on a dataset of 400 face images of dimensions 64 × 64.</p>
+<p>차원 감소에 대해 설명. 첫번쨰 방법은 임의의 투영법, Random Projection. pCA보다 계산상 효율적이다. 데이터세트가 있는 경우 일반적으로 사용된다. PCA는 차원이 너무 많아 계산이 힘들다. </p>
+<p>PCA는 분산이 최대화 되는 벡터 또는 방향을 찾아서 차원을 줄이고 정보를 잃을 때 가장 적은 정보량을 잃게 된다. Random projection은 랜덤으로 그은 선에 투영된 점을 단순히 축소했다 할 수 있다. </p>
+<p>이론적 배경은 데이터에 랜덤행렬을 곱한 것.<br>Johnson-Lindenstrauss lemma 보조정리</p>
+<p><img src="img/01-001.png" alt="01-001"><br><img src="img/01-002.png" alt="01-002"><br><img src="img/01-003.png" alt="01-003"><br><img src="img/01-004.png" alt="01-004"><br><img src="img/01-005.png" alt="01-005"></p>
+<ul>
+<li>Paper: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.322.679&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">“Independent component analysis: algorithms and applications” (pdf)</a></li>
+</ul>
+<p>nonGaussian 이어야한다. 어떻게? negentropy 엔트로피, 정보이론. 독립적.이어야 한다. </p>
+<p>Paper: <a href="http://papers.nips.cc/paper/1091-independent-component-analysis-of-electroencephalographic-data.pdf" target="_blank" rel="noopener">Independent Component Analysis of Electroencephalographic Data [PDF]</a></p>
+<p>This paper is an example of how ICA is used to transform EEG scan data to do blind source separation. For example, on the left are the readings of 14 channels from an EEG scan that lasted 4.5 seconds. On the right are the independent components extracted from that dataset:</p>
+<p>Paper: <a href="https://pdfs.semanticscholar.org/a34b/e08a20eba7523600203a32abb026a8dd85a3.pdf" target="_blank" rel="noopener">Applying Independent Component Analysis to Factor Model in Finance [PDF]</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/12/20190212-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1895,198 +2076,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/02/20190202-TIL/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Namwoo Kim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/02/20190202-TIL/" itemprop="url">20190202_TIL</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-02T08:37:51+09:00">2019-02-02</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-02T14:03:02+09:00">2019-02-02</time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/02/20190202-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/02/02/20190202-TIL/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">3 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>비지도학습, Unsupervised Learning, Clustering, Feature Scaling</p>
-<h1 id="데이터-만들기"><a href="#데이터-만들기" class="headerlink" title="데이터 만들기"></a>데이터 만들기</h1><p>넘파이 모듈을 사용해 원하는 데이터의 형태를 정의할 수 있다. <a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.RandomState.html" target="_blank" rel="noopener">refer</a></p>
-<h3 id="numpy-random-RandomState-seed-None"><a href="#numpy-random-RandomState-seed-None" class="headerlink" title="numpy.random.RandomState(seed = None)"></a><code>numpy.random.RandomState(seed = None)</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">n_points = <span class="number">100</span></span><br><span class="line">X = np.random.RandomState(<span class="number">3200000</span>).uniform(<span class="number">-3</span>, <span class="number">3</span>, [n_points, <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
-<ul>
-<li>seed = 3200000<ul>
-<li>설정해주면 랜덤으로 나오는 데이터가 다음에 실행해도 또 다음에 실행해도 같은 랜덤값으로 출력되게 해준다. 그래서 실습할 때나 테스트 할 때, 또 다른 사람에게 확인할 때 항상 다른 데이터가 아닌 같은 랜덤데이터가 출력 될 수 있도록 해준다.</li>
-</ul>
-</li>
-<li>uniform(low, high, size)<ul>
-<li>low, high, size 의 파라메터가 정의되며 위 코드에선 -3부터 3까지의 숫자가 100x2 행렬로 랜덤으로 생성되게끔 한다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="numpy-absolute"><a href="#numpy-absolute" class="headerlink" title="numpy.absolute()"></a><code>numpy.absolute()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X_abs = np.absolute(X)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>numpy.absolute(x, /, out=None, *, where=True, casting=&#39;same_kind&#39;, order=&#39;K&#39;, dtype=None, subok=True[, signature, extobj]) = &lt;ufunc &#39;absolute&#39;&gt;</code><ul>
-<li>딱히 다른 파라메터는 필요없는거 같고 수학적 정의 그대로 음수를 양수로 바꿔주는 절대값 함수.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = np.array([-1.2, 1.2])</span><br><span class="line">&gt;&gt;&gt; np.absolute(x)</span><br><span class="line">array([ 1.2,  1.2])</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; np.absolute(1.2 + 1j)</span><br><span class="line">1.5620499351813308</span><br></pre></td></tr></table></figure>
-<h3 id="logical-and"><a href="#logical-and" class="headerlink" title="logical_and"></a>logical_and</h3><p>그리고 다양한 논리함수들. np doc에 자세한 설명과 예제까지.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_and(<span class="keyword">True</span>, <span class="keyword">False</span>)</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_and([<span class="keyword">True</span>, <span class="keyword">False</span>], [<span class="keyword">False</span>, <span class="keyword">False</span>])</span><br><span class="line">array([<span class="keyword">False</span>, <span class="keyword">False</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_and(x&gt;<span class="number">1</span>, x&lt;<span class="number">4</span>)</span><br><span class="line">array([<span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br></pre></td></tr></table></figure>
-<h3 id="logical-or"><a href="#logical-or" class="headerlink" title="logical_or"></a>logical_or</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_or(<span class="keyword">True</span>, <span class="keyword">False</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_or([<span class="keyword">True</span>, <span class="keyword">False</span>], [<span class="keyword">False</span>, <span class="keyword">False</span>])</span><br><span class="line">array([ <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_or(x &lt; <span class="number">1</span>, x &gt; <span class="number">3</span>)</span><br><span class="line">array([ <span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>])</span><br></pre></td></tr></table></figure>
-<h3 id="logical-not"><a href="#logical-not" class="headerlink" title="logical_not"></a>logical_not</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_not(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_not([<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">array([<span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logical_not(x&lt;<span class="number">3</span>)</span><br><span class="line">array([<span class="keyword">False</span>, <span class="keyword">False</span>, <span class="keyword">False</span>,  <span class="keyword">True</span>,  <span class="keyword">True</span>])</span><br></pre></td></tr></table></figure>
-<h3 id="logical-xor"><a href="#logical-xor" class="headerlink" title="logical_xor"></a>logical_xor</h3><h3 id="bitwise-and"><a href="#bitwise-and" class="headerlink" title="bitwise_and"></a>bitwise_and</h3><h2 id="종합"><a href="#종합" class="headerlink" title="종합"></a>종합</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_data</span><span class="params">()</span>:</span></span><br><span class="line">    n_points = <span class="number">120</span></span><br><span class="line">    X = np.random.RandomState(<span class="number">3200000</span>).uniform(<span class="number">-3</span>, <span class="number">3</span>, [n_points, <span class="number">2</span>])</span><br><span class="line">    X_abs = np.absolute(X)</span><br><span class="line"></span><br><span class="line">    inner_ring_flag = np.logical_and(X_abs[:,<span class="number">0</span>] &lt; <span class="number">1.2</span>, X_abs[:,<span class="number">1</span>] &lt; <span class="number">1.2</span>)</span><br><span class="line">    outer_ring_flag = X_abs.sum(axis = <span class="number">1</span>) &gt; <span class="number">5.3</span></span><br><span class="line">    keep = np.logical_not(np.logical_or(inner_ring_flag, outer_ring_flag))</span><br><span class="line"></span><br><span class="line">    X = X[keep]</span><br><span class="line">    X = X[:<span class="number">60</span>] <span class="comment"># only keep first 100</span></span><br><span class="line">    X1 = np.matmul(X, np.array([[<span class="number">2.5</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">100</span>]])) + np.array([<span class="number">22.5</span>, <span class="number">500</span>])</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    plt.figure(figsize = [<span class="number">15</span>,<span class="number">15</span>])</span><br><span class="line"></span><br><span class="line">    plt.scatter(X1[:,<span class="number">0</span>], X1[:,<span class="number">1</span>], s = <span class="number">64</span>, c = plot_colors[<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line">    plt.xlabel(<span class="string">'5k Completion Time (min)'</span>, size = <span class="number">30</span>)</span><br><span class="line">    plt.xticks(np.arange(<span class="number">15</span>, <span class="number">30</span>+<span class="number">5</span>, <span class="number">5</span>), fontsize = <span class="number">30</span>)</span><br><span class="line">    plt.ylabel(<span class="string">'Test Score (raw)'</span>, size = <span class="number">30</span>)</span><br><span class="line">    plt.yticks(np.arange(<span class="number">200</span>, <span class="number">800</span>+<span class="number">200</span>, <span class="number">200</span>), fontsize = <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">    ax = plt.gca()</span><br><span class="line">    ax.spines[<span class="string">'top'</span>].set_visible(<span class="keyword">False</span>)</span><br><span class="line">    ax.spines[<span class="string">'right'</span>].set_visible(<span class="keyword">False</span>)</span><br><span class="line">    [side.set_linewidth(<span class="number">2</span>) <span class="keyword">for</span> side <span class="keyword">in</span> ax.spines.values()]</span><br><span class="line">    ax.tick_params(width = <span class="number">2</span>)</span><br><span class="line">    plt.savefig(<span class="string">'C18_FeatScalingEx_01.png'</span>, transparent = <span class="keyword">True</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    data = pd.DataFrame(X1)</span><br><span class="line">    data.columns = [<span class="string">'5k_Time'</span>, <span class="string">'Raw_Test_Score'</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
-<p>파라메터 추가해서 시간하고 분에따라 graph title 달라지게 수정해야겠음.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2137,7 +2126,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2172,7 +2161,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -2238,7 +2227,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">71k</span>
+    <span title="Site words total count">72k</span>
   
 
   
@@ -2247,7 +2236,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">1:11</span>
+    <span title="Site reading time">1:12</span>
   
 </div>
 

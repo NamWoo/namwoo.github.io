@@ -126,7 +126,7 @@
 
 
 
-  <title>algolia | my Blog of Absolute and Subjective Knowledge</title>
+  <title>20190313_TIL | my Blog of Absolute and Subjective Knowledge</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2018/12/19/algolia/">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/03/13/20190313-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Namwoo Kim">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">algolia</h2>
+          <h2 class="post-title" itemprop="name headline">20190313_TIL</h2>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T14:46:41+09:00">2018-12-19</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-13T20:54:12+09:00">2019-03-13</time>
             
 
             
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-19T16:02:22+09:00">2018-12-19</time>
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-13T21:20:11+09:00">2019-03-13</time>
             
           </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/19/algolia/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2018/12/19/algolia/" itemprop="commentCount">0</span> comments
+                <a href="/2019/03/13/20190313-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/03/13/20190313-TIL/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="Words count in article">2k</span>
+                <span title="Words count in article">954</span>
               
 
               
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">1 mins.</span>
               
             </div>
           
@@ -431,39 +431,22 @@
       
 
       
-        <p>정신없는 몇 주. 강의도 끝내야 했고 과제도 시험도 도와줘야 했고 또 오래걸리고 힘들었던 프로젝트를 진행하면서 수업시간에 배웠던 내용들도 복습해야 했고 그걸 가지고 kaggle에 competition도 해봤다. (17위!! 참가자가 별로 없다는게 비밀)</p>
-<p>그리고 나서 뻐근한 어께도 풀어줄겸 쉬엄쉬엄(?) 블로그를 떠돌다가 algolia라는 검색엔진? 검색분석엔진? 을 찾고 내 블로그에도 적용해보기 위해 빨래 2번 돌릴 시간 동안(드럼세탁기 삶음기능 2번) 이리저리 시도해봤다.</p>
-<ol>
-<li>Register at Algolia</li>
-</ol>
-<p>가입 그리고 알고리아가 뭔지 확인 <a href="https://www.algolia.com/" target="_blank" rel="noopener">https://www.algolia.com/</a><br>첫 가입 후 14일 후면 FREE모드로 넘어가서 한달에 up to 10k records and 100k operations per month.<br>확인은 빌링탭</p>
-<p>가입 후 dashboard 탭에 보면 왼쪽 사이드탭에 Indices 눌러서<br>index 버튼 왼쪽에 이름 눌러서<br>Create index<br>이름은 원하는데로. 나는 원래 깃헙 블로그파일명인 myBlog</p>
-<p><img src="https://camo.githubusercontent.com/244ac146bf644651ed0f6341b85d6aa23e0aea73/687474703a2f2f7468656d652d6e6578742e696973736e616e2e636f6d2f75706c6f6164732f616c676f6c69612f616c676f6c69612d737465702d322e706e67" alt="index"></p>
-<p>또 다시 왼쪽 사이드탭에<br>API Keys를 눌러보면 Your API Keys 탭에 있는 정보</p>
-<ul>
-<li>Application ID = 블라블라</li>
-<li>Search-Only API Key = 블라블라</li>
+        <p>부산스럽다.</p>
+<h2 id="삽질"><a href="#삽질" class="headerlink" title="삽질"></a>삽질</h2><h3 id="intel-complier"><a href="#intel-complier" class="headerlink" title="intel complier"></a>intel complier</h3><ul>
+<li>자그마치 최신 intel complier로 설치해서 icc 가 아닌 icl 로 컴파일 잘~ 되는 것은 확인했는데 openmp 는 진행이 안되서 또 삽질 중</li>
+<li>os마다 cpu x68, 64마다, 또 버전마다 달랐지만<ul>
+<li>system_studio_2019.2.057_ultimate_edition_windows_target 이거 말고 </li>
+<li>parallel_studio_xe_2019_update2_cluster_edition_setup 로 결국 성공</li>
+<li>물론 openmp랑 mpi 는 아직 안됨. 아니 하는 법을 또 찾아야함.</li>
 </ul>
-<p>이 두 개를 잘 기억</p>
-<p><img src="https://user-images.githubusercontent.com/8521181/35479066-64e35aec-0428-11e8-91f9-1ec3afa45c5c.png" alt="apiKey"></p>
-<p>그리고 github 블로그에 테마가 설치되어 있는 원래 기본적으로 블로그에 사용하던 폴더로 이동해서</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-algolia</span><br><span class="line">npm i hexo-generator-json-content --save</span><br><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
-<p>git 설정 _config.yml 추가</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line"><span class="attr">  applicationID:</span> <span class="string">기억해놓은</span> <span class="string">Application</span> <span class="string">ID</span> <span class="string">블라블라</span> <span class="string">입력</span></span><br><span class="line"><span class="attr">  apiKey:</span> <span class="string">역시</span> <span class="string">기억해놓은</span> <span class="string">Search-Only</span> <span class="string">API</span> <span class="string">Key</span> <span class="string">블라블라</span> <span class="string">입력</span></span><br><span class="line"><span class="attr">  indexName:</span> <span class="string">아까</span> <span class="string">Create</span> <span class="string">index로</span> <span class="string">만든</span> <span class="string">이름</span> <span class="string">입력</span></span><br><span class="line"><span class="attr">  chunkSize:</span> <span class="number">5000</span></span><br></pre></td></tr></table></figure>
-<p>그리고 테마 설정 _config.yml<br>algolia_search 값을 true로</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  hits:</span></span><br><span class="line"><span class="attr">    per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    input_placeholder:</span> <span class="string">Search</span> <span class="string">for</span> <span class="string">Posts</span></span><br><span class="line"><span class="attr">    hits_empty:</span> <span class="string">"We didn't find any results for the search: $&#123;query&#125;"</span></span><br><span class="line"><span class="attr">    hits_stats:</span> <span class="string">"$&#123;hits&#125; results found in $&#123;time&#125; ms"</span></span><br></pre></td></tr></table></figure>
-<p>그리고 윈도우os 일 경우<br>실행-cmd에서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # Use Windows command line</span><br></pre></td></tr></table></figure></p>
-<p>맥이라면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # Use Git Bash</span><br></pre></td></tr></table></figure></p>
-<p>환경변수값 설정하는건데 직접 윈도우 성능에 고급, 환경변수 들어가서 추가했더니 안됨. 위 쓴데로 하는게 더 쉬움.</p>
-<p>다 되면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  </span><br><span class="line">$ hexo algolia</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://camo.githubusercontent.com/747791b2da3308ee2a7fc18c664da9dc9d0e6f5f/687474703a2f2f7468656d652d6e6578742e696973736e616e2e636f6d2f75706c6f6164732f616c676f6c69612f616c676f6c69612d737465702d342e706e67" alt=""></p>
-<p>그리고 잘 적용됐는지</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generator</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<hr>
-<p>급 생각난 현주누나의 명언</p>
-<p><img src="https://blogfiles.pstatic.net/MjAxNzA3MjVfMjI1/MDAxNTAwOTcwNjkwODk4.L5RBjx1ZVo4EOIJqDPfSF2d5hZdYd_uIppO4fypc3U0g.mBC7Ke_ii3bTUHfnBjk2L8TXX8A4-dkIVwtrUbG4jQQg.PNG.rodeobike1/image_1593228131500970479321.png" alt="competition"></p>
-<hr>
-<p>출처<br><a href="https://github.com/algolia" target="_blank" rel="noopener">https://github.com/algolia</a><br><a href="https://www.npmjs.com/package/hexo-algolia#api-key" target="_blank" rel="noopener">https://www.npmjs.com/package/hexo-algolia#api-key</a><br><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/ALGOLIA-SEARCH.md" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/blob/master/docs/ALGOLIA-SEARCH.md</a><br><a href="https://zouzeir.xyz/2017/01/16/Hexo%E9%9B%86%E6%88%90Algolia%E6%90%9C%E7%B4%A2%E6%8F%92%E4%BB%B6/" target="_blank" rel="noopener">https://zouzeir.xyz/2017/01/16/Hexo%E9%9B%86%E6%88%90Algolia%E6%90%9C%E7%B4%A2%E6%8F%92%E4%BB%B6/</a><br><a href="https://elfinlas.github.io/2018/06/07/hexo-usea-lgolia/" target="_blank" rel="noopener">https://elfinlas.github.io/2018/06/07/hexo-usea-lgolia/</a></p>
+</li>
+</ul>
+<h3 id="format"><a href="#format" class="headerlink" title="format"></a>format</h3><p><code>c:\&gt;format d: /Q /V:d: /FS:NTFS</code> 모듈설치를 하도 하다보니 용량이 자꾸 부족해져가다 os가 있는 sdd에 남은 용량이 2GB까지 왔다.. 그래서 싹 포멧…. 백업도 잘 해줬지만….  다시 몇개의 드라이브에 있는 git 연결 설정이 꼬여있었다..</p>
+<h3 id="hexo-blog"><a href="#hexo-blog" class="headerlink" title="hexo blog"></a>hexo blog</h3><p>블로그가 안들어가진다.. 갑자기.. 급한 것도 아니고 누가 들어오는 것도 아니니 그냥 나뒀었는데 오늘 다시 들어오니까 또 들어가지고 있었다.. 이틀 사이에 뭐가 바뀐거지?? 어쨌든 예전엔 따로 프로그램 써서 generate 하고 deploy 했는데 이젠 그냥 git bash에서 몽땅 명령어로만 할거다. 블로그 다시 정리해야지..</p>
+<p>그나저나 이 <a href="https://namwoo.github.io/2019/03/11/hello-world/"><code>first-post</code></a> 이건 왜 제멋대로 생겨서 지울 수도 없지?</p>
+<h3 id="kaggle"><a href="#kaggle" class="headerlink" title="kaggle"></a>kaggle</h3><p>이건 뭐 끝도 없이 할게 많아서 여전히 진행중이고..</p>
+<h3 id="HPC"><a href="#HPC" class="headerlink" title="HPC"></a>HPC</h3><p>아.. 이것도 mpi랑 openmp 를 내 프로젝트들에 어떻게 연결시킬지 참 많이 생각해봐야할 문제고..</p>
+<h3 id=""><a href="#" class="headerlink" title="????"></a>????</h3><p>아.. 이거 항상 뭐든지 몰아서 들어오니 감당하기도 힘들고 하나하나씩 좋은 성과를 내야할 것들이 별딱지 잔뜩 붙여서 몰아들어오니 버릴건 버려야 하는데 뭐하나 버릴 수 조차도 없고.. 하나 무너지만 도미노처럼 터져버릴 것 같고… 시간은 자꾸만 가고.. 에고고</p>
 
       
     </div>
@@ -484,7 +467,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://namwoo.github.io/2018/12/19/algolia/" title="algolia">http://namwoo.github.io/2018/12/19/algolia/</a>
+    <a href="http://namwoo.github.io/2019/03/13/20190313-TIL/" title="20190313_TIL">http://namwoo.github.io/2019/03/13/20190313-TIL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -496,6 +479,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TIL/" rel="tag"># TIL</a>
+          
+        </div>
       
 
       
@@ -524,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/11/tree/" rel="next" title="tree">
-                <i class="fa fa-chevron-left"></i> tree
+              <a href="/2019/03/11/20190311-TIL/" rel="next" title="20190311_TIL">
+                <i class="fa fa-chevron-left"></i> 20190311_TIL
               </a>
             
           </div>
@@ -533,10 +522,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/24/car-accident-almost/" rel="prev" title="car_accident_almost">
-                car_accident_almost <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -567,7 +552,7 @@
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://namwoo.github.io/2018/12/19/algolia/" data-numposts="10" data-width="100%" data-colorscheme="light">
+      <div class="fb-comments" data-href="http://namwoo.github.io/2019/03/13/20190313-TIL/" data-numposts="10" data-width="100%" data-colorscheme="light">
       </div>
     </div>
 
@@ -594,8 +579,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -685,6 +679,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#삽질"><span class="nav-number">1.</span> <span class="nav-text">삽질</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#intel-complier"><span class="nav-number">1.1.</span> <span class="nav-text">intel complier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#format"><span class="nav-number">1.2.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-blog"><span class="nav-number">1.3.</span> <span class="nav-text">hexo blog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kaggle"><span class="nav-number">1.4.</span> <span class="nav-text">kaggle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HPC"><span class="nav-number">1.5.</span> <span class="nav-text">HPC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.6.</span> <span class="nav-text">????</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -839,9 +849,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://namwoo.github.io/2018/12/19/algolia/';
-          this.page.identifier = '2018/12/19/algolia/';
-          this.page.title = 'algolia';
+          this.page.url = 'http://namwoo.github.io/2019/03/13/20190313-TIL/';
+          this.page.identifier = '2019/03/13/20190313-TIL/';
+          this.page.title = '20190313_TIL';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://nwism.disqus.com/embed.js';
