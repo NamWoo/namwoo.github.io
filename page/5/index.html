@@ -319,6 +319,296 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/21/20190121-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/21/20190121-TIL/" itemprop="url">20190121_TIL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-21T00:46:20+09:00">2019-01-21</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-21T20:21:24+09:00">2019-01-21</time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/21/20190121-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/21/20190121-TIL/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">6.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">6 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>과제를 제출했는데 몇가지 코멘트가 달렸다. 그중 하나가</p>
+<blockquote>
+<p>Even though your code is technically correct, the goal here is to implement the process manually, rather than using Transforms. You need to</p>
+<ul>
+<li>Find the ratio between the larger side and the smaller side</li>
+<li>Resize smaller side to 256 and larger side to 256*ratio</li>
+<li>Crop to 224 by 224, making sure the image is centered</li>
+<li>Convert to numpy and normalize</li>
+</ul>
+</blockquote>
+<p>이걸 보고 읭? 왜? <code>transforms.Compose</code> 로 묶어 처리하면 안좋은 건가? 싶기도 했지만 저 라이브러리가 없을 때 해결하는 방법을 배워보라는 건지 아니면 실제 코딩이 어떻게 돌아가는지 확인해보라는 건지 싶기도 하고 해서 싹… 바꿔봤다.</p>
+<h2 id="transforms-Compose"><a href="#transforms-Compose" class="headerlink" title="transforms.Compose"></a>transforms.Compose</h2><p>이런 식으로 <code>transforms</code>을 사용하면 편하지만 <a href="https://pytorch.org/docs/stable/torchvision/transforms.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/torchvision/transforms.html</a></p>
+<h3 id="방법1"><a href="#방법1" class="headerlink" title="방법1"></a>방법1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">adjustments = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">256</span>),</span><br><span class="line">    transforms.CenterCrop(<span class="number">224</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(mean=[<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], std=[<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">])</span><br><span class="line">image_pil = adjustments(image_np)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">transforms 함수를 사용하지 않고 수동으로 코딩하는 방법은 .. 일단 검색.. 시작..</span><br><span class="line"></span><br><span class="line"><span class="comment">### 방법2</span></span><br><span class="line">```python</span><br><span class="line">trans = transforms.ToPILImage()</span><br><span class="line">trans1 = transforms.ToTensor()</span><br><span class="line"></span><br><span class="line">image_pil = trans(trans1(image_np))</span><br></pre></td></tr></table></figure>
+<p><a href="https://discuss.pytorch.org/t/pytorch-pil-to-tensor-and-vice-versa/6312" target="_blank" rel="noopener">ref</a></p>
+<h2 id="to-implement-the-process-manually"><a href="#to-implement-the-process-manually" class="headerlink" title="to implement the process manually"></a>to implement the process manually</h2><p>하나씩 찾아보고 고쳐가보자.</p>
+<h3 id="transforms-Resize-바꾸기"><a href="#transforms-Resize-바꾸기" class="headerlink" title="transforms.Resize 바꾸기"></a>transforms.Resize 바꾸기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Resize</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">resize_num = <span class="number">256</span></span><br><span class="line"><span class="keyword">if</span> image_pil.size[<span class="number">0</span>] &gt; image_pil.size[<span class="number">1</span>]:    </span><br><span class="line">    print(<span class="string">'height'</span> , image_pil.size[<span class="number">0</span>], <span class="string">'&gt;'</span> , <span class="string">'width'</span>, image_pil.size[<span class="number">1</span>])</span><br><span class="line">    print(<span class="string">'height'</span> , resize_num*image_pil.size[<span class="number">0</span>]/image_pil.size[<span class="number">1</span>], <span class="string">'&gt;'</span> , <span class="string">'width '</span>, resize_num,<span class="string">' (resized)'</span>)</span><br><span class="line">    image_pil = image_pil.resize((round(resize_num*image_pil.size[<span class="number">0</span>]/image_pil.size[<span class="number">1</span>]), resize_num))    </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'height'</span> , image_pil.size[<span class="number">0</span>], <span class="string">'&lt;'</span> , <span class="string">'width'</span>, image_pil.size[<span class="number">1</span>])</span><br><span class="line">    print(<span class="string">'height '</span>,resize_num,<span class="string">'&lt; width'</span>,resize_num*image_pil.size[<span class="number">1</span>]/image_pil.size[<span class="number">0</span>], <span class="string">'(resized)'</span>)</span><br><span class="line">    image_pil = image_pil.resize((resize_num, round(resize_num*image_pil.size[<span class="number">1</span>]/image_pil.size[<span class="number">0</span>])))</span><br></pre></td></tr></table></figure>
+<p>일단 이렇게 코딩하고 보니까 조금 복잡해보인다.</p>
+<p><code>w, h = image_pil.size</code> 이렇게 퉁쳐서 </p>
+<ul>
+<li><code>image_pil.size[0]</code> 가 <code>w</code>로 </li>
+<li><code>image_pil.size[1]</code> 를 <code>h</code>로 </li>
+</ul>
+<p>하면 더 가독성이 좋을 것 같다. <code>from PIL import Image</code> 를 사용한 이유는 어차피 그래프를 그려줘야하니까 포함되어 있는 걸 최대한 사용했다.</p>
+<p><a href="https://076923.github.io/posts/Python-opencv-8/" target="_blank" rel="noopener">https://076923.github.io/posts/Python-opencv-8/</a><br><a href="https://kolikim.tistory.com/57" target="_blank" rel="noopener">https://kolikim.tistory.com/57</a></p>
+<h3 id="transforms-CenterCrop-바꾸기"><a href="#transforms-CenterCrop-바꾸기" class="headerlink" title="transforms.CenterCrop 바꾸기"></a>transforms.CenterCrop 바꾸기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># CenterCrop</span></span><br><span class="line">crop_num = <span class="number">224</span></span><br><span class="line">left = (image_pil.size[<span class="number">0</span>] - crop_num)/<span class="number">2</span></span><br><span class="line">top = (image_pil.size[<span class="number">1</span>] - crop_num)/<span class="number">2</span></span><br><span class="line">right = (image_pil.size[<span class="number">0</span>] + crop_num)/<span class="number">2</span></span><br><span class="line">bottom = (image_pil.size[<span class="number">1</span>] + crop_num)/<span class="number">2</span></span><br><span class="line">image_pil = image_pil.crop((left, top, right, bottom))</span><br><span class="line"><span class="comment">#     print(image_pil.size)</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://stackoverflow.com/questions/16646183/crop-an-image-in-the-centre-using-pil" target="_blank" rel="noopener">reference1</a><br><a href="https://pillow.readthedocs.io/en/latest/reference/Image.html" target="_blank" rel="noopener">reference2</a></p>
+<p>그냥.. 함수고 파라메터 넣는 수학계산이지 뭐</p>
+<h3 id="transforms-ToTensor-바꾸기"><a href="#transforms-ToTensor-바꾸기" class="headerlink" title="transforms.ToTensor 바꾸기"></a>transforms.ToTensor 바꾸기</h3><p>기본적으로 <code>PIL Image</code> 나 <code>numpy.ndarray</code> 는 배열이 (H x W x C) 에 범위가 [0, 255] 이다. 이걸 Torch로 계산하기 위해 Torch에 맞게 바꿔줘야 하는게 Torch는 (C x H x W) 에 범위가 [0.0, 1.0] 이기 때문이다. 그래서 이름이 ToTensor, 텐서형식으로 바꾸기.</p>
+<ul>
+<li>PIL Image or numpy.ndarray (H x W x C) in the range [0, 255]   1 2 0</li>
+<li>to a torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0]   201  120<ul>
+<li>C는 채널. 주로 RGB 색상정보</li>
+<li>H는 이미지의 height 높이(위아래)</li>
+<li>W는 weight 이미지의 폭(양옆)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image_np = np.array(image_pil) <span class="comment"># (224, 224, 3)</span></span><br><span class="line">image_np = np.transpose(image_np, (<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>)) <span class="comment"># (3, 224, 224)</span></span><br></pre></td></tr></table></figure>
+<p>(H x W x C)를 (C x H x W)로 잘 바꿨는데 뭔가 이상하다. 변환은 잘 됐는데 <code>transforms.ToTensor()</code>에서 나온 결과값하고 다르다. 왜그러지? 일단 패쓰.</p>
+<p>어쨌든 <code>np.array</code> 로 array 만들어주고 난 다음 <code>np.transpose</code>를 통해서 원래 순서인 0 1 2 인 행렬순서를 2 0 1로 바꿨다.</p>
+<ul>
+<li>파라메터 순서는 기본적으로 입력된 0 1 2 순서대로, 여기선 (H x W x C)로 (224, 224, 3) 설정되어 있는 상태를</li>
+<li>(C x H x W) 순으로 2 0 1 순서로 바꿔주면 (3, 224, 224) 요로코롬 바뀐다.  </li>
+</ul>
+<p><a href="https://github.com/pytorch/vision/issues/399" target="_blank" rel="noopener">https://github.com/pytorch/vision/issues/399</a></p>
+<h3 id="transforms-Normalize-바꾸기"><a href="#transforms-Normalize-바꾸기" class="headerlink" title="transforms.Normalize 바꾸기"></a>transforms.Normalize 바꾸기</h3><p>Normalize라는게 이미지 데이터 정보를 바꿔준다는 말인데 실제 0~255로 되어있는 컬러채널을 -1에서1 로 바꿔준다든가 중앙값, 평균값을 원하는 값으로 수정한다든가 한쪽으로 기울어져 있는 이미지 데이터 정보를 콤푸타가 잘 알아먹을 수 있고 쏠려서 학습하는 오류를 피하기 위해 해야한다고 한다. </p>
+<p><a href="https://discuss.pytorch.org/t/question-about-inception-v3-model/8727" target="_blank" rel="noopener">https://discuss.pytorch.org/t/question-about-inception-v3-model/8727</a></p>
+<p>가장 좋은 Normalize 설명<br><a href="https://medium.com/@rrfd/standardize-or-normalize-examples-in-python-e3f174b65dfc" target="_blank" rel="noopener">https://medium.com/@rrfd/standardize-or-normalize-examples-in-python-e3f174b65dfc</a></p>
+<ul>
+<li>Image processing with Python and SciPy<ul>
+<li><a href="http://prancer.physics.louisville.edu/astrowiki/index.php/Image_processing_with_Python_and_SciPy" target="_blank" rel="noopener">http://prancer.physics.louisville.edu/astrowiki/index.php/Image_processing_with_Python_and_SciPy</a></li>
+</ul>
+</li>
+</ul>
+<p>이미지 다루는 설명<br><a href="https://www.oreilly.com/library/view/programming-computer-vision/9781449341916/ch01.html" target="_blank" rel="noopener">https://www.oreilly.com/library/view/programming-computer-vision/9781449341916/ch01.html</a></p>
+<p><code>transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])</code> 의 의미는 </p>
+<blockquote>
+<p>input[channel] = (input[channel] - mean[channel]) / std[channel]</p>
+</blockquote>
+<p>mean=[0.485, 0.456, 0.406]<br>std=[0.229, 0.224, 0.225]<br>img[c] = (img[c] - mean[c]) / std[c]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Normalize1</span></span><br><span class="line"><span class="comment"># image_normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])</span></span><br><span class="line"><span class="comment"># image_pil = image_normalize(image_np).float()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Normalize2</span></span><br><span class="line"><span class="comment">## std * image_np + mean</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(image_np[0,:,:])</span></span><br><span class="line"><span class="comment"># image_np[0,:,:] = (image_np[0,:,:] - 0.485) / 0.229</span></span><br><span class="line"><span class="comment"># image_np[0,:,:] = 0.229 * image_np[0,:,:] + 0.485</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://discuss.pytorch.org/t/understanding-transform-normalize/21730" target="_blank" rel="noopener">https://discuss.pytorch.org/t/understanding-transform-normalize/21730</a></p>
+<ul>
+<li><code>sklearn.preprocessing.normalize</code> 사용, <code>np.atleast_1d</code> 사용<ul>
+<li><a href="https://stackoverflow.com/questions/21030391/how-to-normalize-an-array-in-numpy" target="_blank" rel="noopener">https://stackoverflow.com/questions/21030391/how-to-normalize-an-array-in-numpy</a></li>
+</ul>
+</li>
+<li>scale size minmaxscaler 사용<ul>
+<li><a href="https://code.i-harness.com/en/q/1a7971" target="_blank" rel="noopener">https://code.i-harness.com/en/q/1a7971</a></li>
+</ul>
+</li>
+<li>normalization-in-the-mnist-example<ul>
+<li><a href="https://discuss.pytorch.org/t/normalization-in-the-mnist-example/457/13" target="_blank" rel="noopener">https://discuss.pytorch.org/t/normalization-in-the-mnist-example/457/13</a></li>
+</ul>
+</li>
+<li>Normalization layers<ul>
+<li><a href="https://lasagne.readthedocs.io/en/latest/modules/layers/normalization.html" target="_blank" rel="noopener">https://lasagne.readthedocs.io/en/latest/modules/layers/normalization.html</a></li>
+</ul>
+</li>
+<li>Normalization 0-1<ul>
+<li><a href="https://stats.stackexchange.com/questions/70801/how-to-normalize-data-to-0-1-range" target="_blank" rel="noopener">https://stats.stackexchange.com/questions/70801/how-to-normalize-data-to-0-1-range</a></li>
+</ul>
+</li>
+<li>Normalization certain-range<ul>
+<li><a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="noopener">https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range</a></li>
+</ul>
+</li>
+<li>OpenCV-normalize<ul>
+<li><a href="http://swprog.tistory.com/entry/OpenCV-normalize" target="_blank" rel="noopener">http://swprog.tistory.com/entry/OpenCV-normalize</a></li>
+</ul>
+</li>
+<li><a href="https://forums.fast.ai/t/images-normalization/4058/9" target="_blank" rel="noopener">https://forums.fast.ai/t/images-normalization/4058/9</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.random.rand(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Normalised [0,1]</span></span><br><span class="line">b = (a - np.min(a))/np.ptp(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Normalised [0,255] as integer</span></span><br><span class="line">c = (<span class="number">255</span>*(a - np.min(a))/np.ptp(a)).astype(int)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Normalised [-1,1]</span></span><br><span class="line">d = <span class="number">2</span>*(a - np.min(a))/np.ptp(a)<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<p>Normalize input image per color channel #338</p>
+<p><a href="https://github.com/onnx/onnx-coreml/issues/338" target="_blank" rel="noopener">https://github.com/onnx/onnx-coreml/issues/338</a><br><a href="https://github.com/onnx/onnx-coreml/issues/338" target="_blank" rel="noopener">https://github.com/onnx/onnx-coreml/issues/338</a><br><a href="https://github.com/onnx/onnx-coreml/issues/338" target="_blank" rel="noopener">https://github.com/onnx/onnx-coreml/issues/338</a></p>
+<pre><code class="python"><span class="comment"># IMAGE_NET_MEAN = [0.485, 0.456, 0.406]</span>
+<span class="comment"># IMAGE_NET_STD = [0.229, 0.224, 0.225]</span>
+
+scale = <span class="number">1.0</span> / (<span class="number">0.226</span> * <span class="number">255.0</span>)
+red_scale = <span class="number">1.0</span> / (<span class="number">0.229</span> * <span class="number">255.0</span>)
+green_scale = <span class="number">1.0</span> / (<span class="number">0.224</span> * <span class="number">255.0</span>)
+blue_scale = <span class="number">1.0</span> / (<span class="number">0.225</span> * <span class="number">255.0</span>)
+
+args = dict(is_bgr=<span class="keyword">False</span>, red_bias = -(<span class="number">0.485</span> * <span class="number">255.0</span>)  , green_bias = -(<span class="number">0.456</span> * <span class="number">255.0</span>)  , blue_bias = -(<span class="number">0.406</span> * <span class="number">255.0</span>))
+
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/50239066/efficiently-standardizing-images-in-a-numpy-array" target="_blank" rel="noopener">https://stackoverflow.com/questions/50239066/efficiently-standardizing-images-in-a-numpy-array</a></p>
+<hr>
+<p>Pytorch Notes</p>
+<ul>
+<li><a href="https://ikhlestov.github.io/pages/machine-learning/pytorch-notes/" target="_blank" rel="noopener">Data Augmentation</a></li>
+<li><a href="https://arxiv.org/pdf/1609.08764.pdf" target="_blank" rel="noopener">Transfer Learning_1</a></li>
+<li><a href="https://machinelearningmastery.com/transfer-learning-for-deep-learning/" target="_blank" rel="noopener">Transfer Learning_2</a></li>
+</ul>
+<p>Specific to this flower classification problem:</p>
+<ul>
+<li><a href="http://cs231n.github.io/transfer-learning/" target="_blank" rel="noopener">Flower Classication_1</a></li>
+<li><a href="https://arxiv.org/ftp/arxiv/papers/1708/1708.03763.pdf" target="_blank" rel="noopener">Flower Classication_2</a></li>
+</ul>
+<p>Use if <strong>name</strong> == “<strong>main</strong>”: to make your script execuatble.</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/419163/what-does-if-name-main-do" target="_blank" rel="noopener">From stackoverflow</a></li>
+<li><a href="https://thepythonguru.com/what-is-if-__name__-__main__/" target="_blank" rel="noopener">From thepythonguru</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/20/20190120-TMQ/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2378,241 +2668,6 @@ danger -->
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/14/20190114-TIL/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Namwoo Kim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/14/20190114-TIL/" itemprop="url">20190114_TIL</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-14T12:42:04+09:00">2019-01-14</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-15T15:34:32+09:00">2019-01-15</time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/14/20190114-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/14/20190114-TIL/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">2k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">2 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>영어는 언제할꺼임?</p>
-<p>일단 오늘 현재까지 한 일</p>
-<ol>
-<li><p>Video program setting </p>
-<ul>
-<li>done</li>
-</ul>
-</li>
-<li><p>Python Argpare 이것저것 실험해보기.</p>
-<ul>
-<li>각각 parameters, argument 비교해보기</li>
-<li><a href="https://pymotw.com/3/argparse/" target="_blank" rel="noopener">https://pymotw.com/3/argparse/</a></li>
-<li><a href="https://docs.python.org/3/library/argparse.html#action" target="_blank" rel="noopener">https://docs.python.org/3/library/argparse.html#action</a></li>
-</ul>
-</li>
-<li><p>github sync 다시 맞추기</p>
-<ul>
-<li>100MB 이상되는 파일 껴있을때 해결법 찾기<ul>
-<li>설정값 조절하라는데 해도 안됨.</li>
-<li>100MB 넘는 파일 밖으로 뺴냈는데도 이미 들어간 파일이라 history에 올라가버려니 결국 오류</li>
-<li>ignore값 설정해도 이미 그전 history에 먼저 올라가있어 안됨.</li>
-<li>history revert 하면 컴퓨터에 파일들이 아예 과거로 회귀해버림..</li>
-</ul>
-</li>
-<li>github network에 repo 삭제 -&gt; repo ADD<ul>
-<li>숨긴파일로 .git history 저장되어 있어서 예전과 같은 상황 발생.</li>
-</ul>
-</li>
-<li>github network에 repo 삭제 -&gt; repo Create<ul>
-<li>아예 그냥 삭제후 다시 만듬. github에 올라있는 이전 파일들 그냥 강제삭제..</li>
-</ul>
-</li>
-<li>이 방법 밖에는 없는 걸까?</li>
-</ul>
-</li>
-<li><p>Project submission : Udacity Data Scientist Nanodegree</p>
-<ul>
-<li>Project 2 : Create Your Own Image Classifier</li>
-<li>102가지 꽃 종류 판단하기<ul>
-<li>4일동안 하루~~종일 고치고 실행하고 고치고 실행..</li>
-<li>CUDA 없이 그냥 Scikit-learn으로 해볼 때는 수정하고 고치고가 쉬웠고 frontforward, backpropagation 모두 쉽게 예측(?) 해볼 수 있었다.</li>
-<li>pythorch로 CUDA ON 하고 사용할 때 명령어도 싹 바뀌었고 model parameter 솎아내고 수정하는거, 그리고 argument 설정하는 것들… 고생 좀 했다.</li>
-<li>vgg19_bn에 linear 1개 더 추가해서 돌렸더니 정확도가 93%까지 올라갔는데 실제 테스트할 때는 도대체가 맞지를 않는다.</li>
-<li>너무 올래걸리기도 하고(내 컴 GTX1050 2GB) 내 컴으론 도저히 뭘 할 수가 없어 Udacity 가상머신 GPU 켜놓고, 진행</li>
-<li>vgg13으로 linear는 다시 기본으로 input-hidden(512)-output, bath_size=32 로 해서 돌리는데 정확도 67%. 60 넘었으니 일단 pass. </li>
-<li>마찬가지.. 이미지 가지고 checking 하는데 자꾸 틀린다…. 왜 그러지? 이것 때문에 이틀 더 걸렸는데…</li>
-<li>그래서 그냥 냄…. 그래서 Advisor 에게 멋진 코멘트도 씀.. <ul>
-<li><code>dear Advisor, please, lead me the right way.</code>. </li>
-<li>직역하면 올바른 길로 인도해주세요.. 제바알~~</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Dear Advisor,</span><br><span class="line"></span><br><span class="line">1. Development Notebook</span><br><span class="line">when using Notebook(vgg19_bn) , the accuracy went up 93%, </span><br><span class="line">but when check real image, the results were constantly wrong. </span><br><span class="line">It&apos;s almost a 20%? 30%? probability.</span><br><span class="line"></span><br><span class="line">2. Command Line Application</span><br><span class="line">Likewise, when check real random image, the results were constantly wrong. </span><br><span class="line"></span><br><span class="line">I really hope I can fix it. </span><br><span class="line">I&apos;ve tried a lot, but i don&apos;t know what to do, where wrong, how fix.</span><br><span class="line">please give me a some hint, and lead me the right way.</span><br><span class="line"></span><br><span class="line">Thank you and Happy new year!</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>현재시간 오후 10시.  영어는 결국?</li>
-</ol>
-<p>59.4</p>
-<p>내일 할일</p>
-<ol>
-<li>영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어<ul>
-<li>제발 좀. 영어.</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://github.com/NamWoo/namwoo.github.io/blob/master/2019/01/14/20190114-TIL/m-002.png?raw=true" alt="aa"></p>
-<p><img src="https://github.com/NamWoo/namwoo.github.io/blob/master/2019/01/14/20190114-TIL/m-002.png" alt="ff"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2663,7 +2718,7 @@ danger -->
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2698,7 +2753,7 @@ danger -->
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -2764,7 +2819,7 @@ danger -->
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">73k</span>
+    <span title="Site words total count">74k</span>
   
 
   
@@ -2773,7 +2828,7 @@ danger -->
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">1:13</span>
+    <span title="Site reading time">1:14</span>
   
 </div>
 

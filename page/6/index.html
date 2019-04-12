@@ -319,6 +319,241 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/14/20190114-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/14/20190114-TIL/" itemprop="url">20190114_TIL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-14T12:42:04+09:00">2019-01-14</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-15T15:34:32+09:00">2019-01-15</time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/14/20190114-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2019/01/14/20190114-TIL/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">2 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>영어는 언제할꺼임?</p>
+<p>일단 오늘 현재까지 한 일</p>
+<ol>
+<li><p>Video program setting </p>
+<ul>
+<li>done</li>
+</ul>
+</li>
+<li><p>Python Argpare 이것저것 실험해보기.</p>
+<ul>
+<li>각각 parameters, argument 비교해보기</li>
+<li><a href="https://pymotw.com/3/argparse/" target="_blank" rel="noopener">https://pymotw.com/3/argparse/</a></li>
+<li><a href="https://docs.python.org/3/library/argparse.html#action" target="_blank" rel="noopener">https://docs.python.org/3/library/argparse.html#action</a></li>
+</ul>
+</li>
+<li><p>github sync 다시 맞추기</p>
+<ul>
+<li>100MB 이상되는 파일 껴있을때 해결법 찾기<ul>
+<li>설정값 조절하라는데 해도 안됨.</li>
+<li>100MB 넘는 파일 밖으로 뺴냈는데도 이미 들어간 파일이라 history에 올라가버려니 결국 오류</li>
+<li>ignore값 설정해도 이미 그전 history에 먼저 올라가있어 안됨.</li>
+<li>history revert 하면 컴퓨터에 파일들이 아예 과거로 회귀해버림..</li>
+</ul>
+</li>
+<li>github network에 repo 삭제 -&gt; repo ADD<ul>
+<li>숨긴파일로 .git history 저장되어 있어서 예전과 같은 상황 발생.</li>
+</ul>
+</li>
+<li>github network에 repo 삭제 -&gt; repo Create<ul>
+<li>아예 그냥 삭제후 다시 만듬. github에 올라있는 이전 파일들 그냥 강제삭제..</li>
+</ul>
+</li>
+<li>이 방법 밖에는 없는 걸까?</li>
+</ul>
+</li>
+<li><p>Project submission : Udacity Data Scientist Nanodegree</p>
+<ul>
+<li>Project 2 : Create Your Own Image Classifier</li>
+<li>102가지 꽃 종류 판단하기<ul>
+<li>4일동안 하루~~종일 고치고 실행하고 고치고 실행..</li>
+<li>CUDA 없이 그냥 Scikit-learn으로 해볼 때는 수정하고 고치고가 쉬웠고 frontforward, backpropagation 모두 쉽게 예측(?) 해볼 수 있었다.</li>
+<li>pythorch로 CUDA ON 하고 사용할 때 명령어도 싹 바뀌었고 model parameter 솎아내고 수정하는거, 그리고 argument 설정하는 것들… 고생 좀 했다.</li>
+<li>vgg19_bn에 linear 1개 더 추가해서 돌렸더니 정확도가 93%까지 올라갔는데 실제 테스트할 때는 도대체가 맞지를 않는다.</li>
+<li>너무 올래걸리기도 하고(내 컴 GTX1050 2GB) 내 컴으론 도저히 뭘 할 수가 없어 Udacity 가상머신 GPU 켜놓고, 진행</li>
+<li>vgg13으로 linear는 다시 기본으로 input-hidden(512)-output, bath_size=32 로 해서 돌리는데 정확도 67%. 60 넘었으니 일단 pass. </li>
+<li>마찬가지.. 이미지 가지고 checking 하는데 자꾸 틀린다…. 왜 그러지? 이것 때문에 이틀 더 걸렸는데…</li>
+<li>그래서 그냥 냄…. 그래서 Advisor 에게 멋진 코멘트도 씀.. <ul>
+<li><code>dear Advisor, please, lead me the right way.</code>. </li>
+<li>직역하면 올바른 길로 인도해주세요.. 제바알~~</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Dear Advisor,</span><br><span class="line"></span><br><span class="line">1. Development Notebook</span><br><span class="line">when using Notebook(vgg19_bn) , the accuracy went up 93%, </span><br><span class="line">but when check real image, the results were constantly wrong. </span><br><span class="line">It&apos;s almost a 20%? 30%? probability.</span><br><span class="line"></span><br><span class="line">2. Command Line Application</span><br><span class="line">Likewise, when check real random image, the results were constantly wrong. </span><br><span class="line"></span><br><span class="line">I really hope I can fix it. </span><br><span class="line">I&apos;ve tried a lot, but i don&apos;t know what to do, where wrong, how fix.</span><br><span class="line">please give me a some hint, and lead me the right way.</span><br><span class="line"></span><br><span class="line">Thank you and Happy new year!</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>현재시간 오후 10시.  영어는 결국?</li>
+</ol>
+<p>59.4</p>
+<p>내일 할일</p>
+<ol>
+<li>영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어영어<ul>
+<li>제발 좀. 영어.</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://github.com/NamWoo/namwoo.github.io/blob/master/2019/01/14/20190114-TIL/m-002.png?raw=true" alt="aa"></p>
+<p><img src="https://github.com/NamWoo/namwoo.github.io/blob/master/2019/01/14/20190114-TIL/m-002.png" alt="ff"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/01/13/20190113-TIL/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1953,211 +2188,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2018/12/05/MD1/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Namwoo Kim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/05/MD1/" itemprop="url">대학원 알아보기(1)</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T09:43:33+09:00">2018-12-05</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-05T09:46:10+09:00">2018-12-05</time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/05/MD1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://namwoo.github.io/2018/12/05/MD1/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">2.5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">2 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>첫 깃헙블로그 테스팅 3번째 글.<br>깃헙에서 그리고 내 로컬에서 잘 올리고 받고 확인도 되었는데<br>한글이 깨지길래 이것저것 업뎃하니까 잘 되길래 봤더니 또 깨지네..<br>지금 이 글은 안깨지고 있으려나..?</p>
-<p>Master Degree, Graduate School 을 알아보면서 정리도 할겸<br>거기다가 github 공부도 할겸 알아가보자</p>
-<h2 id="why-do-I-need-a-degree"><a href="#why-do-I-need-a-degree" class="headerlink" title="why do I need a degree?"></a>why do I need a degree?</h2><p>각종 MOOC 를 들으면서 nanodegree도 따고 specialization도 계속 따고 있고<br>이리저리 더 공부해보다보니 배움이 더 고파진다.<br>온라인엔 전세계에 내노라 하는 석학들의 무료오픈소스 수업들이 널리고 널렸다.<br>amr chiar scholar 인 나에겐 너무너무 좋은 분들..</p>
-<p>온라인의 장점을 최대한 챙기면서<br>오프라인의 강점을 살리기 위해선 대학원은 필수인거 같아 알아보게 되었다.</p>
-<blockquote>
-<p><strong>conditional statement:</strong>  </p>
-<ul>
-<li><strong>tuition</strong> : 학비가 감당할 정도여야 할 것. 그래봤자 어차피 학자금 대출.</li>
-<li>통학, 교통, 숙식. 가진거 없이 학자금 대출로 공부하는거니 최대한 아낄 수 있어야 한다는 점.</li>
-<li>해외든 어디든 상관없이 배울 수 있고 스스로 성장할 수 있다면 최우선으로!</li>
-<li><strong>keywords</strong>: Data analyst, Data Science, Data Engineering</li>
-</ul>
-</blockquote>
-<p>이럴꺼면 산업대학원, 일하면서 석사 따는게 더 좋아보이기도 했는데..<br>후자는 확실한 길이 보이지 않았고 모자란 내 짱구로 생각해본 결과…<br>경제 상황 상, 취업 구직난 상으로 볼 때 신입이 성장하기 힘들어보일거 같다는 뇌피셜.로 패쓰.</p>
-<h2 id="in-China"><a href="#in-China" class="headerlink" title="in China"></a>in China</h2><p>중국..  내수가 짱짱한 나라니 중국어 잘하면 한국오지말고 세계 어디에서든지 생활하면 참 좋을거라는건 누가 말하주지 않아도 중국에서 고등학교를 다녀본 <strong>조기유학</strong>을 통해 느껴보았고, 중국에서 그 친구들이 지금까지 살고 있는 20년, 아니지 부모님부터 자녀까지 중국에서 거주하고 있는 친구들이 주변에 많이 있다보니 중국은 항상 눈독드리는 나라.</p>
-<blockquote>
-<p>if (in China)<br>also if (<strong>Chinese and English languages</strong>) than ok.</p>
-</blockquote>
-<p>중국에선 중국어만 해서는 안된다. 학위만 따올거라면 모르겠는데 취업까지 넘어가려면 돈 많고 능력 뛰어난 American Chinese 같은 친구들이 너무너무너무너무너무 많다. 북대, 칭화대 애들….. 중국 수십억명중에서 뽑히고 뽑히고 뽑힌 애들을 따라갈 수는 없다.. 언어를 잘해야 어떻게 말이라도 붙여보고 배울텐데 언어도 못하면서 공부하겠다면.. 언어배우다 시간만 낭비할께 뻔한 상황.. 이건 미국, 독일, 일본 어디든 마찬가지..</p>
-<p>거기다 조선족.. 요즘 조선족분들… 예전엔 중국에서 한국어가 들리면 조선족과 한국인을 구별하는건 너무너무 쉬웠다. 일본인, 한국인, 중국인 구별하는 것도 너무 쉬웠고.<br>근데 요즘은 옷, 행동, 말습관 모두 너무 비스므리해지고 체형도 많이 또 바뀌고..<br>아직 외모적으로는 차이가 나는게 보이지만<br>한국에 있는, 전문직종에 일하는 조선족들은 와…. 한국인보다 한국말도 잘하고 죄다 엘리트..</p>
-<p>중국에서 중국어 가르쳐주시던 조선족 과외선생님이 계셨는데<br>그분은 중국어, 한국어 에다가 일본어, 영어까지……<br>어차피 중국어랑 한국어는 기본이고 교육과정상 영어는 또 당연히 할 수 있고..<br>취미로 일본어 하나 더 하면 이미….4개 국어..<br>이쪽 언어들은 유럽애들처럼 언어학적으로 비스므리해서 독일프랑스 애들 모이면 대충 50% 이해하고 넘어가는 것도 아닌데 이미 4개국어..<br>출발선부터 다른.. 분들과 경쟁하려면 나도 나만의 경쟁력을 길러야하기에..</p>
-<p>한국 돌아오면 비벼볼 수는 있다.<br>워낙 한국에 적을두고 해외를 갔다오면 한국에서 그래도 어느 기준으로 공부를 했구나라는게 눈치껏 보인다.<br>돈으로 해외대학가서 언어만 잘해오는 해외파들이 넘쳐나기에 그 사람들보다 경쟁력있으려면 언어는 못할지라도 실력으로 밀어야….  (실력만 가지고 안되는게 세상이던데..)</p>
-<p>다시 돌아와서.<br>beijing 아니면 shanghai, hongkong 쪽인데</p>
-<p><a href="https://stackedit.io/" target="_blank" rel="noopener">Tsinghua University</a> 쪽은 이거 3개</p>
-<ol>
-<li><p><strong>Tsinghua-UC Berkeley Shenzhen Institute</strong><br>Data Science and Information Technology (M)(ED)</p>
-</li>
-<li><p><strong>Global Innovation eXchange Institute,Tsinghua University</strong><br>Data Science and Information Technology (M)</p>
-</li>
-<li><p><strong>Graduate School at Shenzhen，Tsinghua University</strong><br>Data Science and Information Technology (M)</p>
-</li>
-</ol>
-<p>홍콩 쪽, 상해 쪽은 뒤에 이어서…</p>
-<blockquote>
-<ul>
-<li>대학원 알아보기(2)</li>
-</ul>
-</blockquote>
-<hr>
-<p><strong>어디든 들어가서 열심히 공부, 최선을 다해 노력</strong> 만 가지고는 복잡한 세상 편하게 살 수 없어졌고<br>어딜가나 해외는 수 많은 네이티브들과 경쟁해야 할텐데 영어랑 로컬, 그리고 추가외국어까지.. 그리고 당연히 실력까지 있어야 하니 전략적 잘 접근해야 요즘 같은 때에 살아남고 먼 훗날을 도모할 수 있으리니..</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2208,7 +2238,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2243,7 +2273,7 @@
                   <h3 class="widget-title">Tag Cloud</h3>
                   <div id="myCanvasContainer" class="widget tagcloud">
                       <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
+                          <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Diary/">Diary</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dirary/">Dirary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KISTI/">KISTI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercomputer/">Supercomputer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TMQ/">TMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Torch/">Torch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yonsei-University/">Yonsei University</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-degree/">master degree</a><span class="tag-list-count">1</span></li></ul>
                       </canvas>
                   </div>
               </div>
@@ -2309,7 +2339,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Site words total count">73k</span>
+    <span title="Site words total count">74k</span>
   
 
   
@@ -2318,7 +2348,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Site reading time">1:13</span>
+    <span title="Site reading time">1:14</span>
   
 </div>
 
