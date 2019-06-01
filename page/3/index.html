@@ -95,7 +95,7 @@
     root: '/',
     scheme: 'Muse',
     version: '6.0.0',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -294,6 +294,212 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/18/20190218-TIL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Namwoo Kim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/20190218-TIL/" itemprop="url">20190218_TIL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T09:36:11+09:00">2019-02-18</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-18T22:18:54+09:00">2019-02-18</time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/18/20190218-TIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/18/20190218-TIL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">1.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>스스로가 꽤 진전이 있다고 생각했는데 아직도 전처리 중……ㅡㅡ<br>대충 90만개 행 x 85개 열 데이터 셋을 이리저리 뜯어보는 중에</p>
+<h1 id="결측치에-대하여"><a href="#결측치에-대하여" class="headerlink" title="결측치에 대하여"></a>결측치에 대하여</h1><h2 id="과정"><a href="#과정" class="headerlink" title="과정"></a>과정</h2><ol>
+<li>각각의 열마다 또 각각 따로 정의된 missing values 가 있어 모두 따로 정의했다.<ol>
+<li>이건 따로 csv로 정의되어 있어 비교대조 진행</li>
+<li>그래서 빈칸이든 missing values든 error values든 모두 np.nan 로 변환</li>
+</ol>
+</li>
+<li>행 별로 기준 결측치 퍼센트 15% 부터 30% 까지 나열<ol>
+<li>18%부터 출력되는 행이 6개 확인</li>
+<li>한 행에 결측치 18% 이상인 행 drop</li>
+</ol>
+</li>
+<li>열 별로 기준 결측치 확인</li>
+</ol>
+<p><strong>여기서 의문</strong><br>행은 카테고리로 정의된 string 값이라, 그러니까 사람의 특징을 나열할 때 나이, 키, 몸무게 같은 특징을 나타내는데 열은 그냥 index도 아니고 그냥 내열된 값이다. 90만번까지 있는 이 열 중에 몇 개를 날려버려도 상관없는 것인가?</p>
+<ol start="4">
+<li>어쨌든 열 별로 기준 결측치 퍼센트로 확인<ol>
+<li>결측치가 40% 이상인 열 10만개 열 총 10% drop</li>
+</ol>
+</li>
+</ol>
+<p><strong>잘하고 있는 짓인거?</strong> 전체 데이터의 10%면 어마어마한건데…. PCA나 fastICA 진행시 차이가 있을까? 이건 결과값가지고 비교해볼 수 밖에..</p>
+<ol start="5">
+<li>0 또는 1, Yes or No, Y, or N, O or X 등 과 같은 이진값들 확인 후 0,1로 통일.<ol>
+<li>근데 어떤 행에는 <code>O</code>, <code>W</code> 이런 이진값이 있었는데..?? 어느게 1? 어느게 0? 그냥 바꿔 내맘대로 바꿈</li>
+<li>1과 0 그리고 1.0과 0.0, int or float<ol>
+<li>데이터들이 그냥 정수 인데 <code>.0</code> 이 붙어있는 실수화 되어있다. 소수점 이하 수치가 있으면 고민하지도 않았음.</li>
+<li>이런 int와 float 차이는 어떻게? </li>
+<li>싹 int로 바꿔 버리고 싶었는데 안에 np.nan 있기에 int 불가</li>
+<li>그냥 싹 float로 바꿔? 아님 그냥 나둬? </li>
+<li>일단 놔두고 나중에 비교해보기?</li>
+</ol>
+</li>
+<li>그냥 np.nan 빼고 모두 int로 바꿔버림</li>
+</ol>
+</li>
+</ol>
+<p><strong>잘… 하는거 맞겠…지?</strong></p>
+<h2 id="화남"><a href="#화남" class="headerlink" title="화남"></a>화남</h2><p>csv 단일 파일만 150MB. 데이터가 이 정도면 크지 않다고 생각하는데 <code>.copy()</code> 수 단계 거치고 솎아내고 걸러내고 따로 뽑아비교하고.. 점점 커져가다보니 Jupyter가 밀리기 시작함. ipython 말고 그냥 일반 python으로 하고 싶어도 실제 그래프를 보면서 데이터를 비교하고 대조하고 그리고 글도 써내려가고 싶은데… </p>
+<p>그리고 클라우드 기반 ipython 사용중이라 리눅스 가상환경 설정도 맞춰줘야함.. import 오류 떄문에 한 고생.. 작성한 cells 모두 실행해놓아도 환경설정 오류나면 import 오류나면서 싹 다시 해야함….. 또 엄청 기다림… 오늘도 도대체 코딩한 시간보다 기다린 시간이 더 많음…. 말도 안돼…</p>
+<p>마지막엔 잘 되고 있었는데 끝에가서 크롬 뒤로가기 실행돼서 싹 초기화… 열받아서 드러누음. ㅡㅡ</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1862,172 +2068,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://namwoo.github.io/2019/02/07/20190207-TIL/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Namwoo Kim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my Blog of Absolute and Subjective Knowledge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/07/20190207-TIL/" itemprop="url">20190207_TIL</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-07T21:46:31+09:00">2019-02-07</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-07T21:46:52+09:00">2019-02-07</time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/07/20190207-TIL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/07/20190207-TIL/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">11</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>클러스터링 이어서.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2078,7 +2118,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2156,6 +2196,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -2212,11 +2259,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
